@@ -14,6 +14,10 @@ export const RequireAuth = (Component, type) => {
 		}
 
 		render() {
+			if(!this.props.user.authLoaded && this.props.user.userData.social) {
+				return <Component {...this.props}/>;
+			}
+
 			if(!this.props.user.authLoaded) {
 				return <p>We are checking your account</p>;
 			}

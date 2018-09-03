@@ -16,6 +16,10 @@ body {
 	height:100vh;
 }
 
+input, input:focus, input:active, select, select:focus, select:active, button, button:focus, button:active {
+	outline:none;
+}
+
 #root, .app_container {
 	width:100%;
 	height:100%;
@@ -29,5 +33,45 @@ body {
 	flex-direction:column;
 	align-items:flex-start;
 	justify-content:flex-start;
-	background: linear-gradient(to top, #d66d75, #e29587);
+	background:linear-gradient(#e96443, #904e95);
+}
+
+.flashcardly_input {
+	border:none;
+	background:none;
+	background:#fbfbfb;
+	box-shadow:0px 1px 3px 0px rgba(0,0,0,0.4);
+	border-radius:3px;
+	padding:6px 12px;
+	color:#2e2e2e;
+	font-size:0.9rem;
+}
+
+.flashcardly_input:focus {
+	box-shadow:0px 1px 3px 0px rgba(93,155,155,1);
+}
+
+.flashcardly_btn {
+	border:none;
+	background:none;
+	border:1px solid rgba(0,0,0,0.1);
+	padding:5px 12px;
+	border-radius:3px;
+	font-size:0.7rem;
+	font-weight:600;
+	cursor:pointer;
+	transition:border-radius 200ms linear;
+}
+
+.flashcardly_btn:active {
+	box-shadow:0px 0px 1px 1px #0099cc;
+}
+
+.flashcardly_btn--common {
+	color:#fff;
+	background:linear-gradient(#F15F79, #B24592);
+}
+
+.flashcardly_btn--common:hover {
+	background:linear-gradient(#B24592, #F15F79);
 }

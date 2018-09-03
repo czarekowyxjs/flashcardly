@@ -9,8 +9,12 @@ const flashcardSchema: Schema = new Schema({
 		type: String,
 		default: Math.floor(new Date().getTime()/1000)
 	},
-	flashcardName: {
+	title: {
 		type: String
+	},
+	description: {
+		type: String,
+		default: ''
 	},
 	author: {
 		type: Schema.Types.ObjectId,

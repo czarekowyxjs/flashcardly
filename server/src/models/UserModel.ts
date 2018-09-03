@@ -23,6 +23,11 @@ const userSchema: Schema = new Schema({
 		type: String,
 		default: ''
 	},
+	token: {
+		type: String,
+		default: uuid(),
+		unique: true
+	},
 	social: {
 		facebook: {
 			accessToken: {

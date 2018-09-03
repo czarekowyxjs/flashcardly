@@ -1,0 +1,27 @@
+.flashcardly_plus_circle_btn > span {
+	height:29px;
+	width:29px;
+	background:linear-gradient(#66cc33,#339900);
+	border-radius:100%;
+	box-shadow:1px 1px 3px 0px rgba(0,0,0,0.3);
+	cursor:pointer;
+	display:inline-block;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	transition:transform 200ms linear;
+}
+
+.flashcardly_plus_circle_btn > span:hover {
+	transform:scale(0.9);
+}
+
+.flashcardly_plus_circle_btn > span:active {
+	transform:scale(0.2);
+}
+
+.flashcardly_plus_circle_btn > span > svg {
+	color:#fff;
+	height:94%;
+	width:94%;
+}

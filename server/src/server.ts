@@ -1,5 +1,6 @@
 // import modules
 import express from 'express';
+import validator from 'express-validator';
 import bodyParser from 'body-parser';
 import path from 'path';
 import cors from 'cors';
@@ -9,6 +10,7 @@ import mongoose from 'mongoose';
 import config from './config';
 // import controller
 import authenticationController from './controllers/AuthenticationController';
+import flashcardController from './controllers/FlashcardController';
 
 /**
 	Server class
@@ -35,11 +37,14 @@ class Server {
 		//
 		this.app.use(helmet());
 		this.app.use(cors());
+		//
+		this.app.use(validator());
 		this.app.use("/img", express.static(__dirname + "/public/images"));
 	}
 
 	private routes(): void {
 		this.app.use("/api/v1/authentication", authenticationController.router);
+		this.app.use('/api/v1/flashcard', flashcardController.router);
 	}
 }
 
