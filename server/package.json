@@ -1,0 +1,49 @@
+{
+  "name": "server",
+  "version": "0.1.0",
+  "description": "Api for flashcardly app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently --kill-others \"tsc -w\" \"nodemon ./dist/index.js\"",
+    "build": "tsc",
+    "start": "npm run build && NODE_ENV=production node ./dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/czarekowyxjs/flashcardly.git"
+  },
+  "author": "Cezary Góralski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/czarekowyxjs/flashcardly/issues"
+  },
+  "homepage": "https://github.com/czarekowyxjs/flashcardly#readme",
+  "dependencies": {
+    "@types/body-parser": "^1.17.0",
+    "@types/cors": "^2.8.4",
+    "@types/debug": "0.0.30",
+    "@types/express": "^4.16.0",
+    "@types/helmet": "0.0.39",
+    "@types/mongodb": "^3.1.4",
+    "@types/mongoose": "^5.2.7",
+    "@types/uuid": "^3.4.4",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "helmet": "^3.13.0",
+    "mongoose": "^5.2.9",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.0.1",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "concurrently": "^4.0.0",
+    "nodemon": "^1.18.3"
+  },
+  "engines": {
+    "node": "8.9.4",
+    "npm": "6.1.0"
+  }
+}
