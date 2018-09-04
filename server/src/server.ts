@@ -27,8 +27,9 @@ class Server {
 	private config(): void {
 		// mongoose(mongodb) connection
 		mongoose.connect(process.env.MONGO_URI || config.MONGO_URI, {
-			useNewUrlParser: true
+  		useNewUrlParser: true
 		});
+		mongoose.set('useCreateIndex', true);
 		//
 		this.app.use(bodyParser.json());
 		this.app.use(bodyParser.urlencoded({
@@ -44,7 +45,7 @@ class Server {
 
 	private routes(): void {
 		this.app.use("/api/v1/authentication", authenticationController.router);
-		this.app.use('/api/v1/flashcard', flashcardController.router);
+		this.app.use('/api/v1/flashcards', flashcardController.router);
 	}
 }
 

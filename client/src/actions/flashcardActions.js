@@ -9,7 +9,7 @@ export const createNewFlashcard = (flashcard) => {
 		const userState = store.getState().user;
 		dispatch(setCreateFlashcardLoaded(false));
 		try {
-			const response = await axios.post("/api/v1/flashcard/create", flashcard, {
+			const response = await axios.post("/api/v1/flashcards/create", flashcard, {
 				headers: {
 					authorization: userState.userData.social.facebook.signedRequest
 				}
@@ -35,3 +35,31 @@ export const setCreateFlashcardLoaded = (payload) => {
 /** 
 	FLASHCARD SETTINGS
 */
+export const fetchFlashcardSet = (flashcardID) => {
+	return async dispatch => {
+		const userState = store.getState().user;
+		dispatch(setFetchFlashcardLoaded(false));
+		try {
+			const response = await axios.get("/api/v1/flashcards/"+flashcardID, {
+				headers: {
+					authorization: userState.userData.social.facebook.signedRequest
+				}
+			});
+			dispatch({
+				type: "FETCH_FLASHCARD_DATA",
+				payload: response.data.flashcard
+			});
+			console.log(response);
+			dispatch(setFetchFlashcardLoaded(true));
+		} catch(e) {	
+			console.log(e.response);
+		}
+	};	
+};
+
+export const setFetchFlashcardLoaded = (payload) => {
+	return {
+		type: "FETCH_FLASHCARD_LOADED",
+		payload: payload
+	};
+};

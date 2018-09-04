@@ -23,11 +23,6 @@ const userSchema: Schema = new Schema({
 		type: String,
 		default: ''
 	},
-	token: {
-		type: String,
-		default: uuid(),
-		unique: true
-	},
 	social: {
 		facebook: {
 			accessToken: {
@@ -43,7 +38,14 @@ const userSchema: Schema = new Schema({
 				default: ''
 			},
 			picture: {
-				url: String,
+				url: String
+			},
+			firstName: {
+				type: String,
+				default: ''
+			},
+			lastName: {
+				type: String,
 				default: ''
 			},
 			fullName: {

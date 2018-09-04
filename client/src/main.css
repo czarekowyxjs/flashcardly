@@ -14,16 +14,21 @@ html {
 body {
 	width:100%;
 	height:100vh;
+	background:linear-gradient(#e96443, #904e95);
+	background-repeat:no-repeat;
+	background-attachment:fixed;
 }
 
 input, input:focus, input:active, select, select:focus, select:active, button, button:focus, button:active {
 	outline:none;
 }
 
+a {
+	text-decoration:none;
+}
+
 #root, .app_container {
 	width:100%;
-	height:100%;
-	background-color:#fbfbfb;
 }
 
 .app_root {
@@ -33,7 +38,6 @@ input, input:focus, input:active, select, select:focus, select:active, button, b
 	flex-direction:column;
 	align-items:flex-start;
 	justify-content:flex-start;
-	background:linear-gradient(#e96443, #904e95);
 }
 
 .flashcardly_input {

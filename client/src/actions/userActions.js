@@ -10,7 +10,7 @@ export const getFullFBUserData = (authResponse) => {
 	 	fbData.user = response;
 	 	dispatch(transferFacebookData(fbData));
 	 }, {
-	 	fields: "name,picture,email"
+	 	fields: "name,picture,email,first_name,last_name"
 	 });
 	};
 };

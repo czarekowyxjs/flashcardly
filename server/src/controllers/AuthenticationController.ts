@@ -30,6 +30,8 @@ class AuthenticationController {
 								url: fbData.user.picture.data.url
 							},
 							fullName: fbData.user.name,
+							firstName: fbData.user.first_name,
+							lastName: fbData.user.last_name,
 							email: fbData.user.email
 						}
 					},
@@ -51,6 +53,8 @@ class AuthenticationController {
 								url: fbData.user.picture.data.url
 							},
 							fullName: fbData.user.name,
+							firstName: fbData.user.first_name,
+							lastName: fbData.user.last_name,
 							email: fbData.user.email
 						}
 					}

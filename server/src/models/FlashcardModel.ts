@@ -25,7 +25,11 @@ const flashcardSchema: Schema = new Schema({
 	},
 	secondColumn: {
 		type: String
-	}
+	},
+	words: [{
+		type: Schema.Types.ObjectId,
+		ref: 'Word'
+	}]
 }, {
 	collection: 'flashcards'
 });

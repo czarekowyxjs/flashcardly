@@ -1,0 +1,66 @@
+.single_flashcard_block {
+	width:100%;
+	display:flex;
+	flex-direction:column;
+	align-items:flex-start;
+	justify-content:flex-start;
+	background-color:#fbfbfb;
+	border-radius:3px;
+	border:1px solid rgba(0,0,0,0.05);
+	box-shadow:0px 2px 5px 0px rgba(0,0,0,0.3);
+}
+
+.single_flashcard_header {
+	padding:12px 16px 6px 16px;
+}
+
+.single_flashcard_header_title {
+
+}
+
+.flashcard_header_title_direct > h3 {
+	color:#2e2e2e;
+	font-weight:600;
+	font-size:0.9rem;
+}
+
+.flashcard_header_title_user {
+
+}
+
+.flashcard_header_title_user > p {
+	
+}
+
+.flashcard_header_title_user > p > span {
+	color:rgba(0,0,0,0.7);
+	font-size:0.75rem;
+	margin:0px 3px;
+}
+
+.flashcard_header_title_user > p > time {
+	color:rgba(0,0,0,0.7);
+	font-size:0.75rem;	
+}
+
+.flashcard_header_title_user > p > span:first-child {
+	margin-left:0px;
+}
+
+.flashcard_header_title_user > p > a {
+	font-size:0.75rem;
+	color:#0099cc;
+}
+
+.flashcard_header_title_user > p > a:hover {
+	text-decoration:underline;
+	color:#006699;
+}
+
+.single_flashcard_body {
+	width:100%;
+	display:flex;
+	flex-direction:column;
+	align-items:flex-start;
+	justify-content:flex-start;
+}

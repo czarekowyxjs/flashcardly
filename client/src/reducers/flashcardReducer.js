@@ -1,5 +1,6 @@
 const initialState = {
 	createFlashcardLoaded: false,
+	fetchFlashcardLoaded: false,
 	flashcardData: {}
 };
 
@@ -9,6 +10,11 @@ export default (state = initialState, action) => {
 			return {
 				...state,
 				createFlashcardLoaded: action.payload
+			};
+		case "FETCH_FLASHCARD_LOADED":
+			return {
+				...state,
+				fetchFlashcardLoaded: action.payload
 			};
 		case "FETCH_FLASHCARD_DATA":
 			return {
