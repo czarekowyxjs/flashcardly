@@ -1,0 +1,89 @@
+.single_flashcard_preview {
+	width:295px;
+	height:130px;
+	margin:10px;
+	background:none;
+	border:1px solid rgba(0,0,0,0.25);
+	box-shadow:0px 1px 4px 0px rgba(0,0,0,0.1);
+	border-radius:3px;
+	display:flex;
+	flex-direction:column;
+	align-items:flex-start;
+	justify-content:flex-start;
+}
+
+.single_flashcard_preview:nth-child(4n+1) {
+	margin-left:20px;
+}
+
+.single_flashcard_preview:nth-child(4n+4) {
+	margin-right:20px;
+}
+
+.single_flashcard_preview_title {
+	width:100%;
+	background:linear-gradient(#e96443, #904e95);
+	border-top-right-radius:2px;
+	border-top-left-radius:2px;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+
+.single_flashcard_preview_title > h3 {
+	color:#fbfbfb;
+	font-size:0.8rem;
+	padding:5px;
+}
+
+.flashcard_preview_table {
+	width:100%;
+}
+
+.flashcard_preview_table_header {
+	width:100%;
+	background-image:linear-gradient(#0099cc, #006699);
+	display:flex;
+	flex-direction:row;
+	border-bottom:1px solid rgba(0,0,0,0.4);
+}
+
+.flashcard_preview_table_header > .flashcard_preview_table_field {
+	padding:8px 9px;
+	width:50%;
+}
+
+.flashcard_preview_table_header > .flashcard_preview_table_field > span {
+	color:#fbfbfb;
+	font-weight:600;
+	font-size:0.85rem;
+}
+
+.flashcard_preview_table_desc {
+	width:100%;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+
+.flashcard_preview_table_desc > p {
+	font-size:0.8rem;
+	padding:8px;
+	transition:color 200ms linear;
+	color:rgba(0,0,0,0.4);
+}
+
+.flashcard_preview_table_desc > p:hover {
+	color:rgba(0,0,0,0.7);
+}
+
+.flashcard_preview_btn {
+	width:100%;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+
+.flashcard_preview_btn > button {
+
+}

@@ -79,3 +79,21 @@ a {
 .flashcardly_btn--common:hover {
 	background:linear-gradient(#B24592, #F15F79);
 }
+
+.flashcardly_btn--light-blue {
+	color:#fff;
+	background:linear-gradient(#6dd5ed, #2193b0);
+}
+
+.flashcardly_btn--light-blue:hover {
+	background:linear-gradient(#2193b0, #6dd5ed);
+}
+
+.flashcardly_btn--white {
+	color:rgba(0,0,0,0.9);
+	background:linear-gradient(#f6f6f6, #dedede);
+}
+
+.flashcardly_btn--white:hover {
+	background:linear-gradient(#dedede, #f6f6f6);	
+}

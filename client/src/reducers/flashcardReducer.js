@@ -19,7 +19,8 @@ export default (state = initialState, action) => {
 		case "FETCH_FLASHCARD_LOADED":
 			return {
 				...state,
-				fetchFlashcardLoaded: action.payload
+				fetchFlashcardLoaded: action.payload,
+				addWordError: {}
 			};
 		case "FETCH_FLASHCARD_DATA":
 			return {

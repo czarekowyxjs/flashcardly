@@ -12,13 +12,17 @@ module.exports = function(req, res, next) {
 		]
 	})
 	.then(function(foundWord) {
-		const now = Math.floor(new Date().getTime()/1000);
-		const diff = now-foundWord.createdAt;
-		if(diff < 5) {
-			res.status(404).send({
-				error: true,
-				message: 'Anti spam error'
-			});
+		if(foundWord) {
+			const now = Math.floor(new Date().getTime()/1000);
+			const diff = now-foundWord.createdAt;
+			if(diff < 5) {
+				res.status(404).send({
+					error: true,
+					message: 'Anti spam error'
+				});
+			} else {
+				next();
+			}
 		} else {
 			next();
 		}

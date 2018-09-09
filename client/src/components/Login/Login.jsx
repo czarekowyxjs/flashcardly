@@ -26,10 +26,6 @@ class Login extends Component {
 								<i><img src="/img/fb-square-icon.svg" alt="Facebook's logo"/></i>
 								<p>Continue with facebook</p>
 							</div>
-							<div className="login_body_item login_body_item--email">
-								<i><img src="/img/email-square-icon.svg" alt="Icon of email address"/></i>
-								<p>Continue with your email address</p>
-							</div>
 						</div>
 					</div>
 				</div>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getLoginStatusFB } from '../actions/authActions';
+import Loader from '../components/Commons/Loader/Loader.jsx';
 
 export const RequireAuth = (Component, type) => {
 	class RequireAuthComponent extends React.Component {
@@ -19,7 +20,7 @@ export const RequireAuth = (Component, type) => {
 			}
 
 			if(!this.props.user.authLoaded) {
-				return <p>We are checking your account</p>;
+				return <Loader message="Loading your account data"/>;
 			}
 			if(type === "Protect") {
 				if(!this.props.user.isLoggedIn) {

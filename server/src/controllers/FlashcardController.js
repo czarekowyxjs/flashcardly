@@ -1,4 +1,5 @@
 const Router = require("express").Router();
+const Op = require("sequelize").Op;
 const VerifyToken = require("../middlewares/VerifyToken");
 const AntiWordSpam = require("../middlewares/AntiWordSpam");
 const models = require("../models");
@@ -124,6 +125,64 @@ Router.get('/:fid', VerifyToken, function(req, res) {
 		}
 	});
 });
+
+/**
+	Find many flashcards
+*/
+Router.get('/', VerifyToken, function(req, res) {
+
+	const query = {
+		where: {
+			author: res.locals.uid
+		},
+		include: [{
+			model: models.User,
+			attributes: {
+				exclude: ['createdAt', 'displayName']
+			},
+			include: [{
+				model: models.Facebook,
+				attributes: {
+					exclude: ["accessToken", "signedRequest", "lastName", "userID"]
+				}
+			}]
+		}, {
+			model: models.Word
+		}]
+	};
+
+	if(req.query.title) {
+		query.where.title = {
+			[Op.or]: {
+				[Op.like]: '%'+req.query.title,
+				[Op.like]: req.query.title,
+				[Op.like]: req.query.title+'%'			
+			}
+		}
+	}
+	//
+	if(req.query.limit) {
+		query.limit = parseInt(req.query.limit);
+	}
+	//
+	if(req.query.sort && req.query.st) {
+		query.order = [
+			[req.query.sort, req.query.st]
+		]
+	}
+	//
+	if(req.query.page && req.query.limit) {
+		query.offset = parseInt(req.query.limit)*parseInt(req.query.page);
+	}
+
+	models.Flashcard.findAll(query)
+	.then(function(foundFlashcards) {
+		res.status(200).send({
+			flashcards: foundFlashcards
+		});
+	});
+});
+
 /**
 	Delete word from set
 */

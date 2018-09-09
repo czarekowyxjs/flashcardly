@@ -1,6 +1,6 @@
 .app_login {
 	width:100%;
-	height:100%;
+	height:100vh;
 	display:flex;
 	align-items:center;
 	justify-content:center;
@@ -24,7 +24,8 @@
 }
 
 .login_body_item {
-	min-width:300px;
+	min-width:200px;
+	width:250px;
 	cursor:pointer;
 	display:flex;
 	flex-direction:row;

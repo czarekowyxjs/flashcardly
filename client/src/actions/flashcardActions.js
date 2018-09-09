@@ -109,11 +109,11 @@ export const addNewWordToSet = (firstColWord, secondColWord, fid) => {
 			dispatch(landUpFlashcardData(flashcardData));
 			dispatch(setAddWordLoaded(true));
 		} catch(e) {
-			dispatch(setAddWordLoaded(true));
 			dispatch({
 				type: "ADD_WORD_ERROR",
 				payload: e.response.data
 			});
+			dispatch(setAddWordLoaded(true));
 		}
 	};
 };
@@ -235,3 +235,39 @@ export const setWordAsNotEditable = wid => {
 		payload: flashcardData
 	};
 }
+
+/**
+	Fetch many flashcards
+*/
+export const getManyFlashcards = () => {
+	return async dispatch => {
+		const userState = store.getState().user;
+		const page = userState.ownFlashcardsPage;
+		let ownFlashcards = userState.ownFlashcards;
+		try {
+			const response = await axios.get("/api/v1/flashcards?sort=createdAt&st=desc&limit=4&page="+page, {
+				headers: {
+					authorization: userState.userData.fb.signedRequest
+				}
+			});
+
+			const newFlashcards = [].concat(ownFlashcards, response.data.flashcards);
+			dispatch({
+				type: "LAND_UP_OWN_FLASHCARDS",
+				payload: newFlashcards
+			});
+			dispatch({
+				type: "UP_OWN_FLASHCARDS_PAGE"
+			});
+
+		} catch(e) {
+			console.log(e.response);
+		}
+	};
+}
+
+export const clearOwnFlashcards = () => {
+	return {
+		type: "CLEAR_OWN_FLASHCARDS"
+	};
+};

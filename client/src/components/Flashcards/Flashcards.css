@@ -5,6 +5,7 @@
 
 .flashcards_block {
 	width:100%;
+	margin-bottom:20px;
 	display:flex;
 	flex-direction:column;
 	align-items:flex-start;
@@ -16,7 +17,7 @@
 
 .flashcards_block_header {
 	position:relative;
-	padding:6px 6px 12px 6px;
+	padding:6px 6px 6px 6px;
 }
 
 .flashcards_block_add_btn {
@@ -26,7 +27,7 @@
 }
 
 .flashcards_block_header_title {
-	margin:6px 0px 6px 12px;
+	margin:6px 0px 0px 16px;
 }
 
 .flashcards_block_header_title_creator {
@@ -50,6 +51,44 @@
 
 .flashcards_block_body {
 	width:100%;
+}
+
+.flashcards_block_previews {
+	width:100%;
+	margin-bottom:10px;
+	height:auto;
+	display:flex;
+	flex-flow:row wrap;
+	align-items:flex-start;
+	justify-content:flex-start;
+}
+
+.flashcards_block_previews > p {
+	width:100%;
+	text-align:center;
+	padding:12px;
+	font-size:1rem;
+	color:rgba(0,0,0,0.8);
+}
+
+.flashcards_block_load_previews {
+	width:100%;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	margin:10px 0px;
+}
+
+.flashcards_block_load_previews > button {
+	background:none;
+	border:none;
+	color:rgba(0,0,0,0.3);
+	cursor:pointer;
+	transition:color 150ms linear;
+}
+
+.flashcards_block_load_previews > button:hover {
+	color:rgba(0,0,0,0.6);
 }
 
 .flashcards_block_body_creator {

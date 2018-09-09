@@ -4,6 +4,7 @@ import Login from './components/Login/Login.jsx';
 import Dashboard from './components/Dashboard/Dashboard.jsx';
 import Flashcards from './components/Flashcards/Flashcards.jsx';
 import { RequireAuth } from './hocs/RequireAuth.jsx';
+import Loader from './components/Commons/Loader/Loader.jsx';
 
 import "./Layout.css";
 
@@ -44,7 +45,7 @@ class App extends Component {
 
   render() {
     if(!this.state.fbApiLoaded) {
-      return <p>Loading facebook api</p>;
+      return <Loader message="Loading facebook data"/>;
     }
     return (
       <div className="app_container">

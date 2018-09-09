@@ -9,6 +9,7 @@ const FlashcardController = require("./controllers/FlashcardController");
 
 const app = express();
 //
+app.use("/img", express.static(__dirname+"/public/images"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(helmet());
