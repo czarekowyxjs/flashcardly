@@ -21,7 +21,6 @@ export const transferFacebookData = (fbData) => {
 			const response = await axios.post("/api/v1/authentication/signin/facebook", {
 				data: fbData
 			});
-
 			dispatch(landUpUserData(response.data.user));
 			dispatch(setLoggedInStatus(true));
 			dispatch(setAuthLoadedStatus(true));

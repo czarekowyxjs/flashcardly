@@ -33,7 +33,7 @@ class CreateFlashcards extends Component {
 
 	render() {
 		if(this.props.flashcard.createFlashcardLoaded) {
-			return <Redirect to={`/flashcards/${this.props.flashcard.flashcardData._id}`}/>
+			return <Redirect to={`/flashcards/${this.props.flashcard.flashcardData.fid}`}/>
 		}
 		return (
 			<div className="flashcards_window">

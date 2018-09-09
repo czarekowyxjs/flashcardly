@@ -1,0 +1,3 @@
+.flashcard_word_table_row--add > .flashcard_word_table_field > span > input {
+	width:100%;
+}
