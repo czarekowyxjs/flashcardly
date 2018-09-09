@@ -8,6 +8,7 @@ import SingleFlashcardPreview from '../SingleFlashcardPreview/SingleFlashcardPre
 class OwnFlashcards extends Component {
 	componentDidMount() {
 		this.props.getManyFlashcards();
+		document.title = "Flashcardly - flashcards";
 	}
 
 	componentWillUnmount() {
@@ -43,9 +44,16 @@ class OwnFlashcards extends Component {
 						<div className="flashcards_block_previews">
 							{this.props.user.ownFlashcards.length > 0 ? this.renderFlashcardPreviews() : <p>You don't have any flashcards yet</p>}
 						</div>
-						<div className="flashcards_block_load_previews">
-							<button onClick={this.handleLoadMorePreviews}>Load more</button>
-						</div>
+						{
+							this.props.user.ownFlashcards.length < 4 || (this.props.user.ownFlashcards.length >= 4 && this.props.user.ownFlashcards.length & 2 !== 0)
+							? null
+							: 
+							(
+							<div className="flashcards_block_load_previews">
+								<button onClick={this.handleLoadMorePreviews}>Load more</button>
+							</div>
+							)
+						}
 					</div>
 				</div>
 			</div>

@@ -11,6 +11,10 @@ class CreateFlashcards extends Component {
 		flashcardSecondCol: ''
 	}
 
+	componentDidMount() {
+		document.title = "Create new set of flashcards";
+	}
+
 	componentWillUnmount() {
 		this.props.setCreateFlashcardLoaded(false);
 	}

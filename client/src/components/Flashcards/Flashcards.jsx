@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import Header from '../Header/Header.jsx';
 import CreateFlashcards from '../CreateFlashcards/CreateFlashcards.jsx';
 import SingleFlashcard from '../SingleFlashcard/SingleFlashcard.jsx';
+import OwnFlashcards from '../OwnFlashcards/OwnFlashcards.jsx';
 
 import "./Flashcards.css";
 
@@ -15,6 +16,7 @@ class Flashcards extends Component {
 					<div className="app_body">
 						<div className="app_body_content">
 							<Switch>
+								<Route path={`${this.props.match.path}`} render={(props) => <OwnFlashcards {...props}/>} exact={true}/>
 								<Route path={`${this.props.match.path}/create`} render={(props) => <CreateFlashcards {...props}/>}/>
 								<Route path={`${this.props.match.path}/:fid`} render={(props) => <SingleFlashcard {...props}/>}/>
 							</Switch>

@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Login from './components/Login/Login.jsx';
 import Dashboard from './components/Dashboard/Dashboard.jsx';
 import Flashcards from './components/Flashcards/Flashcards.jsx';
+import Privacy from './components/Privacy/Privacy.jsx';
 import { RequireAuth } from './hocs/RequireAuth.jsx';
 import Loader from './components/Commons/Loader/Loader.jsx';
 
@@ -20,7 +21,7 @@ class App extends Component {
     }
     window.fbAsyncInit = function () {
       window.FB.init({
-        appId: '292137841568531',
+        appId: '546567255782834',
         cookie: true,
         xfbml: true,
         version: 'v3.1'
@@ -54,6 +55,7 @@ class App extends Component {
       			<Route path="/signin" component={RequireAuth(Login, "Common")}/>
       			<Route path="/" exact={true} component={RequireAuth(Dashboard, "Protect")}/>
             <Route path="/flashcards" component={RequireAuth(Flashcards, "Protect")}/>
+            <Route path="/privacy" component={Privacy}/>
       		</Switch>
       	</BrowserRouter>
       </div>

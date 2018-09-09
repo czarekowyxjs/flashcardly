@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchFlashcardSet, setFetchFlashcardLoaded, addNewWordToSet, returnFlashcardToInitial, deleteWord, setWordAsEditable, setWordAsNotEditable, editWord } from '../../actions/flashcardActions';
 import TableOfFlashcardWords from './TableOfFlashcardWords.jsx';
+import GamePreviews from './GamePreviews.jsx';
 import ProcessUnixTime from '../../helpers/ProcessUnixTime.js';
 
 import "./SingleFlashcard.css";
@@ -10,6 +11,12 @@ import "./SingleFlashcard.css";
 class SingleFlashcard extends Component {
 	componentDidMount() {
 		this.props.fetchFlashcardSet(this.props.match.params.fid);
+	}
+
+	componentDidUpdate() {
+		if(this.props.flashcard.fetchFlashcardLoaded) {
+			document.title = this.props.flashcard.flashcardData.title;
+		}		
 	}
 
 	componentWillUnmount() {
@@ -66,6 +73,7 @@ class SingleFlashcard extends Component {
 						</div>
 					</div>
 					<div className="single_flashcard_body">
+						<GamePreviews {...this.props}/>
 						<TableOfFlashcardWords flashcard={this.props.flashcard} methods={methods}/>
 					</div>
 				</div>

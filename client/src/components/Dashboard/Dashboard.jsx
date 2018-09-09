@@ -5,6 +5,10 @@ import OwnFlashcards from '../OwnFlashcards/OwnFlashcards.jsx';
 import "./Dashboard.css";
 
 class Dashboard extends Component {
+	componentDidMount() {
+		document.title = "Flashcardly - dashboard";
+	}
+
 	render() {
 		return (
 			<div className="app_root">

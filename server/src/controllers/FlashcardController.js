@@ -2,6 +2,7 @@ const Router = require("express").Router();
 const Op = require("sequelize").Op;
 const VerifyToken = require("../middlewares/VerifyToken");
 const AntiWordSpam = require("../middlewares/AntiWordSpam");
+const CheckFlashcardAuthor = require("../middlewares/CheckFlashcardAuthor");
 const models = require("../models");
 
 /**
@@ -56,7 +57,7 @@ Router.post('/create', VerifyToken, function(req, res) {
 /**
 	Add new word to set of flashcards
 */
-Router.post("/word/create", VerifyToken, AntiWordSpam, function(req, res) {
+Router.post("/word/create", VerifyToken, CheckFlashcardAuthor, AntiWordSpam, function(req, res) {
 	req.checkBody('firstColWord', "Incorrect first word value").trim().isLength({ min: 1, max: 255 });
 	req.checkBody('secondColWord', "Incorrect second word value").trim().isLength({ min: 1, max: 255});
 
@@ -186,7 +187,7 @@ Router.get('/', VerifyToken, function(req, res) {
 /**
 	Delete word from set
 */
-Router.post('/word/delete', VerifyToken, function(req, res) {
+Router.post('/word/delete', VerifyToken, CheckFlashcardAuthor, function(req, res) {
 	models.Word.destroy({
 		where: {
 			wid: req.body.wid
@@ -202,7 +203,7 @@ Router.post('/word/delete', VerifyToken, function(req, res) {
 /**
 	Update word
 */
-Router.put('/word/update', VerifyToken, function(req, res) {
+Router.put('/word/update', VerifyToken, CheckFlashcardAuthor, function(req, res) {
 	req.checkBody('firstColWord', "Incorrect first word value").trim().isLength({ min: 1, max: 255 });
 	req.checkBody('secondColWord', "Incorrect second word value").trim().isLength({ min: 1, max: 255 });
 

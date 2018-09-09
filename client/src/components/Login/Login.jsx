@@ -19,7 +19,7 @@ class Login extends Component {
 				<div className="app_login">
 					<div className="login_wrapper">
 						<div className="login_header">
-							<h2> Log in to Flashcardly</h2>
+							<h2>Log in to Flashcardly</h2>
 						</div>
 						<div className="login_body">
 							<div className="login_body_item login_body_item--fb" onClick={this.loginByFacebook}>
