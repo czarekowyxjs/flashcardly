@@ -3,7 +3,7 @@
 	flex-direction:row;
 	align-items:center;
 	justify-content:flex-start;
-	margin:15px 0px 0px 15px;
+	padding:15px 0px 0px 15px;
 }
 
 .app_user_bar_av {
@@ -39,4 +39,10 @@
 .user_bar_basic_info--displayname {
 	font-size:0.85rem;
 	color:rgba(255,255,255,0.85);
+}
+
+@media (max-width: 800px) {
+	.app_user_bar {
+		width:100%;
+	}
 }

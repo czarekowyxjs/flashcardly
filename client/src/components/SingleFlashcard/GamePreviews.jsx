@@ -4,8 +4,12 @@ import "./GamePreviews.css";
 
 class GamePreviews extends Component {
 	enterToGameRoom = (e, gameType) => {
+		if(this.props.flashcard.flashcardData.Words.length < 1) {
+			return;
+		}
+		// standard mode = 1
 		if(gameType === "standard") {
-			this.props.history.replace("/gameinit?type=1&fid="+this.props.flashcard.flashcardData.fid);
+			this.props.history.replace("/gameroom/play?type=1&fid="+this.props.flashcard.flashcardData.fid);
 		}
 	}
 
@@ -15,7 +19,7 @@ class GamePreviews extends Component {
 				<div className="single_flashcard_games_wrapper">
 					<div className="single_flashcard_game">
 						<div className="single_flashcard_game_header" onClick={(e) => this.enterToGameRoom(e, "standard")}>
-							<p>Learn flashcards using the standard method</p>
+							<p>Standard learning</p>
 						</div>
 					</div>
 				</div>

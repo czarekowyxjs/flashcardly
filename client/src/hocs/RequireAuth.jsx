@@ -2,10 +2,17 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getLoginStatusFB } from '../actions/authActions';
+import { getUserScreenParameters } from '../actions/userActions';
 import Loader from '../components/Commons/Loader/Loader.jsx';
 
 export const RequireAuth = (Component, type) => {
 	class RequireAuthComponent extends React.Component {
+		constructor(props) {
+			super(props)
+
+			this.props.getUserScreenParameters();
+		}
+
 		componentDidMount() {
 			this.getLoginStatusFB();
 		}
@@ -44,5 +51,5 @@ export const RequireAuth = (Component, type) => {
 		};
 	};
 
-	return connect(mapStateToProps, { getLoginStatusFB })(RequireAuthComponent);
+	return connect(mapStateToProps, { getLoginStatusFB, getUserScreenParameters })(RequireAuthComponent);
 };

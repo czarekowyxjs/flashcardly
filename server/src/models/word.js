@@ -16,6 +16,10 @@ module.exports = (sequelize, DataTypes) => {
   	secondColumnValue: {
   		type: DataTypes.STRING
   	},
+    learned: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: 0
+    },
   	createdAt: {
   		type: DataTypes.STRING(99)
   	}

@@ -4,6 +4,7 @@ import Login from './components/Login/Login.jsx';
 import Dashboard from './components/Dashboard/Dashboard.jsx';
 import Flashcards from './components/Flashcards/Flashcards.jsx';
 import Privacy from './components/Privacy/Privacy.jsx';
+import GameRoomWrapper from './components/GameRoom/GameRoomWrapper.jsx';
 import { RequireAuth } from './hocs/RequireAuth.jsx';
 import Loader from './components/Commons/Loader/Loader.jsx';
 
@@ -55,6 +56,7 @@ class App extends Component {
       			<Route path="/signin" component={RequireAuth(Login, "Common")}/>
       			<Route path="/" exact={true} component={RequireAuth(Dashboard, "Protect")}/>
             <Route path="/flashcards" component={RequireAuth(Flashcards, "Protect")}/>
+            <Route path="/gameroom" component={RequireAuth(GameRoomWrapper, "Protect")}/>
             <Route path="/privacy" component={Privacy}/>
       		</Switch>
       	</BrowserRouter>

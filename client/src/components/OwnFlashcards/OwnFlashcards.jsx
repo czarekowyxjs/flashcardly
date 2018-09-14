@@ -31,16 +31,29 @@ class OwnFlashcards extends Component {
 			<div className="flashcards_window">
 				<div className="flashcards_block">
 					<div className="flashcards_block_header">
-						<div className="flashcards_block_add_btn">
-							<Link to="/flashcards/create">
-								<PlusCircleBtn onClick={this.goToFlashcardCreator}/>
-							</Link>
-						</div>
+						{
+							this.props.user.screen.width <= 800 
+							? null 
+							: (<div className="flashcards_block_add_btn">
+								<Link to="/flashcards/create">
+									<PlusCircleBtn onClick={this.goToFlashcardCreator}/>
+								</Link>
+							</div>)
+						}
 						<div className="flashcards_block_header_title">
 							<h3>Your flashcards</h3>
 						</div>
 					</div>
 					<div className="flashcards_block_body">
+						{
+							this.props.user.screen.width <= 800 
+							?(<div className="flashcards_add_flashcard_body_btn">
+								<Link to="/flashcards/create" className="flashcardly_btn flashcardly_btn--light-blue">
+									<span>Create new set of flashcards</span>
+								</Link>
+							</div>)
+							: null
+						}
 						<div className="flashcards_block_previews">
 							{this.props.user.ownFlashcards.length > 0 ? this.renderFlashcardPreviews() : <p>You don't have any flashcards yet</p>}
 						</div>

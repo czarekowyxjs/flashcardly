@@ -48,3 +48,9 @@
 .nav_global_directly > li > a > i {
 	font-size:1.3rem;
 }
+
+@media (max-width: 800px) {
+	.app_nav_global {
+		margin:5px 0px 5px 0px;
+	}
+}

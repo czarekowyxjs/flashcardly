@@ -2,7 +2,7 @@ const models = require("../models");
 
 module.exports = function(req, res, next) {
 	const uid = res.locals.uid;
-	console.log(req.body);
+
 	let fid = req.body.fid || false;
 	if(!fid) {
 		models.Word.findOne({

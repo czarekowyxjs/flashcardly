@@ -87,3 +87,18 @@
 .flashcard_preview_btn > button {
 
 }
+
+@media (max-width:1024px) {
+	.single_flashcard_preview:nth-child(4n+1) {
+		margin-left:7px;
+	}
+
+	.single_flashcard_preview:nth-child(4n+4) {
+		margin-right:7px;
+	}
+
+	.single_flashcard_preview {
+		width:100%;
+		margin:7px;
+	}
+}

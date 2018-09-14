@@ -36,4 +36,8 @@
 	.app_body_content {
 		width:100%;
 	}
+
+	.app_header {
+		flex-direction:column;
+	}
 }

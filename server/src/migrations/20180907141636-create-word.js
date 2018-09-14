@@ -17,6 +17,10 @@ module.exports = {
       secondColumnValue: {
         type: Sequelize.STRING
       },
+      learned: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: 0
+      },
       createdAt: {
         type: Sequelize.STRING(99)
       }

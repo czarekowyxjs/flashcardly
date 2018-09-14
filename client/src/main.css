@@ -97,3 +97,9 @@ a {
 .flashcardly_btn--white:hover {
 	background:linear-gradient(#dedede, #f6f6f6);	
 }
+
+@media (max-width: 800px) {
+	html {
+		font-size:14px;
+	}
+}

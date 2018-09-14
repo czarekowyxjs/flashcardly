@@ -10,6 +10,7 @@ import "./SingleFlashcard.css";
 
 class SingleFlashcard extends Component {
 	componentDidMount() {
+		this.props.returnFlashcardToInitial();
 		this.props.fetchFlashcardSet(this.props.match.params.fid);
 	}
 

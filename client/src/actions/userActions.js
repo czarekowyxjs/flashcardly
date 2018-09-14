@@ -27,3 +27,13 @@ export const landUpUserData = (user) => {
 		payload: user
 	};
 };
+
+export const getUserScreenParameters = () => {
+	return {
+		type: "GET_SCREEN_PARAMETERS",
+		payload: {
+			width: window.screen.availWidth,
+			height: window.screen.availHeight
+		}
+	};
+};

@@ -3,7 +3,11 @@ const initialState = {
 	authLoaded: false,
 	userData: {},
 	ownFlashcards: [],
-	ownFlashcardsPage: 0
+	ownFlashcardsPage: 0,
+	screen: {
+		width: 0,
+		height: 0
+	}
 };
 
 export default (state = initialState, action) => {
@@ -38,6 +42,11 @@ export default (state = initialState, action) => {
 				...state,
 				ownFlashcards: [],
 				ownFlashcardsPage: 0
+			};
+		case "GET_SCREEN_PARAMETERS":
+			return {
+				...state,
+				screen: action.payload
 			};
 		default:
 			return state;

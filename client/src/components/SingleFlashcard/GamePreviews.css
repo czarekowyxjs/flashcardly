@@ -1,6 +1,6 @@
 .single_flashcard_games {
 	width:100%;
-	padding:16px 16px 24px 16px;
+	padding:12px 16px 18px 16px;
 }
 
 .single_flashcard_games_wrapper {
@@ -10,11 +10,11 @@
 }
 
 .single_flashcard_game {
-	width:250px;
-	height:120px;
+	width:150px;
+	height:40px;
 	background-color:#fbfbfb;
 	border-radius:4px;
-	box-shadow:0px 1px 3px 0px rgba(0,0,0,0.3);
+	box-shadow:0px 1px 4px 0px rgba(0,0,0,0.4);
 	cursor:pointer;
 	opacity:0.9;
 	transition:opacity 150ms linear;
@@ -35,6 +35,6 @@
 .single_flashcard_game_header > p {
 	color:#2e2e2e;
 	max-width:80%;
-	font-size:0.85rem;
+	font-size:0.8rem;
 	font-weight:600;
 }
