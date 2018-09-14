@@ -3,7 +3,6 @@ const models = require("../models");
 
 Router.post("/signin/facebook", function(req, res) {
 	const fbData = req.body.data;
-	console.log(fbData);
 	models.Facebook.findOne({
 		where: {
 			userID: fbData.authResponse.userID

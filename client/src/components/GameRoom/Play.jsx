@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { toggleCheckLearnedWord } from '../../actions/flashcardActions';
 import { fetchFlashcardToGame, fetchFlashcardToGameLoaded } from '../../actions/gameActions';
 import Loader from '../Commons/Loader/Loader.jsx';
 import Standard from './Standard/Standard.jsx';
@@ -18,10 +19,18 @@ class Play extends Component {
 		this.props.fetchFlashcardToGameLoaded(false);		
 	}
 
+	handlerToggleLearnedWord = (wid) => {
+		this.props.toggleCheckLearnedWord(wid);
+	}
+
 	renderGame = () => {
+		const methods = {
+			handlerToggleLearnedWord: this.handlerToggleLearnedWord
+		};
+
 		switch(parseInt(this.search.get("type"), 10)) {
 			case 1:
-				return <Standard flashcard={this.props.flashcard} game={this.props.game}/>;
+				return <Standard flashcard={this.props.flashcard} game={this.props.game} methods={methods}/>;
 			default:
 				return null;
 		}
@@ -46,4 +55,4 @@ const mapStateToProps = state => {
 	};
 };
 
-export default connect(mapStateToProps, { fetchFlashcardToGame, fetchFlashcardToGameLoaded })(Play);
+export default connect(mapStateToProps, { fetchFlashcardToGame, fetchFlashcardToGameLoaded, toggleCheckLearnedWord })(Play);

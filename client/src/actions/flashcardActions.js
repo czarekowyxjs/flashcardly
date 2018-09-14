@@ -271,3 +271,36 @@ export const clearOwnFlashcards = () => {
 		type: "CLEAR_OWN_FLASHCARDS"
 	};
 };
+
+/**
+	Toggle check learned word
+*/
+export const toggleCheckLearnedWord = wid => {
+	return async dispatch => {
+		const userState = store.getState().user;
+		try {
+			const response = await axios.put("/api/v1/flashcards/word/learned", {
+				wid: wid
+			}, {
+				headers: {
+					authorization: userState.userData.fb.signedRequest
+				}
+			});
+
+			let flashcardData = store.getState().flashcard.flashcardData;
+			let indexToChange;
+
+			for(let i = 0;i < flashcardData.Words.length;++i) {
+				if(flashcardData.Words[i].wid === response.data.word.wid) {
+					indexToChange = i;
+					break;
+				}
+			}
+
+			flashcardData.Words[indexToChange].learned = response.data.word.learned;
+			dispatch(landUpFlashcardData(flashcardData));
+		} catch(e) {
+			console.log(e.response);
+		}
+	};
+};

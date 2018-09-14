@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import SingleWordStandard from "./SingleWordStandard.jsx";
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { IoMdShareAlt } from 'react-icons/io';
+import { IoMdShareAlt, IoIosHelpBuoy } from 'react-icons/io';
 import { GoScreenFull, GoScreenNormal } from 'react-icons/go';
 
 import "./Standard.css";
@@ -19,9 +19,8 @@ class Standard extends Component {
 		const words = this.props.flashcard.flashcardData.Words;
 		this.shuffle(words);
 		this.setState({
-			words: words,
 			loaded: true
-		});
+		});	
 		window.addEventListener("keyup", this.changeWordNumber, false);
 	}
 
@@ -44,7 +43,7 @@ class Standard extends Component {
 			}
 		}
 		if(direction === "next" || e.key === "ArrowRight") {
-			if(parseInt(this.state.actualWord, 10)+1 < parseInt(this.state.words.length, 10)) {
+			if(parseInt(this.state.actualWord, 10)+1 < parseInt(this.props.flashcard.flashcardData.Words.length, 10)) {
 				this.setState({
 					actualWord: this.state.actualWord+1
 				});
@@ -79,17 +78,22 @@ class Standard extends Component {
 						<p>Standard learn mode</p>
 					</div>
 					<div className="standard_game_window_num">
-						<span>{`${this.state.actualWord+1} in ${this.state.words.length}`}</span>
+						<span>{`${this.state.actualWord+1} in ${this.props.flashcard.flashcardData.Words.length}`}</span>
 					</div>
-					<div className="standard_game_window_screen" onClick={this.changeScreenMode}>
-						{this.state.fullScreen ? <GoScreenNormal/> : <GoScreenFull/>}
+					<div className="standard_game_window_menu">
+						<div className="standard_game_window_help" title="Help">
+							<IoIosHelpBuoy/>
+						</div>
+						<div className="standard_game_window_screen" onClick={this.changeScreenMode} title="Change screen mode">
+							{this.state.fullScreen ? <GoScreenNormal/> : <GoScreenFull/>}
+						</div>
 					</div>
 				</div>
 				<div className="standard_game_window_body">
 					<div className="standard_game_window_body_arrow" onClick={(e) => this.changeWordNumber(e, "back")}>
 						<FaAngleLeft/>
 					</div>
-					<SingleWordStandard word={this.state.words[this.state.actualWord]}/>
+					<SingleWordStandard word={this.props.flashcard.flashcardData.Words[this.state.actualWord]} methods={this.props.methods}/>
 					<div className="standard_game_window_body_arrow" onClick={(e) => this.changeWordNumber(e, "next")}>
 						<FaAngleRight/>
 					</div>

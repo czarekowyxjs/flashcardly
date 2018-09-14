@@ -67,24 +67,27 @@
 	font-size:0.8rem;
 }
 
-.standard_game_window_num {
-
-}
-
 .standard_game_window_num > span {
 	font-size:1rem;
 	font-weight:600;
 }
 
-.standard_game_window_screen {
+.standard_game_window_menu {
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+}
+
+.standard_game_window_menu > * {
 	font-size:1.4rem;
 	cursor:pointer;
 	color:#2e2e2e;
 	opacity:0.7;
 	transition:opacity 150ms linear;
+	margin:0px 2px;
 }
 
-.standard_game_window_screen:hover {
+.standard_game_window_menu > *:hover {
 	opacity:0.95;
 }
 
@@ -138,10 +141,20 @@
   hyphens: auto;	
 }
 
-.single_word_content_turn {
-	cursor:pointer;
-	color:#3399cc;
+.single_word_content_options {
+	display:flex;
+	flex-direction:row;
+	align-items:center;
 	margin-left:3px;
+}
+
+.single_word_content_options > * {
+	cursor:pointer;
+	margin:0px 3px;
+}
+
+.single_word_content_turn {
+	color:#3399cc;
 	font-size:2rem;
 	transition:transform 150ms linear;
 }
@@ -152,6 +165,24 @@
 
 .single_word_content_turn:active {
 	transform:scale(0.5);
+}
+
+.single_word_content_check {
+	font-size:1.8rem;
+	transition:opacity 150ms linear;
+}
+
+.single_word_content_check.single_word_content_check_checked {
+	color:#66cc33;
+}
+
+.single_word_content_check.single_word_content_check_notchecked {
+	color:#2e2e2e;
+	opacity:0.6;
+}
+
+.single_word_content_check.single_word_content_check_notchecked:hover {
+	opacity:0.9;
 }
 
 @media (max-width: 800px) {

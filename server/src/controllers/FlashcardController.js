@@ -234,4 +234,28 @@ Router.put('/word/update', VerifyToken, CheckFlashcardAuthor, function(req, res)
 	}
 });
 
+/**
+	Toggle check learned word
+*/
+Router.put("/word/learned", VerifyToken, CheckFlashcardAuthor, function(req, res) {
+	console.log(req.body);
+	models.Word.findOne({
+		where: {
+			wid: req.body.wid
+		}
+	})
+	.then(function(foundWord) {
+		if(foundWord) {
+			foundWord.updateAttributes({
+				learned: !foundWord.learned
+			})
+			.then(function(updatedWord) {
+				res.status(200).send({
+					word: updatedWord
+				});
+			});
+		}
+	});
+});
+
 module.exports = Router;

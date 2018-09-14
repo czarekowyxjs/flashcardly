@@ -12,14 +12,6 @@
 	justify-content:flex-start;
 }
 
-.single_flashcard_preview:nth-child(4n+1) {
-	margin-left:20px;
-}
-
-.single_flashcard_preview:nth-child(4n+4) {
-	margin-right:20px;
-}
-
 .single_flashcard_preview_title {
 	width:100%;
 	background:linear-gradient(#e96443, #904e95);
@@ -89,14 +81,6 @@
 }
 
 @media (max-width:1024px) {
-	.single_flashcard_preview:nth-child(4n+1) {
-		margin-left:7px;
-	}
-
-	.single_flashcard_preview:nth-child(4n+4) {
-		margin-right:7px;
-	}
-
 	.single_flashcard_preview {
 		width:100%;
 		margin:7px;
