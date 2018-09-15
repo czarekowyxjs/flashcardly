@@ -8,8 +8,12 @@ const AuthenticationController = require("./controllers/AuthenticationController
 const FlashcardController = require("./controllers/FlashcardController");
 
 const app = express();
+require("dotenv");
 //
 app.use("/img", express.static(__dirname+"/public/images"));
+if(process.env.NODE_ENV == "production") {
+	app.use("/static", express.static(__dirname+"/public/build/static"));
+}
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(helmet());
@@ -19,6 +23,12 @@ app.use(validator());
 app.use('/api/v1/authentication', AuthenticationController);
 app.use('/api/v1/flashcards', FlashcardController);
 //
-app.listen(3001, function() {
+if(process.env.NODE_ENV == "production") {
+	app.use("/*", function(req, res) {
+		res.sendFile(__dirname+"/public/build/index.html");
+	});
+}
+
+app.listen(process.env.PORT || 3001, function() {
 	console.log('Server is running');
 });

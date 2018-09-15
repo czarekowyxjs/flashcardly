@@ -12,13 +12,11 @@ module.exports = (sequelize, DataTypes) => {
     },
     accessToken: {
     	type: DataTypes.STRING(999),
-    	required: true,
-    	unique: true
+    	required: true
     },
     signedRequest: {
     	type: DataTypes.STRING(1500),
-    	required: true,
-    	unique: true
+    	required: true
     },
     userID: {
     	type: DataTypes.BIGINT,

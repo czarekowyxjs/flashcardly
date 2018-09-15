@@ -5,20 +5,23 @@
     "database": "flashcardly",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "charset": "utf8"
+    "charset": "utf8",
+    "operatorsAliases": false
   },
   "test": {
     "username": "root",
     "password": "1234",
     "database": "flashcardly",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "operatorsAliases": false
   },
   "production": {
     "username": "root",
     "password": null,
     "database": "database_production",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "operatorsAliases": false
   }
 }
