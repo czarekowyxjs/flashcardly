@@ -1,0 +1,27 @@
+.app_header--noflashcardly {
+	width:100%;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	padding:15px 0px;
+}
+
+.app_header--noflashcardly_bar {
+	max-width:1600px;
+	width:94%;
+}
+
+.app_header--noflashcardly_return {
+	padding:5px;
+}
+
+.app_header--noflashcardly_return > a {
+	color:rgba(255,255,255,0.8);
+	text-decoration:underline;
+	font-size:0.95rem;
+}
+
+.app_header--noflashcardly_return > a:hover {
+	text-decoration:none;
+	color:rgba(255,255,255,0.9);
+}

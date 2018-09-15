@@ -157,3 +157,14 @@
 .flashcard_word_table_row--editable > .flashcard_word_table_field {
 	padding-bottom:15px;
 }
+
+.flashcard_word_table_field.flashcard_word_table_field--loader {
+	border:0;
+	width:100%;
+}
+
+.flashcard_word_table_field.flashcard_word_table_field--loader > span {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}

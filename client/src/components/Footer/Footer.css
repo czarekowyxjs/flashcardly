@@ -1,0 +1,51 @@
+.flashcardly_footer {
+	width:100%;
+	padding:8px 0px;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	margin-bottom:15px;
+}
+
+.flashcardly_footer_content {
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+}
+
+.flashcardly_footer_nav {
+	padding:2px 0px;
+}
+
+.flashcardly_footer_nav > ul {
+	list-style-type:none;
+	display:flex;
+	flex-direction:row;
+}
+
+.flashcardly_footer_nav > ul > li > a {
+	color:rgba(255,255,255,0.5);
+	padding:0px 4px;
+	font-size:0.85rem;
+}
+
+.flashcardly_footer_nav > ul > li > a:hover {
+	text-decoration:underline;
+}
+
+.flashcardly_footer_info {
+	font-size:0.85rem;
+}
+
+.flashcardly_footer_info > span {
+	color:rgba(255,255,255,0.5);
+}
+
+.flashcardly_footer_info > a {
+	color:rgba(255,255,255,0.5);
+}
+
+.flashcardly_footer_info > a:hover {
+	text-decoration:underline;
+}

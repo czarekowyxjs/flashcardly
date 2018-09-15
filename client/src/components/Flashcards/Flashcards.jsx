@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Header from '../Header/Header.jsx';
+import Footer from '../Footer/Footer.jsx';
 import CreateFlashcards from '../CreateFlashcards/CreateFlashcards.jsx';
 import SingleFlashcard from '../SingleFlashcard/SingleFlashcard.jsx';
 import OwnFlashcards from '../OwnFlashcards/OwnFlashcards.jsx';
@@ -22,6 +23,7 @@ class Flashcards extends Component {
 							</Switch>
 						</div>
 					</div>
+					<Footer/>
 				</div>
 			</div>			
 		);

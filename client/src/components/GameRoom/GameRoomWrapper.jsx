@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Header from '../Header/Header.jsx';
+import Footer from '../Footer/Footer.jsx';
 import Play from './Play.jsx';
 
 
@@ -17,6 +18,7 @@ class GameRoomWrapper extends Component {
 							</Switch>
 						</div>
 					</div>
+					<Footer/>
 				</div>
 			</div>	
 		);

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SingleWord from './SingleWord.jsx';
 import AddWordForm from './AddWordForm.jsx';
+import AddWordLoader from './AddWordLoader.jsx';
 
 import "./TableOfFlashcardWords.css";
 
@@ -28,6 +29,10 @@ class TableOfFlashcardWords extends Component {
 				</div>
 				<AddWordForm methods={this.props.methods} flashcard={flashcard}/>
 				{this.renderTableItems(flashcard.flashcardData.Words)}
+				{!flashcard.addWordLoaded
+					? <AddWordLoader/> 
+					: null
+					}
 			</div>
 		);
 	}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header.jsx';
+import Footer from '../Footer/Footer.jsx';
 import OwnFlashcards from '../OwnFlashcards/OwnFlashcards.jsx';
 
 import "./Dashboard.css";
@@ -19,6 +20,7 @@ class Dashboard extends Component {
 							<OwnFlashcards/>
 						</div>
 					</div>
+					<Footer/>
 				</div>
 			</div>
 		);

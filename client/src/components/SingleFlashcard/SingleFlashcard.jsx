@@ -5,6 +5,7 @@ import { fetchFlashcardSet, setFetchFlashcardLoaded, addNewWordToSet, returnFlas
 import TableOfFlashcardWords from './TableOfFlashcardWords.jsx';
 import GamePreviews from './GamePreviews.jsx';
 import ProcessUnixTime from '../../helpers/ProcessUnixTime.js';
+import Loader from '../Commons/Loader/Loader.jsx';
 
 import "./SingleFlashcard.css";
 
@@ -46,7 +47,7 @@ class SingleFlashcard extends Component {
 
 	render() {
 		if(!this.props.flashcard.fetchFlashcardLoaded) {
-			return <p>Loading flashcard data...</p>;
+			return <Loader message="Loading flashcard data"/>;
 		}
 		const methods = {
 			handlerAddNewWord: this.handlerAddNewWord,
