@@ -7,7 +7,7 @@ class TopAsides extends Component {
 		return (
 			<div className="flashcardly_top_aside">
 				<div className="flashcardly_top_aside_wrapper">
-					sa
+					
 				</div>	
 			</div>
 		);

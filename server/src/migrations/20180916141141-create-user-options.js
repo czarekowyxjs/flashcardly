@@ -6,7 +6,7 @@ module.exports = {
         type: Sequelize.INTEGER.UNSIGNED,
         unique: true
       },
-      termsDialog: {
+      termsAccept: {
         type: Sequelize.BOOLEAN,
         defaultValue: false
       }

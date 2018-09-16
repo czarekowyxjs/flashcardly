@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER.UNSIGNED,
         unique: true
       },
-      termsDialog: {
+      termsAccept: {
         type: DataTypes.BOOLEAN,
         defaultValue: false
       }

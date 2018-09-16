@@ -21,9 +21,9 @@ class Privacy extends Component {
 								<div className="privacy_body">
 									<h2>Privacy Policy</h2>
 									<p>Effective date: September 09, 2018</p>
-									<p>Flashcardly ("us", "we", or "our") operates the https://arcane-beyond-98192.herokuapp.com website (hereinafter referred to as the "Service").</p>
+									<p>Flashcardly ("us", "we", or "our") operates the https://flashcardly.herokuapp.com website (hereinafter referred to as the "Service").</p>
 									<p>This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data. Our Privacy Policy for Flashcardly is managed with the help of Privacy Policies.</p>
-									<p>We use your data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, the terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, accessible from https://arcane-beyond-98192.herokuapp.com</p>
+									<p>We use your data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, the terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, accessible from https://flashcardly.herokuapp.com</p>
 									<h3>Information Collection And Use</h3>
 									<p>We collect several different types of information for various purposes to provide and improve our Service to you.</p>
 									<h4>Types of Data Collected</h4>
