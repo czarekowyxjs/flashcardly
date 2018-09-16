@@ -167,3 +167,9 @@
 		padding:0px 22px 0px 22px;
 	}
 }
+
+@media (max-width: 800px) {
+	.flashcards_block {
+		border-radius:0px;
+	}
+}

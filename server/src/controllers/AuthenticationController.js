@@ -19,7 +19,10 @@ Router.post("/signin/facebook", function(req, res) {
 				models.User.findOne({
 					where: {
 						uid: updatedFB.uid
-					}
+					},
+					include: [{
+						model: models.User_options
+					}]
 				}).then(function(foundUser) {
 					res.status(200).send({
 						status: "Logged",
@@ -43,12 +46,18 @@ Router.post("/signin/facebook", function(req, res) {
 					lastName: fbData.user.last_name
 				})
 				.then(function(createdFB) {
-					res.status(200).send({
-						status: "Logged",
-						user: {
-							common: createdUser,
-							fb: createdFB
-						}
+					models.User_options.create({
+						uid: createdUser.uid
+					})
+					.then(function(createdUserOptions) {
+						createdUser["User_option"] = createdUserOptions;
+						res.status(200).send({
+							status: "Logged",
+							user: {
+								common: createdUser,
+								fb: createdFB
+							}
+						});
 					});
 				});
 			});

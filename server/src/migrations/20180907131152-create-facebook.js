@@ -3,13 +3,13 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('Facebooks', {
       fbid: {
-        type: Sequelize.BIGINT,
+        type: Sequelize.INTEGER.UNSIGNED,
         unique: true,
         autoIncrement: true,
         primaryKey: true
       },
       uid: {
-        type: Sequelize.BIGINT
+        type: Sequelize.INTEGER.UNSIGNED
       },
       accessToken: {
         type: Sequelize.STRING(999),
@@ -20,7 +20,7 @@ module.exports = {
         required: true
       },
       userID: {
-        type: Sequelize.BIGINT,
+        type: Sequelize.BIGINT.UNSIGNED,
         unique: true
       },
       pictureURL: {

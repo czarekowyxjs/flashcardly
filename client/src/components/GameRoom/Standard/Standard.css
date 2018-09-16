@@ -189,4 +189,8 @@
 	.standard_game_single_word {
 		margin:40px 0px;
 	}
+
+	.standard_game_window {
+		border-radius:0px;
+  }
 }

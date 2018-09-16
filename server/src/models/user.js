@@ -4,7 +4,7 @@ const uuid = require("uuid");
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
   	uid: {
-  		type: DataTypes.BIGINT,
+  		type: DataTypes.INTEGER.UNSIGNED,
   		unique: true,
   		autoIncrement: true,
   		primaryKey: true
@@ -28,6 +28,7 @@ module.exports = (sequelize, DataTypes) => {
   });
   User.associate = function(models) {
     User.hasOne(models.Facebook, { foreignKey: 'uid' });
+    User.hasOne(models.User_options, { foreignKey: "uid" });
     User.hasMany(models.Flashcard, { foreignKey: 'author' });
   };
   return User;

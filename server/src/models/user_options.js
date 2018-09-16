@@ -1,0 +1,23 @@
+'use strict';
+module.exports = (sequelize, DataTypes) => {
+  const User_options = sequelize.define('User_options', {
+      uid: {
+        type: DataTypes.INTEGER.UNSIGNED,
+        unique: true
+      },
+      termsDialog: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+      }
+  }, {
+  	timestamps: false,
+  	tableName: "User_options"
+  });
+
+  User_options.removeAttribute("id");
+
+  User_options.associate = function(models) {
+    User_options.belongsTo(models.User, { foreignKey: "uid" });
+  };
+  return User_options;
+};

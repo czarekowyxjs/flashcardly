@@ -2,13 +2,13 @@
 module.exports = (sequelize, DataTypes) => {
   const Flashcard = sequelize.define('Flashcard', {
     fid: {
-    	type: DataTypes.BIGINT,
+    	type: DataTypes.INTEGER.UNSIGNED,
     	unique: true,
     	autoIncrement: true,
     	primaryKey: true
     },
     author: {
-    	type: DataTypes.BIGINT
+    	type: DataTypes.INTEGER.UNSIGNED
     },
     title: {
     	type: DataTypes.STRING(28),

@@ -3,13 +3,13 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('Words', {
       wid: {
-        type: Sequelize.BIGINT,
+        type: Sequelize.INTEGER.UNSIGNED,
         unique: true,
         autoIncrement: true,
         primaryKey: true
       },
       fid: {
-        type: Sequelize.BIGINT
+        type: Sequelize.INTEGER.UNSIGNED
       },
       firstColumnValue: {
         type: Sequelize.STRING

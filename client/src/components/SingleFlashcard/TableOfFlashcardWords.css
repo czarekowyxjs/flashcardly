@@ -17,9 +17,12 @@
 	position:relative;
 }
 
-.flashcard_word_table_row--header {
+.flashcard_word_table_row.flashcard_word_table_row--header {
 	min-height:46px;
 	height:46px;
+	position:sticky;
+	top:0px;
+	z-index:11;
 }	
 
 .flashcard_word_table_field {

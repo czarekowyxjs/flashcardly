@@ -1,0 +1,12 @@
+.flashcardly_top_aside {
+	width:100%;
+	padding:10px 0px;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+
+.flashcardly_top_aside_wrapper {
+	width:94%;
+	max-width:1600px;
+}

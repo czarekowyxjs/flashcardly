@@ -3,13 +3,13 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('Flashcards', {
       fid: {
-        type: Sequelize.BIGINT,
+        type: Sequelize.INTEGER.UNSIGNED,
         unique: true,
         autoIncrement: true,
         primaryKey: true
       },
       author: {
-        type: Sequelize.BIGINT
+        type: Sequelize.INTEGER.UNSIGNED
       },
       title: {
         type: Sequelize.STRING(28),

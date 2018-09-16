@@ -3,7 +3,7 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('Users', {
       uid: {
-        type: Sequelize.BIGINT,
+        type: Sequelize.INTEGER.UNSIGNED,
         unique: true,
         autoIncrement: true,
         primaryKey: true

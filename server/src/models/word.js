@@ -2,13 +2,13 @@
 module.exports = (sequelize, DataTypes) => {
   const Word = sequelize.define('Word', {
   	wid: {
-  		type: DataTypes.BIGINT,
+  		type: DataTypes.INTEGER.UNSIGNED,
   		unique: true,
   		autoIncrement: true,
   		primaryKey: true
   	},
   	fid: {
-  		type: DataTypes.BIGINT
+  		type: DataTypes.INTEGER.UNSIGNED
   	},
   	firstColumnValue: {
   		type: DataTypes.STRING

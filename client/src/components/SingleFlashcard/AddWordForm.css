@@ -1,3 +1,9 @@
+.flashcard_word_table_row.flashcard_word_table_row--add {
+	position:sticky;
+	top:46px;
+	z-index:11;
+}
+
 .flashcard_word_table_row--add > .flashcard_word_table_field > span > input {
 	width:100%;
 }

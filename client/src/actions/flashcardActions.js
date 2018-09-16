@@ -63,11 +63,14 @@ export const fetchFlashcardSet = (flashcardID) => {
 				response.data.flashcard.Words[i].editable = false;
 			}
 
+			const userIsAuthor = response.data.author.uid === userState.userData.common.uid;
+
 			dispatch({
 				type: "FETCH_FLASHCARD_DATA",
 				payload: {
 					flashcardData: response.data.flashcard,
-					authorData: response.data.author
+					authorData: response.data.author,
+					userIsAuthor: userIsAuthor
 				}
 			});
 			dispatch(setFetchFlashcardLoaded(true));

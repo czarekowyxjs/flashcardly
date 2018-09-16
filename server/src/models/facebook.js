@@ -2,13 +2,13 @@
 module.exports = (sequelize, DataTypes) => {
   const Facebook = sequelize.define('Facebook', {
     fbid: {
-    	type: DataTypes.BIGINT,
+    	type: DataTypes.INTEGER.UNSIGNED,
     	unique: true,
     	autoIncrement: true,
     	primaryKey: true
     },
     uid: {
-    	type: DataTypes.BIGINT
+    	type: DataTypes.INTEGER.UNSIGNED
     },
     accessToken: {
     	type: DataTypes.STRING(999),
@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     	required: true
     },
     userID: {
-    	type: DataTypes.BIGINT,
+    	type: DataTypes.BIGINT.UNSIGNED,
     	unique: true
     },
     pictureURL: {
