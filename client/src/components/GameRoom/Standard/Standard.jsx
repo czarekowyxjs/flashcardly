@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import SingleWordStandard from "./SingleWordStandard.jsx";
 import { Link } from 'react-router-dom';
-import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 import { IoMdShareAlt, IoIosHelpBuoy } from 'react-icons/io';
 import { GoScreenFull, GoScreenNormal } from 'react-icons/go';
-import { MdRefresh, MdInvertColors } from 'react-icons/md';
+import { MdRefresh, MdInvertColors, MdNavigateNext, MdNavigateBefore } from 'react-icons/md';
 
 import "./Standard.css";
 
@@ -18,9 +17,11 @@ class Standard extends Component {
 
 	componentDidMount() {
 		const words = this.props.flashcard.flashcardData.Words;
+		const localStorageInvertColors = localStorage.getItem("standardModeInvertColors") === "true";
 		this.shuffle(words);
 		this.setState({
-			loaded: true
+			loaded: true,
+			invertColors: localStorageInvertColors
 		});	
 		window.addEventListener("keyup", this.changeWordNumber, false);
 	}
@@ -72,13 +73,13 @@ class Standard extends Component {
 	}
 
 	invertColors = () => {
+		localStorage.setItem("standardModeInvertColors", !this.state.invertColors);
 		this.setState({
 			invertColors: !this.state.invertColors
 		});
 	}
 
 	render() {
-		console.log(this.props.flashcard.flashcardData.Words);
 		if(!this.state.loaded) {
 			return null;
 		}
@@ -112,11 +113,11 @@ class Standard extends Component {
 				</div>
 				<div className="standard_game_window_body">
 					<div className="standard_game_window_body_arrow" onClick={(e) => this.changeWordNumber(e, "back")}>
-						<FaAngleLeft/>
+						<MdNavigateBefore/>
 					</div>
 					<SingleWordStandard word={this.props.flashcard.flashcardData.Words[this.state.actualWord]} methods={this.props.methods}/>
 					<div className="standard_game_window_body_arrow" onClick={(e) => this.changeWordNumber(e, "next")}>
-						<FaAngleRight/>
+						<MdNavigateNext/>
 					</div>
 				</div>
 			</div>

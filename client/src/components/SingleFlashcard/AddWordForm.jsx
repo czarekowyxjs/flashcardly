@@ -40,7 +40,7 @@ class AddWordForm extends Component {
 
 	render() {
 		return (
-			<div className="flashcard_word_table_row flashcard_word_table_row--add">
+			<div className={`flashcard_word_table_row flashcard_word_table_row--add`}>
 				<div className="flashcard_word_table_field">
 					<span>
 						<input

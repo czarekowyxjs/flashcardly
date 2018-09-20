@@ -1,0 +1,60 @@
+.flashcards_window_introduce {
+	background-color:rgba(0,0,0,0.3);
+	position:fixed;
+	top:0px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	z-index:12;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+
+.flashcard_word_table_row.flashcard_word_table_row--add.flashcard_word_add_form_intro {
+	z-index:13;
+}
+
+.flashcards_window_introduce_dialog {
+	width:440px;
+	height:auto;
+	background-color:#fbfbfb;
+	border-radius:2px;
+	box-shadow:0px 1px 12px 0px rgba(0,0,0,0.3);
+	padding:18px 22px 18px 22px;
+}
+
+.flashcards_window_introduce_dialog_header {
+	padding:0px 0px 12px 0px;
+}
+
+.flashcards_window_introduce_dialog_title {
+
+}
+
+.flashcards_window_introduce_dialog_title > span {
+	color:#2e2e2e;
+	font-size:0.9rem;
+	font-weight:600;
+}
+
+.flashcards_window_introduce_dialog_body {
+	padding:0px 3px 0px 3px;
+}
+
+.flashcards_window_introduce_dialog_content {
+
+}
+
+.flashcards_window_introduce_dialog_content > p {
+	color:#2e2e2e;
+	font-size:0.9rem;
+}
+
+.flashcards_window_introduce_dialog_btn {
+	width:100%;
+	display:flex;
+	align-items:center;
+	justify-content:flex-end;
+	padding:22px 18px 0px 18px;
+}

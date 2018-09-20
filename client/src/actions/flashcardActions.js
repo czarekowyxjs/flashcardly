@@ -65,12 +65,15 @@ export const fetchFlashcardSet = (flashcardID) => {
 
 			const userIsAuthor = response.data.author.uid === userState.userData.common.uid;
 
+			const emptyFlashcardSet = response.data.flashcard.Words.length < 1;
+
 			dispatch({
 				type: "FETCH_FLASHCARD_DATA",
 				payload: {
 					flashcardData: response.data.flashcard,
 					authorData: response.data.author,
-					userIsAuthor: userIsAuthor
+					userIsAuthor: userIsAuthor,
+					emptyFlashcardSet: emptyFlashcardSet
 				}
 			});
 
@@ -290,8 +293,22 @@ export const clearOwnFlashcards = () => {
 export const toggleCheckLearnedWord = wid => {
 	return async dispatch => {
 		const userState = store.getState().user;
+		
+		let flashcardData = store.getState().flashcard.flashcardData;
+		let indexToChange;
+
+		for(let i = 0;i < flashcardData.Words.length;++i) {
+			if(flashcardData.Words[i].wid === wid) {
+				indexToChange = i;
+				break;
+			}
+		}
+
+		flashcardData.Words[indexToChange].learned = !flashcardData.Words[indexToChange].learned;
+		dispatch(landUpFlashcardData(flashcardData));
+
 		try {
-			const response = await axios.put("/api/v1/flashcards/word/learned", {
+			await axios.put("/api/v1/flashcards/word/learned", {
 				wid: wid
 			}, {
 				headers: {
@@ -299,18 +316,6 @@ export const toggleCheckLearnedWord = wid => {
 				}
 			});
 
-			let flashcardData = store.getState().flashcard.flashcardData;
-			let indexToChange;
-
-			for(let i = 0;i < flashcardData.Words.length;++i) {
-				if(flashcardData.Words[i].wid === response.data.word.wid) {
-					indexToChange = i;
-					break;
-				}
-			}
-
-			flashcardData.Words[indexToChange].learned = response.data.word.learned;
-			dispatch(landUpFlashcardData(flashcardData));
 		} catch(e) {
 			console.log(e.response);
 		}

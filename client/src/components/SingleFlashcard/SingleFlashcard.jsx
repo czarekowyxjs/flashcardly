@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchFlashcardSet, setFetchFlashcardLoaded, addNewWordToSet, returnFlashcardToInitial, deleteWord, setWordAsEditable, setWordAsNotEditable, editWord } from '../../actions/flashcardActions';
+import { confirmFlashcardIntroduce } from '../../actions/userActions';
 import TableOfFlashcardWords from './TableOfFlashcardWords.jsx';
 import GamePreviews from './GamePreviews.jsx';
 import ProcessUnixTime from '../../helpers/ProcessUnixTime.js';
 import Loader from '../Commons/Loader/Loader.jsx';
+import Introduce from './Introduce.jsx';
 
 import "./SingleFlashcard.css";
 
@@ -45,6 +47,10 @@ class SingleFlashcard extends Component {
 		this.props.editWord(firstColWord, secondColWord, wid);
 	}
 
+	confirmIntroduce = () => {
+		this.props.confirmFlashcardIntroduce();
+	}
+
 	render() {
 		if(!this.props.flashcard.fetchFlashcardLoaded) {
 			return <Loader message="Loading flashcard data"/>;
@@ -54,10 +60,14 @@ class SingleFlashcard extends Component {
 			handlerDeleteWord: this.handlerDeleteWord,
 			handlerEditableWord: this.handlerEditableWord,
 			handlerCancelEditWord: this.handlerCancelEditWord,
-			handlerEditWord: this.handlerEditWord
+			handlerEditWord: this.handlerEditWord,
+			confirmIntroduce: this.confirmIntroduce
 		};
 		return (
 			<div className="flashcards_window">
+				{!this.props.user.userData.common.User_option.flashcardIntro
+					? <Introduce methods={methods}/>
+					: null}
 				<div className="flashcards_block">
 					<div className="single_flashcard_header">
 						<div className="single_flashcard_header_title">
@@ -86,8 +96,9 @@ class SingleFlashcard extends Component {
 
 const mapStateToProps = state => {
 	return {
-		flashcard: state.flashcard
+		flashcard: state.flashcard,
+		user: state.user
 	};
 };
 
-export default connect(mapStateToProps, { fetchFlashcardSet, setFetchFlashcardLoaded, addNewWordToSet, returnFlashcardToInitial, deleteWord, setWordAsEditable, setWordAsNotEditable, editWord })(SingleFlashcard);
+export default connect(mapStateToProps, { fetchFlashcardSet, setFetchFlashcardLoaded, addNewWordToSet, returnFlashcardToInitial, deleteWord, setWordAsEditable, setWordAsNotEditable, editWord, confirmFlashcardIntroduce })(SingleFlashcard);

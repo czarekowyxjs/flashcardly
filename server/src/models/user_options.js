@@ -8,6 +8,10 @@ module.exports = (sequelize, DataTypes) => {
       termsAccept: {
         type: DataTypes.BOOLEAN,
         defaultValue: false
+      },
+      flashcardIntro: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
       }
   }, {
   	timestamps: false,

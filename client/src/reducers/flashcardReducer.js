@@ -5,7 +5,8 @@ const initialState = {
 	addWordError: {},
 	flashcardData: {},
 	authorData: {},
-	userIsAuthor: false
+	userIsAuthor: false,
+	emptyFlashcardSet: false
 };
 
 export default (state = initialState, action) => {
@@ -28,7 +29,8 @@ export default (state = initialState, action) => {
 				...state,
 				flashcardData: action.payload.flashcardData,
 				authorData: action.payload.authorData,
-				userIsAuthor: action.payload.userIsAuthor
+				userIsAuthor: action.payload.userIsAuthor,
+				emptyFlashcardSet: action.payload.emptyFlashcardSet
 			};
 		case "ADD_WORD_LOADED":
 			return {

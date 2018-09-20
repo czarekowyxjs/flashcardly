@@ -9,6 +9,10 @@ module.exports = {
       termsAccept: {
         type: Sequelize.BOOLEAN,
         defaultValue: false
+      },
+      flashcardIntro: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false
       }
     }, {
       charset: 'utf8mb4'

@@ -66,7 +66,7 @@ class OwnFlashcards extends Component {
 							: 
 							(
 							<div className="flashcards_block_load_previews">
-								<button onClick={this.handleLoadMorePreviews}>Load more</button>
+								<button onClick={this.handleLoadMorePreviews}>Show more</button>
 							</div>
 							)
 						}
