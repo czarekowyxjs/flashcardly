@@ -1,6 +1,6 @@
 {
   "development": {
-    "username": "root",
+    "username": "czarek",
     "password": "1234",
     "database": "flashcardly",
     "host": "127.0.0.1",
@@ -9,7 +9,7 @@
     "operatorsAliases": false
   },
   "test": {
-    "username": "root",
+    "username": "czarek",
     "password": "1234",
     "database": "flashcardly",
     "host": "127.0.0.1",

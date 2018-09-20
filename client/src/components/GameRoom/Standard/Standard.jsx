@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import SingleWordStandard from "./SingleWordStandard.jsx";
-import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 import { IoMdShareAlt, IoIosHelpBuoy } from 'react-icons/io';
 import { GoScreenFull, GoScreenNormal } from 'react-icons/go';
+import { MdRefresh, MdInvertColors } from 'react-icons/md';
 
 import "./Standard.css";
 
 class Standard extends Component {
 	state = {
-		words: [],
 		loaded: false,
 		actualWord: 0,
-		fullScreen: false
+		fullScreen: false,
+		invertColors: false
 	}
 
 	componentDidMount() {
@@ -29,11 +30,11 @@ class Standard extends Component {
 	}
 
 	shuffle = (array) => {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
+	    for (let i = array.length - 1; i > 0; i--) {
+	        const j = Math.floor(Math.random() * (i + 1));
+	        [array[i], array[j]] = [array[j], array[i]];
+	    }
+	    return array;
 	}
 
 	changeWordNumber = (e, direction) => {
@@ -63,12 +64,26 @@ class Standard extends Component {
 		});
 	}
 
+	refreshWords = () => {
+		this.shuffle(this.props.flashcard.flashcardData.Words);
+		this.setState({
+			actualWord: 0
+		});
+	}
+
+	invertColors = () => {
+		this.setState({
+			invertColors: !this.state.invertColors
+		});
+	}
+
 	render() {
+		console.log(this.props.flashcard.flashcardData.Words);
 		if(!this.state.loaded) {
 			return null;
 		}
 		return (
-			<div className={`standard_game_window ${this.state.fullScreen ? "standard_game_window_fullscreen" : ""}`}>
+			<div className={`standard_game_window ${this.state.fullScreen ? "standard_game_window_fullscreen" : ""} ${this.state.invertColors ? "standard_game_window_black" : "standard_game_window_white"}`}>
 				<div className="standard_game_window_header">
 					<div className="standard_game_window_title">
 						<div className="standard_game_window_title_url">
@@ -81,6 +96,12 @@ class Standard extends Component {
 						<span>{`${this.state.actualWord+1} in ${this.props.flashcard.flashcardData.Words.length}`}</span>
 					</div>
 					<div className="standard_game_window_menu">
+						<div className="standard_game_window_refresh" onClick={this.refreshWords} title="Refresh game">
+							<MdRefresh/>
+						</div>
+						<div className="standard_game_window_refresh" onClick={this.invertColors} title={`Change to ${this.state.invertColors ? "Light mode" : "Dark mode"}`}>
+							<MdInvertColors/>
+						</div>
 						<div className="standard_game_window_help" title="Help">
 							<IoIosHelpBuoy/>
 						</div>

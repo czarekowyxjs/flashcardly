@@ -73,6 +73,7 @@ export const fetchFlashcardSet = (flashcardID) => {
 					userIsAuthor: userIsAuthor
 				}
 			});
+
 			dispatch(setFetchFlashcardLoaded(true));
 		} catch(e) {	
 			console.log(e.response);
@@ -244,6 +245,10 @@ export const setWordAsNotEditable = wid => {
 */
 export const getManyFlashcards = () => {
 	return async dispatch => {
+		dispatch({
+			type: "OWN_FLASHCARDS_LOADED",
+			payload: false
+		});
 		const userState = store.getState().user;
 		const page = userState.ownFlashcardsPage;
 		let ownFlashcards = userState.ownFlashcards;
@@ -261,6 +266,10 @@ export const getManyFlashcards = () => {
 			});
 			dispatch({
 				type: "UP_OWN_FLASHCARDS_PAGE"
+			});
+			dispatch({
+				type: "OWN_FLASHCARDS_LOADED",
+				payload: true
 			});
 
 		} catch(e) {

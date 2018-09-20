@@ -4,6 +4,7 @@ const initialState = {
 	userData: {},
 	ownFlashcards: [],
 	ownFlashcardsPage: 0,
+	ownFlashcardsLoaded: false,
 	screen: {
 		width: 0,
 		height: 0
@@ -37,11 +38,17 @@ export default (state = initialState, action) => {
 				...state,
 				ownFlashcardsPage: state.ownFlashcardsPage+1
 			};
+		case "OWN_FLASHCARDS_LOADED":
+			return {
+				...state,
+				ownFlashcardsLoaded: action.payload
+			};
 		case "CLEAR_OWN_FLASHCARDS":
 			return {
 				...state,
 				ownFlashcards: [],
-				ownFlashcardsPage: 0
+				ownFlashcardsPage: 0,
+				ownFlashcardsLoaded: false
 			};
 		case "GET_SCREEN_PARAMETERS":
 			return {

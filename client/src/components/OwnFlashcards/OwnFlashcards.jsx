@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { getManyFlashcards, clearOwnFlashcards } from '../../actions/flashcardActions';
 import PlusCircleBtn from '../Commons/PlusBtn/PlusCircleBtn.jsx';
 import SingleFlashcardPreview from '../SingleFlashcardPreview/SingleFlashcardPreview.jsx';
+import TinyLoader from '../Commons/Loader/TinyLoader.jsx';
 
 class OwnFlashcards extends Component {
 	componentDidMount() {
@@ -12,6 +13,7 @@ class OwnFlashcards extends Component {
 	}
 
 	componentWillUnmount() {
+		console.log('xd');
 		this.props.clearOwnFlashcards();
 	}
 
@@ -55,7 +57,8 @@ class OwnFlashcards extends Component {
 							: null
 						}
 						<div className="flashcards_block_previews">
-							{this.props.user.ownFlashcards.length > 0 ? this.renderFlashcardPreviews() : <p>You don't have any flashcards yet</p>}
+							{this.props.user.ownFlashcards.length > 0 ? this.renderFlashcardPreviews() : (this.props.user.ownFlashcardsLoaded ? <p>You don't have any flashcards yet</p> : null)}
+							{this.props.user.ownFlashcardsLoaded ? null : <TinyLoader/>}
 						</div>
 						{
 							this.props.user.ownFlashcards.length < 4 || (this.props.user.ownFlashcards.length >= 4 && this.props.user.ownFlashcards.length & 2 !== 0)
