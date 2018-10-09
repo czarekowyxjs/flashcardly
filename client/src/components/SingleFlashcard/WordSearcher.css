@@ -1,0 +1,44 @@
+.single_flashcard_word_searcher_loup > svg {
+	color:#2e2e2e;
+	font-size:1.4rem;
+	margin-right:1px;
+	margin-top:5px;
+	opacity:0.6;
+	transition:opacity 200ms linear;
+	cursor:pointer;
+}
+
+.single_flashcard_word_searcher_loup > svg:hover {
+	opacity:1;
+}
+
+.single_flashcard_word_searcher_body {
+	width:100%;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	flex-direction:column;
+	padding:0px 16px;
+}
+
+.single_flashcard_word_searcher_body > input {
+	width:100%;
+}
+
+.single_flashcard_word_searcher_body > .flashcardly_btn_container {
+	justify-content:flex-end;
+	margin:9px 16px 9px 0px;
+}
+
+.single_flashcard_word_searcher_bg {
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	background-color:rgba(0,0,0,.4);
+	z-index:18;
+	display:flex;
+	align-items:center;
+	justify-content:center;	
+}

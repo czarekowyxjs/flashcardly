@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SingleWordOptions from './SingleWordOptions.jsx';
+import { IoIosCheckmark } from 'react-icons/io';
 
 class SingleWord extends Component {
 	state = {
@@ -21,9 +22,18 @@ class SingleWord extends Component {
 		this.props.methods.handlerEditWord(this.state.firstColWord, this.state.secondColWord, this.props.wordData.wid);
 	}
 
+	handleClickToCloseSearched = () => {
+		this.props.methods.handleClickToCloseSearchedFromChildren(this.props.wordData.wid);
+	}
+
 	render() {
 		return (
-			<div className={`flashcard_word_table_row ${this.props.wordData.editable ? "flashcard_word_table_row--editable" : null}`}>
+			<div className={`flashcard_word_table_row ${this.props.wordData.editable ? "flashcard_word_table_row--editable" : null}`} ref={this.props.provideRef} onClick={this.handleClickToCloseSearched}>
+				<div className="flashcard_word_table_field flashcard_word_table_field--learned">
+					<div className={`flashcard_word_table_field--learned_icon ${this.props.wordData.learned ? "flashcard_word_table_field--learned_icon--true" : "flashcard_word_table_field--learned_icon--false"}`}>
+						<IoIosCheckmark/>
+					</div>
+				</div>
 				<div className="flashcard_word_table_field">
 					<span>
 						{this.props.wordData.editable ?

@@ -92,7 +92,7 @@
 	cursor:pointer;
 	opacity:0.7;
 	transition:opacity 150ms linear;
-	margin:0px 2px;
+	margin:0px 3px;
 }
 
 .standard_game_window_menu > *:hover {

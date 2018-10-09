@@ -96,7 +96,8 @@ Router.get('/:fid', VerifyToken, function(req, res) {
 			model: models.Word
 		}],
 		order: [
-			[models.Word, "createdAt", 'asc']
+			[models.Word, "learned", "asc"],
+			[models.Word, "createdAt", "asc"]
 		]
 	})
 	.then(function(foundFlashcard) {

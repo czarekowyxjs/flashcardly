@@ -27,7 +27,6 @@
     "express": "^4.16.3",
     "express-validator": "^5.3.0",
     "helmet": "^3.13.0",
-    "mongoose": "^5.2.8",
     "mysql2": "^1.6.1",
     "sequelize": "^4.38.0",
     "uuid": "^3.3.2"

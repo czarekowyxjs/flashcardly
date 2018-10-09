@@ -43,15 +43,21 @@ export const getUserScreenParameters = () => {
 export const confirmFlashcardIntroduce = () => {
 	return async dispatch => {
 		const userState = store.getState().user;
-		console.log(userState);
 		try {
-			const response = await axios.put("/api/v1/users/intro/flashcard", {}, {
+			await axios.put("/api/v1/users/options/introflashcard", {}, {
 				headers: {
 					authorization: userState.userData.fb.signedRequest
 				}
 			});
 
-			console.log(response);
+			const userData = userState.userData;
+
+			userData.common.User_option.flashcardIntro = 1;
+
+			dispatch({
+				type: "LAND_UP_USER_DATA",
+				payload: userData
+			});
 		} catch(e) {
 			console.log(e.response);
 		}

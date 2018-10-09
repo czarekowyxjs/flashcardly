@@ -37,11 +37,11 @@
 	width:100%;
 }
 
-.flashcard_word_table_field:nth-child(1) {
+.flashcard_word_table_field:nth-child(2) {
 	border-right:1px solid rgba(0,0,0,0.15);
 }
 
-.flashcard_word_table_field:nth-child(2) {
+.flashcard_word_table_field:nth-child(3) {
 	border-left:1px solid rgba(255,255,255,0.15);
 }
 
@@ -170,4 +170,37 @@
 	display:flex;
 	align-items:center;
 	justify-content:center;
+}
+
+.flashcard_word_table_field--learned {
+	width:36px;
+	height:100%;
+	display:flex;
+	align-items:center;
+	justify-content:flex-end;
+}
+
+.flashcard_word_table_field--learned_icon {
+	display:inline-block;
+	margin-top:5px;
+	font-size:1.8rem;
+}
+
+.flashcard_word_table_field--learned_icon.flashcard_word_table_field--learned_icon--true {
+	color:#e96443;
+	transition:color 200ms linear;
+}
+
+.flashcard_word_table_field--learned_icon.flashcard_word_table_field--learned_icon--true:hover {
+	color:#904e95;
+}
+
+.flashcard_word_table_field--learned_icon.flashcard_word_table_field--learned_icon--false {
+	opacity:0.6;
+	color:#2e2e2e;
+	transition:opacity 200ms linear;
+}
+
+.flashcard_word_table_field--learned_icon.flashcard_word_table_field--learned_icon--false:hover {
+	opacity:1;
 }

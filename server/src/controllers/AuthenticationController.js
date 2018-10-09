@@ -30,7 +30,7 @@ Router.post("/signin/facebook", function(req, res) {
 							common: foundUser,
 							fb: updatedFB
 						}
-					});					
+					});			
 				});
 			});
 		} else {

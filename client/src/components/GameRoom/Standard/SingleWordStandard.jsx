@@ -35,7 +35,7 @@ class SingleWordStandard extends Component {
 		return (
 			<div className="standard_game_single_word">
 				<div className="standard_game_single_word_content">
-					<div className="single_word_content_text">
+					<div className="single_word_content_text" onClick={this.turnWord}>
 						<span>{this.state.check ? this.props.word.secondColumnValue : this.props.word.firstColumnValue}</span>
 					</div>
 					<div className="single_word_content_options">

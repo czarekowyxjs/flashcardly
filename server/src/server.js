@@ -6,6 +6,7 @@ const cors = require("cors");
 const helmet = require("helmet");
 const AuthenticationController = require("./controllers/AuthenticationController");
 const FlashcardController = require("./controllers/FlashcardController");
+const UserController = require("./controllers/UserController");
 
 const app = express();
 require("dotenv");
@@ -22,6 +23,7 @@ app.use(validator());
 //
 app.use('/api/v1/authentication', AuthenticationController);
 app.use('/api/v1/flashcards', FlashcardController);
+app.use('/api/v1/users', UserController);
 //
 if(process.env.NODE_ENV == "production") {
 	app.use("/*", function(req, res) {

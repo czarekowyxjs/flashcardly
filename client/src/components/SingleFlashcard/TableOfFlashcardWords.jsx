@@ -6,17 +6,42 @@ import AddWordLoader from './AddWordLoader.jsx';
 import "./TableOfFlashcardWords.css";
 
 class TableOfFlashcardWords extends Component {
+	state = {
+		searched: false
+	}
+
 	renderTableItems = array => {
 		return array.map((word, index) => {
-			return <SingleWord key={word.wid} wordData={word} methods={this.props.methods}/>
+			this['wid'+word.wid] = React.createRef();
+			return <SingleWord key={word.wid} provideRef={this['wid'+word.wid]} wordData={word} methods={this.props.methods}/>
+		});
+	}
+
+	handleFindWordSearcher = (idToFind) => {
+		this['wid'+idToFind].current.style.zIndex = 20;
+		this.setState({
+			searched: true
+		}, window.scrollTo(0, this['wid'+idToFind].current.offsetTop));
+	}
+
+	handleClickToCloseSearchedFromChildren = (wid) => {
+		this['wid'+wid].current.style.zIndex = "";
+		this.setState({
+			searched: false
 		});
 	}
 
 	render() {
 		const flashcard = this.props.flashcard;
+
+		this.props.methods.handleFindWordSearcher = this.handleFindWordSearcher;
+		this.props.methods.handleClickToCloseSearchedFromChildren = this.handleClickToCloseSearchedFromChildren;
+
 		return (
 			<div className="single_flashcard_words_table">
 				<div className="flashcard_word_table_row flashcard_word_table_row--header">
+					<div className="flashcard_word_table_field flashcard_word_table_field--learned">
+					</div>
 					<div className="flashcard_word_table_field">
 						<span>{flashcard.flashcardData.firstColumnName}</span>
 					</div>
@@ -27,7 +52,7 @@ class TableOfFlashcardWords extends Component {
 						<span>xd</span>
 					</div>
 				</div>
-				<AddWordForm methods={this.props.methods} flashcard={flashcard}/>
+				<AddWordForm methods={this.props.methods} flashcard={flashcard} searched={this.state.searched}/>
 				{this.renderTableItems(flashcard.flashcardData.Words)}
 				{!flashcard.addWordLoaded
 					? <AddWordLoader/> 
