@@ -6,6 +6,12 @@ import AddWordLoader from './AddWordLoader.jsx';
 import "./TableOfFlashcardWords.css";
 
 class TableOfFlashcardWords extends Component {
+	constructor(props) {
+		super(props);
+
+		this.tableHeaderRef = React.createRef();
+	}
+
 	state = {
 		searched: false
 	}
@@ -21,7 +27,7 @@ class TableOfFlashcardWords extends Component {
 		this['wid'+idToFind].current.style.zIndex = 20;
 		this.setState({
 			searched: true
-		}, window.scrollTo(0, this['wid'+idToFind].current.offsetTop));
+		}, window.scrollTo(0, this['wid'+idToFind].current.offsetTop-(this.tableHeaderRef.current.offsetHeight*2)));
 	}
 
 	handleClickToCloseSearchedFromChildren = (wid) => {
@@ -39,7 +45,7 @@ class TableOfFlashcardWords extends Component {
 
 		return (
 			<div className="single_flashcard_words_table">
-				<div className="flashcard_word_table_row flashcard_word_table_row--header">
+				<div className="flashcard_word_table_row flashcard_word_table_row--header" ref={this.tableHeaderRef}>
 					<div className="flashcard_word_table_field flashcard_word_table_field--learned">
 					</div>
 					<div className="flashcard_word_table_field">

@@ -119,8 +119,9 @@ a {
 }
 
 .flashcardly_dialog {
-	width:500px;
+	width:90%;
 	min-width:300px;
+	max-width:500px;
 	background-color:#fbfbfb;
 	border-radius:3px;
 	padding-bottom:6px;
@@ -170,6 +171,10 @@ a {
 @media (min-width: 800px) {
 	html {
 		font-size:16px;
+	}
+
+	.flashcardly_dialog {
+		width:500px;
 	}
 }
 
