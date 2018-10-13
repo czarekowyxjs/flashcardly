@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import { GoTasklist } from 'react-icons/go';
-import { FaInbox } from 'react-icons/fa';
+import {  MdPlaylistAddCheck } from 'react-icons/md';
 
 import "./Navigation.css";
 
@@ -12,8 +11,8 @@ class Navigation extends Component {
 				<nav>
 					<ul className="nav_global_directly">
 						<li><NavLink to="/"><span>FLashcards</span></NavLink></li>
-						<li><NavLink to="/inbox"><i><FaInbox/></i></NavLink></li>
-						<li><NavLink to="/tasks"><i><GoTasklist/></i></NavLink></li>
+						<li><NavLink to="/tasks"><i><MdPlaylistAddCheck/></i></NavLink></li>
+						<li><NavLink to="/signout"><span>Logout</span></NavLink></li>
 					</ul>
 				</nav>
 			</div>

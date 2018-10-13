@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { IoIosSearch } from "react-icons/io";
+import { MdClose } from 'react-icons/md';
 
 import './WordSearcher.css';
 
@@ -53,6 +54,9 @@ class WordSearcher extends Component {
 					<div className="flashcardly_dialog_header">
 						<div className="flashcardly_dialog_title">
 							<h3>Word finder</h3>
+						</div>
+						<div className="flashcardly_dialog_close" onClick={this.handleSearcherClick}>
+							<MdClose/>
 						</div>
 					</div>
 					<div className="flashcardly_dialog_body">

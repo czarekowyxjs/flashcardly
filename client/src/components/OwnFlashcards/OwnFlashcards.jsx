@@ -13,7 +13,6 @@ class OwnFlashcards extends Component {
 	}
 
 	componentWillUnmount() {
-		console.log('xd');
 		this.props.clearOwnFlashcards();
 	}
 
@@ -60,16 +59,9 @@ class OwnFlashcards extends Component {
 							{this.props.user.ownFlashcards.length > 0 ? this.renderFlashcardPreviews() : (this.props.user.ownFlashcardsLoaded ? <p>You don't have any flashcards yet</p> : null)}
 							{this.props.user.ownFlashcardsLoaded ? null : <TinyLoader/>}
 						</div>
-						{
-							this.props.user.ownFlashcards.length < 4 || (this.props.user.ownFlashcards.length >= 4 && this.props.user.ownFlashcards.length & 2 !== 0)
-							? null
-							: 
-							(
-							<div className="flashcards_block_load_previews">
-								<button onClick={this.handleLoadMorePreviews}>Show more</button>
-							</div>
-							)
-						}
+						<div className="flashcards_block_load_previews">
+							<button onClick={this.handleLoadMorePreviews}>Show more</button>
+						</div>
 					</div>
 				</div>
 			</div>

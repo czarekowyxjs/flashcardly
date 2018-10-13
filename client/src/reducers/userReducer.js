@@ -1,6 +1,16 @@
 const initialState = {
 	isLoggedIn: false,
-	authLoaded: false,
+	auth: {
+		loaded: false,
+		processing: false
+	},
+	register: {
+		loaded: false,
+		processing: false,
+		error: false
+	},
+	confirmEmailLoaded: false,
+	confirmEmailError: false,
 	userData: {},
 	ownFlashcards: [],
 	ownFlashcardsPage: 0,
@@ -18,10 +28,25 @@ export default (state = initialState, action) => {
 				...state,
 				isLoggedIn: action.payload
 			};
-		case "AUTH_LOADED_STATUS":
+		case "AUTH_STATE":
 			return {
 				...state,
-				authLoaded: action.payload
+				auth: action.payload
+			};
+		case "REGISTER_STATE":
+			return {
+				...state,
+				register: action.payload
+			};
+		case "CONFIRM_EMAIL_LOADED":
+			return {
+				...state,
+				confirmEmailLoaded: action.payload
+			};
+		case "CONFIRM_EMAIL_ERROR":
+			return {
+				...state,
+				confirmEmailError: action.payload
 			};
 		case "LAND_UP_USER_DATA":
 			return {

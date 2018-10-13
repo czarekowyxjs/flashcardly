@@ -1,14 +1,13 @@
 import axios from 'axios';
-import store from "../store";
 
 export const fetchFlashcardToGame = (flashcardID) => {
 	return async dispatch => {
-		const userState = store.getState().user;
+		const token = localStorage.getItem("token");
 		dispatch(fetchFlashcardToGameLoaded(false));
 		try {
 			const response = await axios.get("/api/v1/flashcards/"+flashcardID, {
 				headers: {
-					authorization: userState.userData.fb.signedRequest
+					authorization: token
 				}
 			});
 

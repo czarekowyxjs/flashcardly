@@ -1,6 +1,6 @@
 html {
 	box-sizing:border-box;
-	font-size:16px;
+	font-size:14px;
 	color:#414141;
 	font-family:'Arial', sans-serif;
 }
@@ -120,16 +120,24 @@ a {
 
 .flashcardly_dialog {
 	width:500px;
+	min-width:300px;
 	background-color:#fbfbfb;
 	border-radius:3px;
+	padding-bottom:6px;
 	box-shadow:0px 1px 9px 0px rgba(0,0,0,.1);
 	display:flex;
 	flex-direction:column;
+	position:relative;
 
 }
 
 .flashcardly_dialog_header {
 	width:100%;
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+	justify-content:space-between;
+	padding:9px 12px 9px 12px;
 }
 
 .flashcardly_dialog_title {
@@ -140,7 +148,17 @@ a {
 	font-size:0.8rem;
 	font-weight:600;
 	color:#2e2e2e;
-	padding:9px 6px 9px 12px;
+}
+
+.flashcardly_dialog_close {
+	font-size:1rem;
+	opacity:0.5;
+	cursor:pointer;
+	transition:opacity 200ms linear;
+}
+
+.flashcardly_dialog_close:hover {
+	opacity:0.8;
 }
 
 .flashcardly_dialog_body {
@@ -149,8 +167,14 @@ a {
 	flex-direction:column;
 }
 
-@media (max-width: 800px) {
+@media (min-width: 800px) {
 	html {
-		font-size:14px;
+		font-size:16px;
+	}
+}
+
+@media (min-width:1920px) {
+	html {
+		font-size:18px;
 	}
 }

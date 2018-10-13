@@ -29,8 +29,10 @@ if(process.env.NODE_ENV == "production") {
 	app.use("/*", function(req, res) {
 		res.sendFile(__dirname+"/public/build/index.html");
 	});
+} else {
+
 }
 
-app.listen(process.env.PORT || 3001, function() {
+const server = app.listen(process.env.PORT || 3001, function() {
 	console.log('Server is running');
 });

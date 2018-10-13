@@ -8,14 +8,34 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true
       },
-      createdAt: {
-        type: Sequelize.STRING(255)
+      username: {
+        type: Sequelize.STRING(99)
       },
-      displayName: {
+      email: {
+        type: Sequelize.STRING(255),
+        unique: true
+      },
+      sex: {
+        type: Sequelize.STRING(1),
+        defaultValue: 'u'
+      },
+      password: {
+        type: Sequelize.STRING(999),
+        required: true
+      },
+      emailHash: {
         type: Sequelize.STRING(999)
+      },
+      avatarUrl: {
+        type: Sequelize.STRING(999),
+        defaultValue: ""
+      },
+      createdAt: {
+        type: Sequelize.STRING(99)
       }
     }, {
-      charset: 'utf8mb4'
+      charset: 'utf8',
+      collate: 'utf8_bin'
     });
   },
   down: (queryInterface, Sequelize) => {

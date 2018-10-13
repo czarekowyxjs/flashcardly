@@ -13,9 +13,18 @@ module.exports = {
       flashcardIntro: {
         type: Sequelize.BOOLEAN,
         defaultValue: false
+      },
+      emailConfirm: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false
+      },
+      setAvatar: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false
       }
     }, {
-      charset: 'utf8mb4'
+      charset: 'utf8',
+      collate: 'utf8_bin'
     });
   },
   down: (queryInterface, Sequelize) => {

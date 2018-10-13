@@ -1,7 +1,12 @@
+.single_flashcard_preview_wrapper {
+	width:25%;
+	height:144px;
+	padding:6px;
+}
+
 .single_flashcard_preview {
-	width:295px;
-	height:130px;
-	margin:10px;
+	width:100%;
+	height:100%;
 	background:none;
 	border:1px solid rgba(0,0,0,0.25);
 	box-shadow:0px 1px 4px 0px rgba(0,0,0,0.1);
@@ -71,6 +76,7 @@
 
 .flashcard_preview_btn {
 	width:100%;
+	margin-bottom:12px;
 	display:flex;
 	align-items:center;
 	justify-content:center;
@@ -81,8 +87,17 @@
 }
 
 @media (max-width:1024px) {
-	.single_flashcard_preview {
+	.single_flashcard_preview_wrapper {
 		width:100%;
-		margin:7px;
+	}
+
+	.flashcard_preview_btn {
+		margin-bottom:12px;
+	}
+}
+
+@media (max-width:800px) {
+	.single_flashcard_preview_wrapper {
+		height:130px;
 	}
 }

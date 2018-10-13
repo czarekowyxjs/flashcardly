@@ -33,10 +33,7 @@ Router.post('/create', VerifyToken, function(req, res) {
 			models.User.findOne({
 				where: {
 					uid: uid
-				},
-				include: [{
-					model: models.Facebook
-				}]
+				}
 			})
 			.then(function(foundUser) {
 				res.status(200).send({
@@ -106,10 +103,7 @@ Router.get('/:fid', VerifyToken, function(req, res) {
 			models.User.findOne({
 				where: {
 					uid: foundFlashcard.author
-				},
-				include: [{
-					model: models.Facebook
-				}]
+				}
 			})
 			.then(function(foundUser) {
 				res.status(200).send({
@@ -141,13 +135,7 @@ Router.get('/', VerifyToken, function(req, res) {
 			model: models.User,
 			attributes: {
 				exclude: ['createdAt', 'displayName']
-			},
-			include: [{
-				model: models.Facebook,
-				attributes: {
-					exclude: ["accessToken", "signedRequest", "lastName", "userID"]
-				}
-			}]
+			}
 		}, {
 			model: models.Word
 		}]

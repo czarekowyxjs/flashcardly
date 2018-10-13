@@ -1,0 +1,93 @@
+.app_login {
+	width:100%;
+	height:100vh;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+}
+
+.login_wrapper {
+	max-width:300px;
+	margin:15px;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+}
+
+.login_header {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	margin-bottom:15px;
+}
+
+.login_header > h2 {
+	font-weight:400;
+	font-size:1.2rem;
+	color:#fbfbfb;
+}
+
+.login_body {
+	width:380px;
+	padding:12px 20px;
+	border-radius:3px;
+	background-color:#fbfbfb;
+	box-shadow:0px 1px 9px 0px rgba(0,0,0,.2);
+}
+
+.login_body > form {
+	display:flex;
+	flex-direction:column;
+}
+
+.login_body > form > label {
+	margin:8px 0px 3px 1px;
+	font-size:0.8rem;
+	font-weight:600;
+	color:#2e2e2e;
+}
+
+.login_body > form > p {
+	margin:3px 0px 0px 1px;
+	font-size:0.75rem;
+	color:rgba(0,0,0,.6);
+}
+
+.login_body_footer {
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+	align-items:center;
+	margin-top:8px;
+}
+
+.login_body_footer > .flashcardly_btn_container {
+	justify-content:flex-end;
+	width:88px;	
+	padding-right:9px;
+}
+
+.login_body_footer > .login_redirect_info {
+	width:50%;
+
+}
+
+.login_redirect_info > span, .login_redirect_info > a {
+	font-size:0.75rem;
+}
+
+.login_redirect_info > span {
+	color:#2e2e2e;
+	opacity:0.7;
+}
+
+.login_redirect_info > a {
+	color:#0099cc;
+}
+
+.login_redirect_info > a:hover {
+	color:#006699;
+}
+

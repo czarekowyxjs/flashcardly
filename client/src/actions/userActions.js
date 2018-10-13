@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { transferFacebookData } from './authActions';
 import store from "../store";
 
 export const getFullFBUserData = (authResponse) => {
@@ -10,7 +9,7 @@ export const getFullFBUserData = (authResponse) => {
 
 	 window.FB.api(authResponse.userID, response => {
 	 	fbData.user = response;
-	 	dispatch(transferFacebookData(fbData));
+	 	
 	 }, {
 	 	fields: "name,picture,email,first_name,last_name"
 	 });
@@ -43,16 +42,17 @@ export const getUserScreenParameters = () => {
 export const confirmFlashcardIntroduce = () => {
 	return async dispatch => {
 		const userState = store.getState().user;
+		const token = localStorage.getItem("token");
 		try {
 			await axios.put("/api/v1/users/options/introflashcard", {}, {
 				headers: {
-					authorization: userState.userData.fb.signedRequest
+					authorization: token
 				}
 			});
 
 			const userData = userState.userData;
 
-			userData.common.User_option.flashcardIntro = 1;
+			userData.User_option.flashcardIntro = 1;
 
 			dispatch({
 				type: "LAND_UP_USER_DATA",
@@ -63,3 +63,27 @@ export const confirmFlashcardIntroduce = () => {
 		}
 	};
 };
+
+export const updateUserAvatar = (avName) => {
+	return async dispatch => {
+		const userState = store.getState().user;
+
+		try {
+			const token = localStorage.getItem("token");
+			const response = await axios.put('/api/v1/users/avatar', {
+				avatarUrl: avName
+			}, {
+				headers: {
+					authorization: token
+				}
+			});
+
+			if(response.status === 200) {
+				userState.userData.avatarUrl = avName;
+				dispatch(landUpUserData(userState.userData));				
+			}
+		} catch(e) {
+			console.log(e.response);
+		}
+	}
+}

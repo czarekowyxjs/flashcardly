@@ -3,9 +3,9 @@ const models = require("../models");
 module.exports = function(req, res, next) {
 	models.User.findOne({
 		include: [{
-			model: models.Facebook,
+			model: models.Token,
 			where: {
-				signedRequest: req.headers.authorization
+				token: req.headers.authorization
 			}
 		}]
 	})

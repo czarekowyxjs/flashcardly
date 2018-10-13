@@ -24,4 +24,27 @@ Router.put("/options/introflashcard", VerifyToken, function(req, res) {
 	});
 });
 
+Router.put("/avatar", VerifyToken, function(req, res) {
+	models.User.update({
+		avatarUrl: req.body.avatarUrl
+	}, {
+		where: {
+			uid: res.locals.uid
+		}
+	})
+	.then(function(updatedUser) {
+		if(updatedUser) {
+			res.status(200).send({
+				error: false
+			});
+		}
+	})
+	.catch(function(err) {
+		res.status(500).send({
+			error: true,
+			message: "Server error"
+		});
+	});
+});
+
 module.exports = Router;

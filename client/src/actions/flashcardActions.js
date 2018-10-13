@@ -15,12 +15,12 @@ export const returnFlashcardToInitial = () => {
 */
 export const createNewFlashcard = (flashcard) => {
 	return async dispatch => {
-		const userState = store.getState().user;
+		const token = localStorage.getItem("token");
 		dispatch(setCreateFlashcardLoaded(false));
 		try {
 			const response = await axios.post("/api/v1/flashcards/create", flashcard, {
 				headers: {
-					authorization: userState.userData.fb.signedRequest
+					authorization: token
 				}
 			});
 			dispatch({
@@ -51,11 +51,12 @@ export const setCreateFlashcardLoaded = (payload) => {
 export const fetchFlashcardSet = (flashcardID) => {
 	return async dispatch => {
 		const userState = store.getState().user;
+		const token = localStorage.getItem("token");
 		dispatch(setFetchFlashcardLoaded(false));
 		try {
 			const response = await axios.get("/api/v1/flashcards/"+flashcardID, {
 				headers: {
-					authorization: userState.userData.fb.signedRequest
+					authorization: token
 				}
 			});
 
@@ -63,7 +64,7 @@ export const fetchFlashcardSet = (flashcardID) => {
 				response.data.flashcard.Words[i].editable = false;
 			}
 
-			const userIsAuthor = response.data.author.uid === userState.userData.common.uid;
+			const userIsAuthor = response.data.author.uid === userState.userData.uid;
 
 			const emptyFlashcardSet = response.data.flashcard.Words.length < 1;
 
@@ -97,7 +98,7 @@ export const setFetchFlashcardLoaded = (payload) => {
 */
 export const addNewWordToSet = (firstColWord, secondColWord, fid) => {
 	return async dispatch => {
-		const userState = store.getState().user;
+		const token = localStorage.getItem("token");
 		dispatch(setAddWordLoaded(false));
 		try {
 			const response = await axios.post("/api/v1/flashcards/word/create", {
@@ -106,7 +107,7 @@ export const addNewWordToSet = (firstColWord, secondColWord, fid) => {
 				secondColWord
 			}, {
 				headers: {
-					authorization: userState.userData.fb.signedRequest
+					authorization: token
 				}
 			});
 
@@ -146,13 +147,13 @@ export const setAddWordLoaded = (payload) => {
 */
 export const deleteWord = (wid) => {
 	return async dispatch => {
-		const userState = store.getState().user;
+		const token = localStorage.getItem("token");
 		try {
 			const response = await axios.post('/api/v1/flashcards/word/delete', {
 				wid: wid
 			}, {
 				headers: {
-					authorization: userState.userData.fb.signedRequest
+					authorization: token
 				}
 			});
 
@@ -182,7 +183,7 @@ export const deleteWord = (wid) => {
 */
 export const editWord = (firstColWord, secondColWord, wid) => {
 	return async dispatch => {
-		const userState = store.getState().user;
+		const token = localStorage.getItem("token");
 		try {
 			const response = await axios.put("/api/v1/flashcards/word/update", {
 				wid,
@@ -190,7 +191,7 @@ export const editWord = (firstColWord, secondColWord, wid) => {
 				secondColWord
 			}, {
 				headers: {
-					authorization: userState.userData.fb.signedRequest
+					authorization: token
 				}
 			});
 
@@ -252,13 +253,14 @@ export const getManyFlashcards = () => {
 			type: "OWN_FLASHCARDS_LOADED",
 			payload: false
 		});
+		const token = localStorage.getItem("token");
 		const userState = store.getState().user;
 		const page = userState.ownFlashcardsPage;
 		let ownFlashcards = userState.ownFlashcards;
 		try {
 			const response = await axios.get("/api/v1/flashcards?sort=createdAt&st=desc&limit=4&page="+page, {
 				headers: {
-					authorization: userState.userData.fb.signedRequest
+					authorization: token
 				}
 			});
 
@@ -292,7 +294,7 @@ export const clearOwnFlashcards = () => {
 */
 export const toggleCheckLearnedWord = wid => {
 	return async dispatch => {
-		const userState = store.getState().user;
+		const token = localStorage.getItem("token");
 		
 		let flashcardData = store.getState().flashcard.flashcardData;
 		let indexToChange;
@@ -312,7 +314,7 @@ export const toggleCheckLearnedWord = wid => {
 				wid: wid
 			}, {
 				headers: {
-					authorization: userState.userData.fb.signedRequest
+					authorization: token
 				}
 			});
 

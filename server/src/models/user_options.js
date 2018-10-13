@@ -12,6 +12,14 @@ module.exports = (sequelize, DataTypes) => {
       flashcardIntro: {
         type: DataTypes.BOOLEAN,
         defaultValue: false
+      },
+      emailConfirm: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+      },
+      setAvatar: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
       }
   }, {
   	timestamps: false,

@@ -27,7 +27,8 @@ module.exports = {
         type: Sequelize.STRING(99)
       }
     }, {
-      charset: 'utf8mb4'
+      charset: 'utf8',
+      collate: 'utf8_bin'
     });
   },
   down: (queryInterface, Sequelize) => {

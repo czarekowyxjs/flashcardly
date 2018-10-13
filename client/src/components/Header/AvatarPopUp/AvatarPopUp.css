@@ -1,0 +1,74 @@
+.flashcardly_dialog_avatars {
+	padding:0px 25px 6px 25px;
+	display:flex;
+	flex-flow:row wrap;
+	align-items:flex-start;
+	justify-content:flex-start;
+}
+
+.flashcardly_dialog_single_av {
+	margin:4px 5px;
+}
+
+.flashcardly_dialog_single_av > img {
+	width:46px;
+	height:46px;
+	border-radius:50%;
+	cursor:pointer;
+	opacity:0.8;
+	transition:opacity 200ms linear;
+}
+
+.flashcardly_dialog_single_av > img:hover {
+	opacity:1;
+}
+
+.flashcardly_dialog_avatar_preview {
+	position:absolute;
+	width:100%;
+	height:100%;
+	z-index:10;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+
+.flashcardly_dialog_avatar_preview_wrapper {
+	background-color:#fbfbfb;
+	border-radius:3px;
+	padding:9px 9px 5px 9px;
+	box-shadow:0px 1px 8px 0px rgba(0,0,0,0.2);
+}
+
+.flashcardly_dialog_avatar_preview_wrapper > img {
+	width:160px;
+	height:160px;
+	border-radius:3px;
+}
+
+.flashcardly_dialog_avatar_preview_option {
+	width:100%;
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+	justify-content:center;
+	margin:3px 0px;
+}
+
+.flashcardly_dialog_avatar_preview_option > span {
+	color:rgba(0,0,0,0.5);
+	font-size:0.7rem;
+	margin:0px 3px;
+}
+
+.flashcardly_dialog_avatar_preview_option--cancel {
+	background:none;
+	border:none;
+	cursor:pointer;
+	color:#0099cc;
+	font-size:0.8rem;
+}
+
+.flashcardly_dialog_avatar_preview_option--cancel:hover {
+	color:#006699;
+}

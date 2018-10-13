@@ -65,7 +65,7 @@ class SingleFlashcard extends Component {
 		};
 		return (
 			<div className="flashcards_window">
-				{!this.props.user.userData.common.User_option.flashcardIntro
+				{!this.props.user.userData.User_option.flashcardIntro
 					? <Introduce methods={methods}/>
 					: null}
 				<div className="flashcards_block">
@@ -79,7 +79,7 @@ class SingleFlashcard extends Component {
 									<span>Created</span>
 									<time>{ProcessUnixTime(this.props.flashcard.flashcardData.createdAt)}</time> 
 									<span>by</span>
-									<Link to={`/users/${this.props.flashcard.authorData.uid}`}>{this.props.flashcard.authorData.Facebook.firstName}</Link>
+									<Link to={`/users/${this.props.flashcard.authorData.uid}`}>{this.props.flashcard.authorData.username}</Link>
 								</p>
 							</div>
 						</div>
