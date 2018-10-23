@@ -10,6 +10,20 @@ class WordSearcher extends Component {
 		searchValue: ""
 	}
 
+	componentDidMount() {
+		window.addEventListener('keyup', this.handleKeyUp, false);
+	}
+
+	componentWillUnmount() {
+		window.removeEventListener('keyup', this.handleKeyUp, false);
+	}
+
+	handleKeyUp = (e) => {
+		if(e.keyCode === 27 && this.state.visibility) {
+			this.handleSearcherClick();
+		} 
+	}
+
 	handleSearcherClick = () => {
 		this.setState({
 			visibility: !this.state.visibility
@@ -23,6 +37,7 @@ class WordSearcher extends Component {
 	}
 
 	handleWordSearchSubmit = (e) => {
+		e.preventDefault();
 		if(this.state.searchValue.length > 0) {
 			this.handleSearcherClick();
 			this.findWord();
@@ -53,7 +68,7 @@ class WordSearcher extends Component {
 				<div className="flashcardly_dialog">
 					<div className="flashcardly_dialog_header">
 						<div className="flashcardly_dialog_title">
-							<h3>Word finder</h3>
+							<h3>{this.props.lang.titles.wordFinder}</h3>
 						</div>
 						<div className="flashcardly_dialog_close" onClick={this.handleSearcherClick}>
 							<MdClose/>
@@ -61,18 +76,20 @@ class WordSearcher extends Component {
 					</div>
 					<div className="flashcardly_dialog_body">
 						<div className="single_flashcard_word_searcher_body">
-							<input 
-								type="text" 
-								className="flashcardly_input"
-								value={this.state.searchValue}
-								onChange={this.handleSearchChange}
-								name="searchValue"
-							/>
-							<div className="flashcardly_btn_container">
-								<button type="submit" className="flashcardly_btn flashcardly_btn--common" onClick={this.handleWordSearchSubmit}>
-									Find
-								</button>
-							</div>
+							<form onSubmit={this.handleWordSearcherSubmit}>
+								<input 
+									type="text" 
+									className="flashcardly_input"
+									value={this.state.searchValue}
+									onChange={this.handleSearchChange}
+									name="searchValue"
+								/>
+								<div className="flashcardly_btn_container">
+									<button type="submit" className="flashcardly_btn flashcardly_btn--common" onClick={this.handleWordSearchSubmit}>
+										{this.props.lang.buttons.find}
+									</button>
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>

@@ -7,7 +7,7 @@ import "./Dashboard.css";
 
 class Dashboard extends Component {
 	componentDidMount() {
-		document.title = "Flashcardly - dashboard";
+		document.title = "Flashcardly";
 	}
 
 	render() {

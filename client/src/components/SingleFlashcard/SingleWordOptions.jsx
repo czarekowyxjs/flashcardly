@@ -27,8 +27,8 @@ class SingleWordOptions extends Component {
 			<div className="single_word_options">
 				<div className="single_word_options_wrapper">
 					<ul>
-						<li onClick={this.handleWordDelete}>Delete(permanently)</li>
-						<li onClick={this.handleEditableWord}>Edit this word</li>
+						<li onClick={this.handleWordDelete}>{this.props.lang.titles.deleteWord}</li>
+						<li onClick={this.handleEditableWord}>{this.props.lang.titles.editWord}</li>
 					</ul>
 				</div>
 			</div>

@@ -4,6 +4,7 @@ import "./SingleFlashcardPreview.css";
 
 class SingleFlashcardPreview extends Component {
 	render() {
+		const lang = this.props.lang;
 		const flashcard = this.props.flashcard;
 		return (
 			<div className="single_flashcard_preview_wrapper">
@@ -21,11 +22,11 @@ class SingleFlashcardPreview extends Component {
 							</div>						
 						</div>
 						<div className="flashcard_preview_table_desc">
-							<p>{`This set of flashcards contains ${flashcard.Words.length}${flashcard.Words.length === 1 ? " word" : " words"}`}</p>
+							<p>{`${lang.contents.flashcardPreviewContain} ${flashcard.Words.length}${flashcard.Words.length === 1 ? lang.shorts.word : lang.shorts.words}`}</p>
 						</div>
 					</div>
 					<div className="flashcard_preview_btn">
-						<a href={`/flashcards/${flashcard.fid}`} className="flashcardly_btn flashcardly_btn--white">{flashcard.Words.length === 0 ? "Add first word!" : "Enter and learn!"}</a>
+						<a href={`/flashcards/${flashcard.fid}`} className="flashcardly_btn flashcardly_btn--white">{flashcard.Words.length === 0 ? lang.buttons.addFirstWord : lang.buttons.learn}</a>
 					</div>
 				</div>
 			</div>

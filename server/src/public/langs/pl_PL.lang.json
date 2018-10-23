@@ -1,0 +1,72 @@
+{
+	"username": "Nazwa użytkownika",
+	"emailAddress": "Adres email",
+	"password": "Hasło",
+	"repeatPassword": "Powtórz hasło",
+	"nav": {
+		"flashcards": "Fiszki",
+		"logout": "Wyloguj się",
+		"privacy": "Polityka prywatności",
+		"cookies": "Ciasteczka"
+	},
+	"titles": {
+		"loginTitle": "Wejdź do Flashcardly",
+		"registerTitle": "Dołącz do Flashcardly",
+		"yourFlashcards": "Twoje fiszki",
+		"language": "Język",
+		"flashcardsSetTitle": "Tytuł zestawu fiszek",
+		"nameFirstColumn": "Tytuł pierwszej kolumny",
+		"nameSecondColumn": "Tytuł drugiej kolumny",
+		"flashcardsCreator": "Kreator fiszek",
+		"standardLearning": "Standardowa nauka",
+		"deleteWord": "Usuń to słowo (nieodwracalnie)",
+		"editWord": "Edytuj słowo",
+		"saveChanges": "Zapisz zmiany",
+		"changeYourAvatar": "Zmień swój avatar",
+		"wordFinder": "Znajdź słówko"
+	},
+	"buttons": {
+		"login": "Zaloguj się",
+		"register": "Zarejestruj się",
+		"showMore": "Pokaż więcej",
+		"addFirstWord": "Dodaj pierwsze słówko!",
+		"learn": "Ucz się!",
+		"confirm": "Potwierdź",
+		"find": "Szukaj"
+	},
+	"shorts": {
+		"word": " słowo",
+		"words": " słów",
+		"created": "Stworzone",
+		"ago": "temu",
+		"by": "przez",
+		"day": "dzień",
+		"days": "dni",
+		"hour": "godzinę",
+		"hours": "godzin",
+		"minute": "minutę",
+		"minutes": "minut",
+		"cancel": "Anuluj",
+		"or": "lub"
+	},
+	"contents": {
+		"registerUsernameDesc": "Nazwa użytkownika jest widoczna dla innych użytkowników. Pamiętaj, aby była unikalna",
+		"registerEmailDesc": "Adres email nie jest widoczny dla innych użytkowników.",
+		"registerPasswordDesc": "Pamiętaj, aby Twoje hasło było skuteczne i silne.",
+		"registerFooterInfo": {
+			"content": "Jeżeli już posiadasz konto, to ",
+			"loginURL": "zaloguj się"
+		},
+		"loginFooterInfo": {
+			"content": "Jeżeli jeszcze nie posiadasz konta, to powinieneś ",
+			"registerURL": "zarejestrować się"
+		},
+		"flashcardsTitleDesc": "To pole musi mieć 2-28 znaków.",
+		"nameColumnDesc": "To pole musi mieć 2-20 znaków.",
+		"flashcardsCreatorDesc": "Witaj w kreatorze fiszek. Możesz tutaj stworzyć nowy zestaw fiszek. Zajmie Ci to tylko 30 sekund! Właśnie tak szybko! Następnie, możesz od razu przejść do nauki.",
+		"flashcardPreviewContain": "Ta fiszka zawiera ",
+		"standardLearnMode": "Standardowy tryb nauki",
+		"createNewSetOfFlashcards": "Stwórz nowy zestaw fiszek",
+		"emptyFlashcards": "Jeszcze nie posiadasz żadnych fiszek"
+	}
+}

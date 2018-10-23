@@ -12,7 +12,7 @@ class CreateFlashcards extends Component {
 	}
 
 	componentDidMount() {
-		document.title = "Create new set of flashcards";
+		document.title = "Flashcardly";
 	}
 
 	componentWillUnmount() {
@@ -36,6 +36,7 @@ class CreateFlashcards extends Component {
 	}
 
 	render() {
+		const lang = this.props.user.lang;
 		if(this.props.flashcard.createFlashcardLoaded) {
 			return <Redirect to={`/flashcards/${this.props.flashcard.flashcardData.fid}`}/>
 		}
@@ -44,9 +45,9 @@ class CreateFlashcards extends Component {
 				<div className="flashcards_block">
 					<div className="flashcards_block_header">
 						<div className="flashcards_block_header_title">
-							<h3>Creator of flashcards</h3>
+							<h3>{lang.titles.flashcardsCreator}</h3>
 							<div className="flashcards_block_header_description">
-								<p>Welcome to the creator of flashcards. You can make new flashcards here. How long will it take? Only 30 seconds! Yes, that fast! And after made this one, you can start learning.</p>
+								<p>{lang.contents.flashcardsCreatorDesc}</p>
 							</div>
 						</div>
 					</div>
@@ -55,7 +56,7 @@ class CreateFlashcards extends Component {
 						<div className="flashcards_block_body_form_creator">
 							<form onSubmit={this.handleCreatorSubmit}>
 								<div className="form_creator_field">
-									<label htmlFor="flashcardTitle">Title of the set of flashcards</label>
+									<label htmlFor="flashcardTitle">{lang.titles.flashcardsSetTitle}</label>
 									<input 
 										type="text"
 										className="flashcardly_input"
@@ -63,10 +64,10 @@ class CreateFlashcards extends Component {
 										onChange={this.handleCreatorChange}
 										value={this.state.flashcardTitle}
 									/>
-									<p>This field must have between 2 and 28 letters.</p>
+									<p>{lang.contents.flashcardsTitleDesc}</p>
 								</div>
 								<div className="form_creator_field">
-									<label htmlFor="flashcardFirstCol">Name of the first column</label>
+									<label htmlFor="flashcardFirstCol">{lang.titles.nameFirstColumn}</label>
 									<input 
 										type="text"
 										className="flashcardly_input"
@@ -74,10 +75,10 @@ class CreateFlashcards extends Component {
 										onChange={this.handleCreatorChange}
 										value={this.state.flashcardFirstCol}
 									/>
-									<p>This field must have between 2 and 20 letters.</p>
+									<p>{lang.contents.nameColumnDesc}</p>
 								</div>
 								<div className="form_creator_field">
-									<label htmlFor="flashcardSecondCol">Name of the second column</label>
+									<label htmlFor="flashcardSecondCol">{lang.titles.nameSecondColumn}</label>
 									<input 
 										type="text"
 										className="flashcardly_input"
@@ -85,10 +86,10 @@ class CreateFlashcards extends Component {
 										onChange={this.handleCreatorChange}
 										value={this.state.flashcardSecondCol}
 									/>
-									<p>This field must have between 2 and 20 letters.</p>
+									<p>{lang.contents.nameColumnDesc}</p>
 								</div>
 								<div className="form_creator_field_btn">
-									<button type="submit" className="flashcardly_btn flashcardly_btn--common">Confirm</button>
+									<button type="submit" className="flashcardly_btn flashcardly_btn--common">{lang.buttons.confirm}</button>
 								</div>
 							</form>
 						</div>
@@ -101,6 +102,7 @@ class CreateFlashcards extends Component {
 
 const mapStateToProps = state => {
 	return {
+		user: state.user,
 		flashcard: state.flashcard
 	};
 };

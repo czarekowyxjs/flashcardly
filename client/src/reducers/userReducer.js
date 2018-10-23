@@ -15,10 +15,12 @@ const initialState = {
 	ownFlashcards: [],
 	ownFlashcardsPage: 0,
 	ownFlashcardsLoaded: false,
+	ownFlashcardsIsMore: false,
 	screen: {
 		width: 0,
 		height: 0
-	}
+	},
+	lang: {}
 };
 
 export default (state = initialState, action) => {
@@ -61,7 +63,8 @@ export default (state = initialState, action) => {
 		case "UP_OWN_FLASHCARDS_PAGE":
 			return {
 				...state,
-				ownFlashcardsPage: state.ownFlashcardsPage+1
+				ownFlashcardsPage: state.ownFlashcardsPage+1,
+				ownFlashcardsIsMore: action.payload.isMore
 			};
 		case "OWN_FLASHCARDS_LOADED":
 			return {
@@ -73,12 +76,18 @@ export default (state = initialState, action) => {
 				...state,
 				ownFlashcards: [],
 				ownFlashcardsPage: 0,
-				ownFlashcardsLoaded: false
+				ownFlashcardsLoaded: false,
+				ownFlashcardsIsMore: false
 			};
 		case "GET_SCREEN_PARAMETERS":
 			return {
 				...state,
 				screen: action.payload
+			};
+		case "LAND_UP_LANG_DATA":
+			return {
+				...state,
+				lang: action.payload
 			};
 		default:
 			return state;

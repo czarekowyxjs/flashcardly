@@ -19,7 +19,7 @@ class TableOfFlashcardWords extends Component {
 	renderTableItems = array => {
 		return array.map((word, index) => {
 			this['wid'+word.wid] = React.createRef();
-			return <SingleWord key={word.wid} provideRef={this['wid'+word.wid]} wordData={word} methods={this.props.methods}/>
+			return <SingleWord key={word.wid} lang={this.props.lang} provideRef={this['wid'+word.wid]} wordData={word} methods={this.props.methods}/>
 		});
 	}
 
@@ -58,7 +58,7 @@ class TableOfFlashcardWords extends Component {
 						<span>xd</span>
 					</div>
 				</div>
-				<AddWordForm methods={this.props.methods} flashcard={flashcard} searched={this.state.searched}/>
+				<AddWordForm lang={this.props.lang} methods={this.props.methods} flashcard={flashcard} searched={this.state.searched}/>
 				{this.renderTableItems(flashcard.flashcardData.Words)}
 				{!flashcard.addWordLoaded
 					? <AddWordLoader/> 

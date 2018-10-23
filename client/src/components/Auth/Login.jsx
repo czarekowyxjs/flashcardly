@@ -13,7 +13,7 @@ class Login extends Component {
 	}
 
 	componentDidMount() {
-		document.title = "Log in to Flashcardly";
+		document.title = this.props.user.lang.titles.loginTitle;
 	}
 
 	handleFormLoginChange = (e) => {
@@ -29,6 +29,8 @@ class Login extends Component {
 	}
 
 	render() {
+		const lang = this.props.user.lang;
+		//
 		if(this.props.user.isLoggedIn) {
 			return <Redirect to="/"/>;
 		}
@@ -37,11 +39,11 @@ class Login extends Component {
 				<div className="app_login">
 					<div className="login_wrapper">
 						<div className="login_header">
-							<h2>Log in to Flashcardly</h2>
+							<h2>{lang.titles.loginTitle}</h2>
 						</div>
 						<div className="login_body">
 							<form onSubmit={this.handleLoginFormSubmit}>
-								<label htmlFor="email">Email address</label>
+								<label htmlFor="email">{lang.emailAddress}</label>
 								<input
 									type="text"
 									id="email"
@@ -50,7 +52,7 @@ class Login extends Component {
 									onChange={this.handleFormLoginChange}
 									className="flashcardly_input"
 								/> 
-								<label htmlFor="password">Password</label>
+								<label htmlFor="password">{lang.password}</label>
 								<input
 									type="password"
 									id="password"
@@ -61,12 +63,12 @@ class Login extends Component {
 								/>
 								<div className="login_body_footer">
 									<div className="login_redirect_info">
-										<span>If you don't have account, you should go to </span>
-										<Link to="/signup">register</Link>
+										<span>{lang.contents.loginFooterInfo.content}</span>
+										<Link to="/signup">{lang.contents.loginFooterInfo.registerURL}</Link>
 									</div>
 									<div className="flashcardly_btn_container">
 										<button className="flashcardly_btn flashcardly_btn--common">
-											Log In
+											{lang.buttons.login}
 										</button>
 									</div>
 								</div>

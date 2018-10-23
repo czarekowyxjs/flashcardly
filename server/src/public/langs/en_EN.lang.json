@@ -1,0 +1,72 @@
+{
+	"username": "Username",
+	"emailAddress": "Email address",
+	"password": "Password",
+	"repeatPassword": "Repeat password",
+	"nav": {
+		"flashcards": "Flashcards",
+		"logout": "Log Out",
+		"privacy": "Privacy",
+		"cookies": "Cookies"
+	},
+	"titles": {
+		"loginTitle": "Log in to Flashcardly",
+		"registerTitle": "Sign up in Flashcardly",
+		"yourFlashcards": "Your flashcards",
+		"language": "Language",
+		"flashcardsSetTitle": "Title of the set of flashcards",
+		"nameFirstColumn": "Name of the first column",
+		"nameSecondColumn": "Name of the second column",
+		"flashcardsCreator": "Flashcards creator",
+		"standardLearning": "Standard learning",
+		"deleteWord": "Delete (permanently)",
+		"editWord": "Edit this word",
+		"saveChanges": "Save your changes",
+		"changeYourAvatar": "Change your avatar",
+		"wordFinder": "Word finder"
+	},
+	"buttons": {
+		"login": "Log In",
+		"register": "Sign Up",
+		"showMore": "Show more",
+		"addFirstWord": "Add first word!",
+		"learn": "Learn!",
+		"confirm": "Confirm",
+		"find": "Find"
+	},
+	"shorts": {
+		"word": " word",
+		"words": " words",
+		"created": "Created",
+		"ago": "ago",
+		"by": "by",
+		"day": "day",
+		"days": "days",
+		"hour": "hour",
+		"hours": "hours",
+		"minute": "minute",
+		"minutes": "minutes",
+		"cancel": "Cancel",
+		"or": "or"
+	},
+	"contents": {
+		"registerUsernameDesc": "It's your username, visible for other users. Remember: Your username should be unique.",
+		"registerEmailDesc": "It's your email address. This one isn't visible for other users. By this one you can confirm your register and sign in",
+		"registerPasswordDesc": "Remember! Password should be secure. Minimum 8 characters, small and big letter, numbers etc.",
+		"registerFooterInfo": {
+			"content": "If you have account, you can log in ",
+			"loginURL": "here"
+		},
+		"loginFooterInfo": {
+			"content": "If you don't have account, you should ",
+			"registerURL": "register"
+		},
+		"flashcardsTitleDesc": "This field must have between 2 and 28 letters.",
+		"nameColumnDesc": "This field must have between 2 and 20 letters.",
+		"flashcardsCreatorDesc": "Welcome to the creator of flashcards. You can make new flashcards here. How long will it take? Only 30 seconds! Yes, that fast! And after made this one, you can start learning.",
+		"flashcardPreviewContain": "This set of flashcards contains ",
+		"standardLearnMode": "Standard learn mode",
+		"createNewSetOfFlashcards": "Create new set of flashcards",
+		"emptyFlashcards": "You don't have any flashcards yet"
+	}
+}

@@ -18,7 +18,7 @@ class App extends Component {
       <div className="app_container">
       	<BrowserRouter>
       		<Switch>
-      			<Route path="/signin" component={RequireAuthReverse(Login)}/>
+      			<Route path="/signin" lang={this.props.lang} component={RequireAuthReverse(Login)}/>
             <Route path="/signup" component={RequireAuthReverse(Register)}/>
       			<Route path="/" exact={true} component={RequireAuth(Dashboard)}/>
             <Route path="/flashcards" component={RequireAuth(Flashcards)}/>

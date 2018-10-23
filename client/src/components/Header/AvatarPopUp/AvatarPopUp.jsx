@@ -50,9 +50,9 @@ class AvatarPopUp extends Component {
 							<div className="flashcardly_dialog_avatar_preview_wrapper">
 								<img src={`/img/avatars/${this.state.selectedAvatar}`} alt="selected avatar"/>
 								<div className="flashcardly_dialog_avatar_preview_option">
-									<button className="flashcardly_dialog_avatar_preview_option--cancel" onClick={this.showAvatarPreview}>Cancel</button>
-									<span>or</span>
-									<button className="flashcardly_btn flashcardly_btn--common" onClick={this.handleConfirmSelectedAvatar}>Confirm</button>
+									<button className="flashcardly_dialog_avatar_preview_option--cancel" onClick={this.showAvatarPreview}>{this.props.lang.shorts.cancel}</button>
+									<span>{this.props.lang.shorts.or}</span>
+									<button className="flashcardly_btn flashcardly_btn--common" onClick={this.handleConfirmSelectedAvatar}>{this.props.lang.buttons.confirm}</button>
 								</div>
 							</div>
 						</div>)
@@ -60,7 +60,7 @@ class AvatarPopUp extends Component {
 				}
 					<div className="flashcardly_dialog_header">
 						<div className="flashcardly_dialog_title">
-							<h3>Select your avatar</h3>
+							<h3>{this.props.lang.titles.changeYourAvatar}</h3>
 						</div>
 						<div className="flashcardly_dialog_close" onClick={this.props.methods.handleAvatarClick}>
 							<MdClose/>

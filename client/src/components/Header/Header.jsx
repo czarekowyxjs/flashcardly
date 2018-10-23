@@ -31,12 +31,12 @@ class Header extends Component {
 			<div className="app_header">
 				{
 					this.state.visibleAvatarPopUp 
-					? <AvatarPopUp user={this.props.user} methods={methods}/>
+					? <AvatarPopUp lang={this.props.user.lang} user={this.props.user} methods={methods}/>
 					: null
 				}
 				<div className="app_header_row">
 					<UserBar user={this.props.user} methods={methods}/>
-					<Navigation/>
+					<Navigation lang={this.props.user.lang}/>
 				</div>
 				<div className="app_header_row">
 					<TopAsides/>

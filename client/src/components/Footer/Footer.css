@@ -30,7 +30,7 @@
 	font-size:0.85rem;
 }
 
-.flashcardly_footer_nav > ul > li > a:hover {
+.flashcardly_footer_nav > ul > li:hover {
 	text-decoration:underline;
 }
 
@@ -47,5 +47,19 @@
 }
 
 .flashcardly_footer_info > a:hover {
+	text-decoration:underline;
+}
+
+.flashcardly_footer_lang {
+	padding:0px 4px;
+}
+
+.flashcardly_footer_lang > .lang_select_wrapper > .lang_select_wrapper_title > span {
+	color:rgba(255,255,255,0.5);
+	font-size:0.85rem;
+	cursor:pointer;
+}
+
+.flashcardly_footer_lang > .lang_select_wrapper > .lang_select_wrapper_title > span:hover {
 	text-decoration:underline;
 }

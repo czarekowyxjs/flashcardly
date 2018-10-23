@@ -52,6 +52,7 @@ class SingleFlashcard extends Component {
 	}
 
 	render() {
+		const lang = this.props.user.lang;
 		if(!this.props.flashcard.fetchFlashcardLoaded) {
 			return <Loader message="Loading flashcard data"/>;
 		}
@@ -76,17 +77,17 @@ class SingleFlashcard extends Component {
 							</div>
 							<div className="flashcard_header_title_user">
 								<p>
-									<span>Created</span>
-									<time>{ProcessUnixTime(this.props.flashcard.flashcardData.createdAt)}</time> 
-									<span>by</span>
+									<span>{lang.shorts.created}</span>
+									<time>{ProcessUnixTime(this.props.flashcard.flashcardData.createdAt, lang)}</time> 
+									<span>{lang.shorts.by}</span>
 									<Link to={`/users/${this.props.flashcard.authorData.uid}`}>{this.props.flashcard.authorData.username}</Link>
 								</p>
 							</div>
 						</div>
 					</div>
 					<div className="single_flashcard_body">
-						<GamePreviews {...this.props}/>
-						<TableOfFlashcardWords flashcard={this.props.flashcard} methods={methods}/>
+						<GamePreviews lang={lang} {...this.props}/>
+						<TableOfFlashcardWords lang={lang} flashcard={this.props.flashcard} methods={methods}/>
 					</div>
 				</div>
 			</div>	

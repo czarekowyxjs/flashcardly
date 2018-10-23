@@ -263,14 +263,16 @@ export const getManyFlashcards = () => {
 					authorization: token
 				}
 			});
-
 			const newFlashcards = [].concat(ownFlashcards, response.data.flashcards);
 			dispatch({
 				type: "LAND_UP_OWN_FLASHCARDS",
 				payload: newFlashcards
 			});
 			dispatch({
-				type: "UP_OWN_FLASHCARDS_PAGE"
+				type: "UP_OWN_FLASHCARDS_PAGE",
+				payload: {
+					isMore: response.data.isMore
+				}
 			});
 			dispatch({
 				type: "OWN_FLASHCARDS_LOADED",

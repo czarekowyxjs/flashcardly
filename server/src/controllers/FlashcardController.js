@@ -167,8 +167,13 @@ Router.get('/', VerifyToken, function(req, res) {
 
 	models.Flashcard.findAll(query)
 	.then(function(foundFlashcards) {
+		let isMore = true;
+		if(foundFlashcards.length < parseInt(req.query.limit)) {
+			isMore = false;
+		}
 		res.status(200).send({
-			flashcards: foundFlashcards
+			flashcards: foundFlashcards,
+			isMore
 		});
 	});
 });

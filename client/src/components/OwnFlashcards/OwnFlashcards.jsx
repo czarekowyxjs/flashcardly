@@ -9,7 +9,7 @@ import TinyLoader from '../Commons/Loader/TinyLoader.jsx';
 class OwnFlashcards extends Component {
 	componentDidMount() {
 		this.props.getManyFlashcards();
-		document.title = "Flashcardly - flashcards";
+		document.title = "Flashcardly";
 	}
 
 	componentWillUnmount() {
@@ -23,11 +23,12 @@ class OwnFlashcards extends Component {
 	renderFlashcardPreviews = () => {
 		const ownFlashcards = this.props.user.ownFlashcards;
 		return ownFlashcards.map((key, index) => {
-			return <SingleFlashcardPreview key={key.fid} flashcard={key}/>
+			return <SingleFlashcardPreview lang={this.props.user.lang} key={key.fid} flashcard={key}/>
 		});
 	}
 
 	render() {
+		const lang = this.props.user.lang;
 		return (
 			<div className="flashcards_window">
 				<div className="flashcards_block">
@@ -42,7 +43,7 @@ class OwnFlashcards extends Component {
 							</div>)
 						}
 						<div className="flashcards_block_header_title">
-							<h3>Your flashcards</h3>
+							<h3>{lang.titles.yourFlashcards}</h3>
 						</div>
 					</div>
 					<div className="flashcards_block_body">
@@ -50,18 +51,22 @@ class OwnFlashcards extends Component {
 							this.props.user.screen.width <= 800 
 							?(<div className="flashcards_add_flashcard_body_btn">
 								<Link to="/flashcards/create" className="flashcardly_btn flashcardly_btn--light-blue">
-									<span>Create new set of flashcards</span>
+									<span>{lang.contents.createNewSetOfFlashcards}</span>
 								</Link>
 							</div>)
 							: null
 						}
 						<div className="flashcards_block_previews">
-							{this.props.user.ownFlashcards.length > 0 ? this.renderFlashcardPreviews() : (this.props.user.ownFlashcardsLoaded ? <p>You don't have any flashcards yet</p> : null)}
+							{this.props.user.ownFlashcards.length > 0 ? this.renderFlashcardPreviews() : (this.props.user.ownFlashcardsLoaded ? <p>{lang.contents.emptyFlashcards}</p> : null)}
 							{this.props.user.ownFlashcardsLoaded ? null : <TinyLoader/>}
 						</div>
-						<div className="flashcards_block_load_previews">
-							<button onClick={this.handleLoadMorePreviews}>Show more</button>
-						</div>
+						{
+							this.props.user.ownFlashcardsIsMore
+							? (<div className="flashcards_block_load_previews">
+								<button onClick={this.handleLoadMorePreviews}>{lang.buttons.showMore}</button>
+								</div>)
+							: null
+						}
 					</div>
 				</div>
 			</div>

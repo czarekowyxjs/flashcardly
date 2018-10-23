@@ -65,12 +65,12 @@
 
 .login_body_footer > .flashcardly_btn_container {
 	justify-content:flex-end;
-	width:88px;	
+	width:auto;	
 	padding-right:9px;
 }
 
 .login_body_footer > .login_redirect_info {
-	width:50%;
+	width:60%;
 
 }
 

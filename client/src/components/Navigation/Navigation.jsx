@@ -6,13 +6,14 @@ import "./Navigation.css";
 
 class Navigation extends Component {
 	render() {
+		const lang = this.props.lang;
 		return (
 			<div className="app_nav_global">
 				<nav>
 					<ul className="nav_global_directly">
-						<li><NavLink to="/"><span>FLashcards</span></NavLink></li>
+						<li><NavLink to="/"><span>{lang.nav.flashcards}</span></NavLink></li>
 						<li><NavLink to="/tasks"><i><MdPlaylistAddCheck/></i></NavLink></li>
-						<li><NavLink to="/signout"><span>Logout</span></NavLink></li>
+						<li><NavLink to="/signout"><span>{lang.nav.logout}</span></NavLink></li>
 					</ul>
 				</nav>
 			</div>

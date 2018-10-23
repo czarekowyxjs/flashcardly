@@ -16,7 +16,7 @@ class Register extends Component {
 	}
 
 	componentDidMount() {
-		document.title = "Sign up in Flashcardly";
+		document.title = this.props.user.lang.titles.registerTitle;
 	}
 
 	handleFormLoginChange = (e) => {
@@ -32,6 +32,7 @@ class Register extends Component {
 	}
 
 	render() {
+		const lang = this.props.user.lang;
 		if(this.props.user.isLoggedIn) {
 			return <Redirect to="/"/>;
 		}
@@ -40,7 +41,7 @@ class Register extends Component {
 				<div className="app_login">
 					<div className="login_wrapper">
 						<div className="login_header">
-							<h2>Sign up in Flashcardly</h2>
+							<h2>{lang.titles.registerTitle}</h2>
 						</div>
 						<div className="login_body">
 							{
@@ -49,7 +50,7 @@ class Register extends Component {
 								: (this.props.user.register.loaded && !this.props.user.register.error
 									?	<p>Confirm your email address</p>
 									: (<form onSubmit={this.handleLoginFormSubmit}>
-										<label htmlFor="username">Username</label>
+										<label htmlFor="username">{lang.username}</label>
 										<input
 											type="text"
 											id="username"
@@ -58,8 +59,8 @@ class Register extends Component {
 											onChange={this.handleFormLoginChange}
 											className="flashcardly_input"
 										/> 
-										<p>It's your username, visible for other users. Remember: Your username should be unique.</p>
-										<label htmlFor="email">Email address</label>
+										<p>{lang.contents.registerUsernameDesc}</p>
+										<label htmlFor="email">{lang.emailAddress}</label>
 										<input
 											type="text"
 											id="email"
@@ -68,8 +69,8 @@ class Register extends Component {
 											onChange={this.handleFormLoginChange}
 											className="flashcardly_input"
 										/> 
-										<p>It's your email address. This one isn't visible for other users. By this one you can confirm your register and sign in</p>
-										<label htmlFor="password">Password</label>
+										<p>{lang.contents.registerEmailDesc}</p>
+										<label htmlFor="password">{lang.password}</label>
 										<input
 											type="password"
 											id="password"
@@ -78,8 +79,8 @@ class Register extends Component {
 											onChange={this.handleFormLoginChange}
 											className="flashcardly_input"
 										/>
-										<p>Remember! Password should be secure. Minimum 8 characters, small and big letter, numbers etc.</p>
-										<label htmlFor="password2">Repeat password</label>
+										<p>{lang.contents.registerPasswordDesc}</p>
+										<label htmlFor="password2">{lang.repeatPassword}</label>
 										<input
 											type="password"
 											id="password2"
@@ -90,12 +91,12 @@ class Register extends Component {
 										/>
 										<div className="login_body_footer">
 											<div className="login_redirect_info">
-												<span>If you have account, you can log in </span>
-												<Link to="/signin">here</Link>
+												<span>{lang.contents.registerFooterInfo.content}</span>
+												<Link to="/signin">{lang.contents.registerFooterInfo.loginURL}</Link>
 											</div>
 											<div className="flashcardly_btn_container">
 												<button className="flashcardly_btn flashcardly_btn--common">
-													Sign Up
+													{lang.buttons.register}
 												</button>
 											</div>
 										</div>

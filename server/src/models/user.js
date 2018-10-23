@@ -50,15 +50,15 @@ module.exports = (sequelize, DataTypes) => {
     User.hasMany(models.Flashcard, { foreignKey: 'author' });
   };
 
-  User.getFullUserData = function(uid) {
+  User.getFullUserData = function(userToken) {
     return this.findOne({
-      where: {
-        uid: uid
-      },
       include: [{
         model: sequelize.models.User_options
       }, {
-        model: sequelize.models.Token
+        model: sequelize.models.Token,
+        where: {
+          token: userToken
+        }
       }],
       attributes: {
         exclude: ['password']

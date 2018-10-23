@@ -43,7 +43,7 @@ class AddWordForm extends Component {
 		return (
 			<div className={`flashcard_word_table_row flashcard_word_table_row--add`}>
 				<div className="flashcard_word_table_field flashcard_word_table_field--learned">
-					<WordSearcher flashcardData={this.props.flashcard} methods={this.props.methods} searched={this.props.searched}/>
+					<WordSearcher lang={this.props.lang} flashcardData={this.props.flashcard} methods={this.props.methods} searched={this.props.searched}/>
 				</div>
 				<div className="flashcard_word_table_field">
 					<span>

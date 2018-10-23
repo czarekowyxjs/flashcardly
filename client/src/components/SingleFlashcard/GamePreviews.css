@@ -10,7 +10,8 @@
 }
 
 .single_flashcard_game {
-	width:150px;
+	min-width:150px;
+	max-width:220px;
 	height:40px;
 	background-color:rgba(0,0,0,0.02);
 	border-radius:2px;
@@ -35,8 +36,8 @@
 
 .single_flashcard_game_header > p {
 	color:rgba(0,0,0,0.7);
-	max-width:80%;
 	letter-spacing:0.2px;
+	padding:2px 5px;
 	font-size:0.8rem;
 	font-weight:600;
 }

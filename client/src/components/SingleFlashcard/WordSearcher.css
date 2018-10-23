@@ -12,7 +12,7 @@
 	opacity:1;
 }
 
-.single_flashcard_word_searcher_body {
+.single_flashcard_word_searcher_body, .single_flashcard_word_searcher_body > form {
 	width:100%;
 	display:flex;
 	align-items:center;
@@ -21,11 +21,11 @@
 	padding:0px 16px;
 }
 
-.single_flashcard_word_searcher_body > input {
+.single_flashcard_word_searcher_body > form > input {
 	width:100%;
 }
 
-.single_flashcard_word_searcher_body > .flashcardly_btn_container {
+.single_flashcard_word_searcher_body > form > .flashcardly_btn_container {
 	justify-content:flex-end;
 	margin:9px 16px 9px 0px;
 }

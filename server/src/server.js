@@ -7,9 +7,12 @@ const helmet = require("helmet");
 const AuthenticationController = require("./controllers/AuthenticationController");
 const FlashcardController = require("./controllers/FlashcardController");
 const UserController = require("./controllers/UserController");
+const ServiceController = require("./controllers/ServiceController");
 
 const app = express();
 require("dotenv");
+
+
 //
 app.use("/img", express.static(__dirname+"/public/images"));
 if(process.env.NODE_ENV == "production") {
@@ -24,6 +27,7 @@ app.use(validator());
 app.use('/api/v1/authentication', AuthenticationController);
 app.use('/api/v1/flashcards', FlashcardController);
 app.use('/api/v1/users', UserController);
+app.use('/api/v1/service', ServiceController);
 //
 if(process.env.NODE_ENV == "production") {
 	app.use("/*", function(req, res) {

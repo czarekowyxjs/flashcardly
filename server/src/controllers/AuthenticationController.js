@@ -61,26 +61,26 @@ Router.post("/signin", function(req, res) {
 });
 
 Router.post("/verify", VerifyToken, function(req, res, next) {
-	models.User.getFullUserData(res.locals.uid).then(function(foundUser) {
+	return models.User.getFullUserData(req.headers.authorization).then(function(foundUser) {
 		if(foundUser) {
 			req.foundUser = foundUser;
-			next();
+			return next();
 		} else {
-			res.status(404).send({
+			return res.status(404).send({
 				error: true,
 				message: "Error"
 			});
 		}
 	})
 	.catch(function(err) {
-		res.status(500).send({
+		return res.status(500).send({
 			error: true
 		});
-	})
+	});
 }, function(req, res) {
 
 	const uniqueToken = models.Token.generateToken();
-	models.Token.update({
+	return models.Token.update({
 		token: uniqueToken
 	}, {
 		where: {
@@ -89,15 +89,17 @@ Router.post("/verify", VerifyToken, function(req, res, next) {
 	})
 	.then(function(updatedToken) {
 		if(updatedToken) {
-			res.status(200).send({
+			return res.status(200).send({
 				error: false,
 				user: req.foundUser,
 				token: uniqueToken
 			});
+		} else {
+			return;
 		}
 	})
 	.catch(function(err) {
-		res.status(500).send({
+		return res.status(500).send({
 			error: true,
 			err
 		});

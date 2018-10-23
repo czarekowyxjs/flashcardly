@@ -51,11 +51,11 @@ class SingleWord extends Component {
 							<div className="word_table_editable_options">
 								<button 
 									className="word_table_editable_btn"
-									onClick={this.handleConfirmEdit}>Save your changes</button>
-								<span>or</span>
+									onClick={this.handleConfirmEdit}>{this.props.lang.titles.saveChanges}</button>
+								<span>{this.props.lang.shorts.or}</span>
 								<button 
 									className="word_table_editable_btn"
-									onClick={this.handleCancelEdit}>Cancel</button>
+									onClick={this.handleCancelEdit}>{this.props.lang.shorts.cancel}</button>
 							</div>
 						) :
 						null
@@ -74,7 +74,7 @@ class SingleWord extends Component {
 						 : this.props.wordData.secondColumnValue}
 					</span>
 				</div>
-				<SingleWordOptions wordData={this.props.wordData} methods={this.props.methods}/>
+				<SingleWordOptions lang={this.props.lang} wordData={this.props.wordData} methods={this.props.methods}/>
 			</div>
 		);
 	}
