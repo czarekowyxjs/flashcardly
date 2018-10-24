@@ -3,17 +3,19 @@
 	flex-direction:row;
 	align-items:center;
 	justify-content:flex-start;
-	padding:15px 0px 0px 15px;
+	padding:0px 0px 0px 0px;
 }
 
 .app_user_bar_av {
+	position:relative;
 	margin-right:7px;
 }
 
 .app_user_bar_av > img {
 	border-radius:100%;
-	width:45px;
-	height:45px;
+	margin-top:3px;
+	width:32px;
+	height:32px;
 	cursor:pointer;
 	transition:transform 200ms linear;
 }
@@ -31,13 +33,14 @@
 }
 
 .user_bar_basic_info--fullname {
-	font-size:1rem;
+	font-size:0.85rem;
 	font-weight:600;
 	color:#fbfbfb;
 }
 
 .user_bar_basic_info--displayname {
-	font-size:0.85rem;
+	font-size:0.8rem;
+	display:none;
 	color:rgba(255,255,255,0.85);
 }
 

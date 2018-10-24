@@ -47,7 +47,11 @@
 		"minute": "minute",
 		"minutes": "minutes",
 		"cancel": "Cancel",
-		"or": "or"
+		"or": "or",
+		"loading": "Loading",
+		"loadingAccountData": "Loading account data",
+		"loadingGame": "Loading game",
+		"sthInSth": "in"
 	},
 	"contents": {
 		"registerUsernameDesc": "It's your username, visible for other users. Remember: Your username should be unique.",

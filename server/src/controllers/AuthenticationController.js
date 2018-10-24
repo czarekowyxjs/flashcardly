@@ -64,7 +64,8 @@ Router.post("/verify", VerifyToken, function(req, res, next) {
 	return models.User.getFullUserData(req.headers.authorization).then(function(foundUser) {
 		if(foundUser) {
 			req.foundUser = foundUser;
-			return next();
+			next();
+			return null;
 		} else {
 			return res.status(404).send({
 				error: true,
@@ -107,7 +108,7 @@ Router.post("/verify", VerifyToken, function(req, res, next) {
 });
 
 Router.post("/verifyreverse", function(req, res) {
-	models.User.findOne({
+	return models.User.findOne({
 		include: [{
 			model: models.Token,
 			where: {
@@ -117,37 +118,39 @@ Router.post("/verifyreverse", function(req, res) {
 	})
 	.then(function(foundToken) {
 		if(foundToken) {
-			res.status(200).send({
+			return res.status(200).send({
 				error: false
 			});
 		} else {
-			res.status(203).send({
+			return res.status(203).send({
 				error: false
 			});
 		}
 	})
 	.catch(function(err) {
-		res.status(500).send({
+		return res.status(500).send({
 			error: true
 		});
 	})
 })
 
 Router.post("/signout", VerifyToken, function(req, res) {
-	models.Token.destroy({
+	return models.Token.destroy({
 		where: {
 			token: req.headers.authorization
 		}
 	})
 	.then(function(deletedToken) {
 		if(deletedToken) {
-			res.status(200).send({
+			return res.status(200).send({
 				error: false
 			});
 		}
 	})
 	.catch(function(err) {
-
+		return res.status(500).send({
+			error: true
+		});
 	});
 });
 
@@ -162,15 +165,16 @@ Router.post("/signup", function(req, res, next) {
 
 	if(!errors) {
 		next();
+		return null;
 	} else {
-		res.status(404).send({
+		return res.status(404).send({
 			error: true,
 			errors
 		});
 	}
 
 }, function(req, res, next) {
-	models.User.findOne({
+	return models.User.findOne({
 		where: {
 			[Op.or]: [
 				{ username: req.body.username },
@@ -180,16 +184,17 @@ Router.post("/signup", function(req, res, next) {
 	})
 	.then(function(foundMultiUser) {
 		if(foundMultiUser) {
-			res.status(404).send({
+			return res.status(404).send({
 				error: false,
 				message: "That account is already exist"
 			});
 		} else {
 			next();
+			return null;
 		}
 	})
 }, function(req, res, next) {
-	models.User.createUser({
+	return models.User.createUser({
 		username: req.body.username,
 		email: req.body.email,
 		password: req.body.password
@@ -198,8 +203,9 @@ Router.post("/signup", function(req, res, next) {
 		if(createdUser) {
 			req.createdUser = createdUser;
 			next();
+			return null;
 		} else {
-			res.status(404).send({
+			return res.status(404).send({
 				error: true
 			});
 		}
@@ -213,15 +219,15 @@ Router.post("/signup", function(req, res, next) {
 		html: `<p>Hello, it is last step of sign up in Flashcardly. You have to only confirm your email address in this link: <a href='${mail.host+"confirm/"+req.createdUser.user.dataValues.emailHash}'>${mail.host+"confirm/"+req.createdUser.user.dataValues.emailHash}</a></p>`
 	};
 
-	mail.transporter.sendMail(mailSettings, function(err, info) {
-		res.status(200).send({
+	return mail.transporter.sendMail(mailSettings, function(err, info) {
+		return res.status(200).send({
 			error: false
 		});
 	});
 });
 
 Router.put("/email/confirm", function(req, res, next) {
-	models.User.findOne({
+	return models.User.findOne({
 		where: {
 			emailHash: req.body.hash
 		},
@@ -238,20 +244,21 @@ Router.put("/email/confirm", function(req, res, next) {
 		if(foundUser) {
 			req.uid = foundUser.uid;
 			next();
+			return null;
 		} else {
-			res.status(403).send({
+			return res.status(403).send({
 				error: true,
 				message: "Permission denied"
 			});
 		}
 	})
 	.catch(function(err) {
-		res.status(500).send({
+		return res.status(500).send({
 			error: true
 		});
 	})
 }, function(req, res) {
-	models.User_options.update({
+	return models.User_options.update({
 		emailConfirm: true
 	}, {
 		where: {
@@ -260,11 +267,11 @@ Router.put("/email/confirm", function(req, res, next) {
 	})
 	.then(function(updatedUserOptions) {
 		if(updatedUserOptions) {
-			res.status(200).send({
+			return res.status(200).send({
 				error: false
 			});
 		} else {
-			res.status(404).send({
+			return res.status(404).send({
 				error: true
 			});
 		}

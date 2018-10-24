@@ -47,7 +47,11 @@
 		"minute": "minutę",
 		"minutes": "minut",
 		"cancel": "Anuluj",
-		"or": "lub"
+		"or": "lub",
+		"loading": "Ładowanie",
+		"loadingAccountData": "Ładowanie danych użytkownika",
+		"loadingGame": "Ładowanie gry",
+		"sthInSth": "z"
 	},
 	"contents": {
 		"registerUsernameDesc": "Nazwa użytkownika jest widoczna dla innych użytkowników. Pamiętaj, aby była unikalna",

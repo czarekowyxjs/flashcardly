@@ -11,8 +11,6 @@ const ServiceController = require("./controllers/ServiceController");
 
 const app = express();
 require("dotenv");
-
-
 //
 app.use("/img", express.static(__dirname+"/public/images"));
 if(process.env.NODE_ENV == "production") {

@@ -1,5 +1,5 @@
 .app_nav_global {
-	margin:0px 15px 0px 0px;
+	padding:20px 15px 0px 0px;
 }
 
 .app_nav_global > nav {
@@ -11,26 +11,28 @@
 	list-style-type:none;
 	display:flex;
 	flex-direction:row;
-	align-items:center;
-	justify-content:flex-start;
 }
 
 .nav_global_directly > li {
-	height:20px;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	position:relative;
+	height:22px;
 	border-left:1px solid rgba(255,255,255,0.1);
 	border-right:1px solid rgba(0,0,0,0.1);
 }
 
-.nav_global_directly > li > a {
-	padding:12px 16px;
-	height:30px;
+.nav_global_directly_item {
 	color:#fbfbfb;
 	font-weight:600;
 	text-decoration:none;
+	padding:0px 12px;
+	cursor:pointer;
 }
 
 .nav_global_directly > li > a:hover {
-	opacity:0.8;
+	
 }
 
 .nav_global_directly > li:first-of-type {
@@ -46,7 +48,95 @@
 }
 
 .nav_global_directly > li > a > i {
-	font-size:1.3rem;
+	font-size:1.2rem;
+}
+
+.nav_drop_down_menu_wrapper {
+	position:relative;
+}
+
+.nav_drop_down_menu_icon {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	cursor:pointer;
+}
+
+.nav_drop_down_menu_icon > i {
+	width:0px;
+	height:0px;
+	border-top:7px solid #fbfbfb;
+	border-left:6px solid transparent;
+	border-right:6px solid transparent;
+	opacity:0.6;
+}
+
+.nav_drop_down_menu {
+	position:absolute;
+	right:-10px;
+	top:15px;
+	width:180px;
+	display:flex;
+	flex-direction:column;
+}
+
+.nav_drop_down_menu_content {
+	width:100%;
+}
+
+.nav_drop_down_menu_traingle_wrapper {
+	width:100%;
+	display:flex;
+	flex-direction:row;
+	justify-content:flex-end;
+}
+
+.nav_drop_down_menu_traingle {
+	width:0px;
+	height:0px;
+	margin-right:10px;
+	border-left:6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom:7px solid #fbfbfb;
+}
+
+.nav_drop_down_menu_menu {
+	width:100%;
+	background-color:#fbfbfb;
+	border-radius:2px;
+	padding:6px 0px;
+	box-shadow:0px 1px 5px 0px rgba(0,0,0,0.4);
+}
+
+.nav_drop_down_menu_menu > ul {
+	list-style-type:none;
+	display:flex;
+	flex-direction:column;
+}
+
+.nav_drop_down_menu_menu > ul > li {
+	width:100%;
+	display:flex;
+	align-items:center;
+	justify-content:flex-start;
+}
+
+.nav_drop_down_menu_menu > ul > li > a {
+	color:#2e2e2e;
+	width:100%;
+	font-size:0.75rem;
+	font-weight:400;
+	padding:3px 12px;
+	cursor:pointer;
+	border-top:1px solid transparent;
+	border-bottom:1px solid transparent;
+}
+
+.nav_drop_down_menu_menu > ul > li > a:hover {
+	background:#e96443;
+	color:#fbfbfb;
+	border-top:1px solid rgba(0,0,0,0.1);
+	border-bottom:1px solid rgba(0,0,0,0.1);	
 }
 
 @media (max-width: 800px) {

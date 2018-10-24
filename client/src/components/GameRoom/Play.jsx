@@ -30,7 +30,7 @@ class Play extends Component {
 
 		switch(parseInt(this.search.get("type"), 10)) {
 			case 1:
-				return <Standard flashcard={this.props.flashcard} game={this.props.game} methods={methods}/>;
+				return <Standard lang={this.props.user.lang} flashcard={this.props.flashcard} game={this.props.game} methods={methods}/>;
 			default:
 				return null;
 		}
@@ -38,7 +38,7 @@ class Play extends Component {
 
 	render() {
 		if(!this.props.game.fetchFlashcardGameLoaded) {
-			return <Loader message="Loading game"/>;
+			return <Loader message={this.props.user.lang.shorts.loadingGame}/>;
 		}
 		return (
 			<div className="game_window">
@@ -51,7 +51,8 @@ class Play extends Component {
 const mapStateToProps = state => {
 	return {
 		flashcard: state.flashcard,
-		game: state.game
+		game: state.game,
+		user: state.user
 	};
 };
 
