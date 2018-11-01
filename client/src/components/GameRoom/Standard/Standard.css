@@ -143,10 +143,10 @@
 .single_word_content_text > span {
 	font-size:3rem;
 	font-weight:600;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  word-break: break-all;
-  hyphens: auto;	
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	word-break: break-all;
+	hyphens: auto;	
 }
 
 .single_word_content_options {
@@ -181,7 +181,12 @@
 }
 
 .single_word_content_check.single_word_content_check_checked {
-	color:#66cc33;
+	color:#e96443;
+	transition:color 200ms linear;
+}
+
+.single_word_content_check.single_word_content_check_checked:hover {
+	color:#904e95;
 }
 
 .single_word_content_check.single_word_content_check_notchecked {	

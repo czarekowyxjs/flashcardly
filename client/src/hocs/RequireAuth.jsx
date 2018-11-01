@@ -18,11 +18,12 @@ export const RequireAuth = (Component) => {
 		}
 
 		render() {
+			const lang = this.props.user.lang;
 			if(!this.props.user.auth.loaded && this.props.user.userData.username && this.props.user.auth.processing) {
 				return <Component {...this.props}/>;
 			}
 			if(!this.props.user.auth.loaded) {
-				return <Loader message="Loading your account data"/>;
+				return <Loader message={lang.shorts.loadingAccountData}/>;
 			}
 			if(!this.props.user.isLoggedIn) {
 				return <Redirect to="/signin"/>;
@@ -48,11 +49,12 @@ export const RequireAuthReverse = (Component) => {
 		}
 
 		render() {
+			const lang = this.props.user.lang;
 			if(!this.props.user.auth.loaded && this.props.user.auth.processing) {
 				return <Component {...this.props}/>;
 			}
 			if(!this.props.user.auth.loaded) {
-				return <Loader message="Loading"/>;
+				return <Loader message={lang.shorts.loading}/>;
 			}
 			if(this.props.user.auth.loaded && !this.props.user.isLoggedIn) {
 				return <Component {...this.props}/>;

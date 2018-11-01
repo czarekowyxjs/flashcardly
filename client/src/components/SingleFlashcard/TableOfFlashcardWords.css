@@ -50,6 +50,10 @@
 	width:100%;
 	font-size:1.1rem;
 	padding:9px;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	word-break: break-all;
+	hyphens: auto;	
 }
 
 .flashcard_word_table_row--header > .flashcard_word_table_field {
@@ -107,7 +111,7 @@
 .single_word_options_wrapper {
 	background-color:#fbfbfb;
 	padding:5px 0px;
-	border-radius:3px;
+	border-radius:2px;
 	max-width:300px;
 	box-shadow:0px 1px 4px 0px rgba(0,0,0,0.3);
 }
@@ -184,6 +188,16 @@
 	display:inline-block;
 	margin-top:5px;
 	font-size:1.8rem;
+}
+
+.flashcard_word_table_field--learned_icon.flashcard_word_table_field--learned_icon--top {
+	color:rgba(255,255,255,0.7);
+	cursor:pointer;
+	transition:color 200ms linear;
+}
+
+.flashcard_word_table_field--learned_icon.flashcard_word_table_field--learned_icon--top:hover {
+	color:rgba(255,255,255,0.9);
 }
 
 .flashcard_word_table_field--learned_icon.flashcard_word_table_field--learned_icon--true {

@@ -37,7 +37,9 @@ class SingleWordOptions extends Component {
 	render() {
 		return (
 			<div className="flashcard_word_table_field--options">
-				<span onClick={this.toggleOptionsVisibility}><IoIosMore/></span>
+				<span onClick={this.toggleOptionsVisibility}>
+					<IoIosMore/>
+				</span>
 				{this.state.optionsVisibility ? this.renderOptions() : null}
 			</div>	
 		);

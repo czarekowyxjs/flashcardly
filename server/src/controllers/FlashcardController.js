@@ -119,6 +119,11 @@ Router.get('/:fid', VerifyToken, function(req, res) {
 				message: 'Unknown flashcard'
 			});
 		}
+	})
+	.catch(function(err) {
+		res.status(500).send({
+			error: true
+		});
 	});
 });
 

@@ -12,11 +12,11 @@ Router.post("/signin", function(req, res) {
 		},
 		include: [{
 			model: models.User_options,
-			where: {
+			/*where: {
 				emailConfirm: {
 					[Op.not]: false
 				}
-			}
+			}*/
 		}],
 		attributes: {
 			exclude: ['password']
@@ -211,6 +211,9 @@ Router.post("/signup", function(req, res, next) {
 		}
 	});
 }, function(req, res) {
+	return res.status(200).send({
+			error: false
+	});
 	const mailSettings = {
 		from: '"Flashcardly" <mailer.bot.service@gmail.com>',
 		to: req.createdUser.user.dataValues.email,

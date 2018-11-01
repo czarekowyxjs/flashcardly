@@ -52,9 +52,10 @@ class SingleFlashcard extends Component {
 	}
 
 	render() {
+
 		const lang = this.props.user.lang;
 		if(!this.props.flashcard.fetchFlashcardLoaded) {
-			return <Loader message="Loading flashcard data"/>;
+			return <Loader message={lang.shorts.loadingFlashcard}/>;
 		}
 		const methods = {
 			handlerAddNewWord: this.handlerAddNewWord,
@@ -67,7 +68,7 @@ class SingleFlashcard extends Component {
 		return (
 			<div className="flashcards_window">
 				{!this.props.user.userData.User_option.flashcardIntro
-					? <Introduce methods={methods}/>
+					? <Introduce user={this.props.user} methods={methods}/>
 					: null}
 				<div className="flashcards_block">
 					<div className="single_flashcard_header">

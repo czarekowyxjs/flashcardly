@@ -7,7 +7,8 @@
 		"flashcards": "Flashcards",
 		"logout": "Log Out",
 		"privacy": "Privacy",
-		"cookies": "Cookies"
+		"cookies": "Cookies",
+		"settings": "Settings"
 	},
 	"titles": {
 		"loginTitle": "Log in to Flashcardly",
@@ -19,6 +20,7 @@
 		"nameSecondColumn": "Name of the second column",
 		"flashcardsCreator": "Flashcards creator",
 		"standardLearning": "Standard learning",
+		"guessByWriting": "Guess by writing",
 		"deleteWord": "Delete (permanently)",
 		"editWord": "Edit this word",
 		"saveChanges": "Save your changes",
@@ -51,6 +53,7 @@
 		"loading": "Loading",
 		"loadingAccountData": "Loading account data",
 		"loadingGame": "Loading game",
+		"loadingFlashcard": "Loading flashcard data",
 		"sthInSth": "in"
 	},
 	"contents": {
@@ -72,5 +75,22 @@
 		"standardLearnMode": "Standard learn mode",
 		"createNewSetOfFlashcards": "Create new set of flashcards",
 		"emptyFlashcards": "You don't have any flashcards yet"
-	}
+	},
+	"flashcardsIntroduce": [
+		{
+			"title": "It's your first set of flashcards!",
+			"content": "Hello! I see that you created your fist set of flashcards. Here you can expand your vocabulary and learn anywhen you want. How?",
+			"btn": "Next"
+		}, 
+		{
+			"title": "Adding new words",
+			"content": "Every your set of flashcards has two fields in which you can enter your words and add this ones. You can confirm adding words by little button beside second field or by click enter.",
+			"btn": "Next"			
+		},
+		{
+			"title": "Time for learn!",
+			"content": "When you collect enough words, you should try our little games to learn it! This will help you in remember a lot of words! ",
+			"btn": "Try!"			
+		}
+	]
 }

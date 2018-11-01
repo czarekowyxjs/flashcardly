@@ -17,9 +17,14 @@ class GamePreviews extends Component {
 		return (
 			<div className="single_flashcard_games">
 				<div className="single_flashcard_games_wrapper">
-					<div className="single_flashcard_game">
-						<div className="single_flashcard_game_header" onClick={(e) => this.enterToGameRoom(e, "standard")}>
+					<div className="single_flashcard_game" onClick={(e) => this.enterToGameRoom(e, "standard")}>
+						<div className="single_flashcard_game_header">
 							<p>{this.props.lang.titles.standardLearning}</p>
+						</div>
+					</div>
+					<div className="single_flashcard_game" onClick={(e) => this.enterToGameRoom(e, "guessStandard")}>
+						<div className="single_flashcard_game_header">
+							<p>{this.props.lang.titles.guessByWriting}</p>
 						</div>
 					</div>
 				</div>

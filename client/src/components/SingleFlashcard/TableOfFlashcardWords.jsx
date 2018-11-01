@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SingleWord from './SingleWord.jsx';
 import AddWordForm from './AddWordForm.jsx';
 import AddWordLoader from './AddWordLoader.jsx';
+import { MdExpandLess } from 'react-icons/md';
 
 import "./TableOfFlashcardWords.css";
 
@@ -37,6 +38,10 @@ class TableOfFlashcardWords extends Component {
 		});
 	}
 
+	handleGoToTop = (e) => {
+		window.scrollTo(0, 0);
+	}
+
 	render() {
 		const flashcard = this.props.flashcard;
 
@@ -47,6 +52,9 @@ class TableOfFlashcardWords extends Component {
 			<div className="single_flashcard_words_table">
 				<div className="flashcard_word_table_row flashcard_word_table_row--header" ref={this.tableHeaderRef}>
 					<div className="flashcard_word_table_field flashcard_word_table_field--learned">
+						<div className={`flashcard_word_table_field--learned_icon flashcard_word_table_field--learned_icon--top`} title="Go to top" onClick={this.handleGoToTop}>
+							<MdExpandLess/>
+						</div>
 					</div>
 					<div className="flashcard_word_table_field">
 						<span>{flashcard.flashcardData.firstColumnName}</span>
@@ -55,7 +63,7 @@ class TableOfFlashcardWords extends Component {
 						<span>{flashcard.flashcardData.secondColumnName}</span>
 					</div>
 					<div className="flashcard_word_table_field--options">
-						<span>xd</span>
+						<span></span>
 					</div>
 				</div>
 				<AddWordForm lang={this.props.lang} methods={this.props.methods} flashcard={flashcard} searched={this.state.searched}/>

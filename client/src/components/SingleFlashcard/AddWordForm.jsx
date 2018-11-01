@@ -40,6 +40,7 @@ class AddWordForm extends Component {
 	}
 
 	render() {
+		if(!this.props.flashcard.userIsAuthor) return null;
 		return (
 			<div className={`flashcard_word_table_row flashcard_word_table_row--add`}>
 				<div className="flashcard_word_table_field flashcard_word_table_field--learned">

@@ -7,7 +7,8 @@
 		"flashcards": "Fiszki",
 		"logout": "Wyloguj się",
 		"privacy": "Polityka prywatności",
-		"cookies": "Ciasteczka"
+		"cookies": "Ciasteczka",
+		"settings": "Ustawienia"
 	},
 	"titles": {
 		"loginTitle": "Wejdź do Flashcardly",
@@ -19,6 +20,7 @@
 		"nameSecondColumn": "Tytuł drugiej kolumny",
 		"flashcardsCreator": "Kreator fiszek",
 		"standardLearning": "Standardowa nauka",
+		"guessByWriting": "Zgaduj pisząc",
 		"deleteWord": "Usuń to słowo (nieodwracalnie)",
 		"editWord": "Edytuj słowo",
 		"saveChanges": "Zapisz zmiany",
@@ -51,6 +53,7 @@
 		"loading": "Ładowanie",
 		"loadingAccountData": "Ładowanie danych użytkownika",
 		"loadingGame": "Ładowanie gry",
+		"loadingFlashcard": "Ładowanie zestawu fiszek",
 		"sthInSth": "z"
 	},
 	"contents": {
@@ -72,5 +75,22 @@
 		"standardLearnMode": "Standardowy tryb nauki",
 		"createNewSetOfFlashcards": "Stwórz nowy zestaw fiszek",
 		"emptyFlashcards": "Jeszcze nie posiadasz żadnych fiszek"
-	}
+	},
+	"flashcardsIntroduce": [
+		{
+			"title": "To Twój pierwszy zestaw fiszek!",
+			"content": "Witaj! Brawo, udało Ci się stworzyć swój pierwszy zestaw fiszek. Możesz tutaj poszerzać swoje słownictwo i uczyć się go kiedy tylko zechcesz. Jak?",
+			"btn": "Dalej"
+		}, 
+		{
+			"title": "Dodawanie nowych słowek",
+			"content": "Każda fiszka posiada dwa pola w których możesz wprowadzać nowe słowa. Frazę i jej tłumaczenie możesz dodać klikając mały plusik po prawej stronie lub Enter",
+			"btn": "Dalej"			
+		},
+		{
+			"title": "Czas na naukę!",
+			"content": "Kiedy zbierzesz dość słów, spróbuj ich się uczyć poprzez nasze mini gry! Są one bardzo pomocne w nauce wielu słówek! ",
+			"btn": "Zaczynam!"			
+		}
+	]
 }

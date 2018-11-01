@@ -31,21 +31,22 @@ class Introduce extends Component {
 	}
 
 	render() {
+		const steps = this.props.user.lang.flashcardsIntroduce;
 		return (
 			<div className="flashcards_window_introduce">
 				<div className="flashcards_window_introduce_dialog">
 					<div className="flashcards_window_introduce_dialog_header">
 						<div className="flashcards_window_introduce_dialog_title">
-							<span>{this.state.steps[this.state.actualStep].title}</span>
+							<span>{steps[this.state.actualStep].title}</span>
 						</div>
 					</div>
 					<div className="flashcards_window_introduce_dialog_body">
 						<div className="flashcards_window_introduce_dialog_content">
-							<p>{this.state.steps[this.state.actualStep].content}</p>
+							<p>{steps[this.state.actualStep].content}</p>
 						</div>
 						<div className="flashcards_window_introduce_dialog_btn">
 							<button className="flashcardly_btn flashcardly_btn--common" onClick={this.changeStep}>
-								{this.state.steps[this.state.actualStep].btn}
+								{steps[this.state.actualStep].btn}
 							</button>
 						</div>	
 					</div>

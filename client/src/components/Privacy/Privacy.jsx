@@ -30,7 +30,6 @@ class Privacy extends Component {
 									<p>Personal Data</p>
 									<p>While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you ("Personal Data"). Personally identifiable information may include, but is not limited to:</p>
 									<ul>
-										<li>First name and last name</li>
 										<li>Cookies and Usage Data</li>
 									</ul>
 									<p>Usage Data</p>

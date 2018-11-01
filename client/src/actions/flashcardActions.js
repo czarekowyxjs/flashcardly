@@ -65,7 +65,6 @@ export const fetchFlashcardSet = (flashcardID) => {
 			}
 
 			const userIsAuthor = response.data.author.uid === userState.userData.uid;
-
 			const emptyFlashcardSet = response.data.flashcard.Words.length < 1;
 
 			dispatch({
