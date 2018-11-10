@@ -1,6 +1,7 @@
 {
 	"username": "Username",
 	"emailAddress": "Email address",
+	"emailAddressOrUsername": "Email address or username",
 	"password": "Password",
 	"repeatPassword": "Repeat password",
 	"nav": {
@@ -8,7 +9,11 @@
 		"logout": "Log Out",
 		"privacy": "Privacy",
 		"cookies": "Cookies",
-		"settings": "Settings"
+		"settings": "Settings",
+		"primary": "Primary",
+		"securityAndPrivacy": "Security & Privacy",
+		"sessions": "Sessions",
+		"deleteAccount": "Delete account"
 	},
 	"titles": {
 		"loginTitle": "Log in to Flashcardly",
@@ -23,9 +28,13 @@
 		"guessByWriting": "Guess by writing",
 		"deleteWord": "Delete (permanently)",
 		"editWord": "Edit this word",
+		"reportWordErrorToAuthor": "Report an error in this word to the author",
+		"reportWordToAdmin": "Report this word to the administration",
 		"saveChanges": "Save your changes",
 		"changeYourAvatar": "Change your avatar",
-		"wordFinder": "Word finder"
+		"wordFinder": "Word finder",
+		"primarySettings": "Primary Settings",
+		"changePassword": "Change password"
 	},
 	"buttons": {
 		"login": "Log In",
@@ -50,11 +59,17 @@
 		"minutes": "minutes",
 		"cancel": "Cancel",
 		"or": "or",
+		"save": "Save",
+		"edit": "Edit",
 		"loading": "Loading",
 		"loadingAccountData": "Loading account data",
 		"loadingGame": "Loading game",
 		"loadingFlashcard": "Loading flashcard data",
-		"sthInSth": "in"
+		"sthInSth": "in",
+		"login": "Login",
+		"currentPassword": "Current password",
+		"newPassword": "New password",
+		"newPasswordRepeat": "Repeat new password"
 	},
 	"contents": {
 		"registerUsernameDesc": "It's your username, visible for other users. Remember: Your username should be unique.",
@@ -74,7 +89,8 @@
 		"flashcardPreviewContain": "This set of flashcards contains ",
 		"standardLearnMode": "Standard learn mode",
 		"createNewSetOfFlashcards": "Create new set of flashcards",
-		"emptyFlashcards": "You don't have any flashcards yet"
+		"emptyFlashcards": "You don't have any flashcards yet",
+		"changePasswordDesc": "Your password should be secure and strong. Password should be changing so often."
 	},
 	"flashcardsIntroduce": [
 		{

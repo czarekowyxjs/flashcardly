@@ -23,12 +23,16 @@ class SingleWordOptions extends Component {
 	}
 
 	renderOptions = () => {
+		const flashcard = this.props.flashcard;
+
 		return (
 			<div className="single_word_options">
 				<div className="single_word_options_wrapper">
 					<ul>
-						<li onClick={this.handleWordDelete}>{this.props.lang.titles.deleteWord}</li>
-						<li onClick={this.handleEditableWord}>{this.props.lang.titles.editWord}</li>
+						{flashcard.userIsAuthor ? <li onClick={this.handleWordDelete}>{this.props.lang.titles.deleteWord}</li> : null}
+						{flashcard.userIsAuthor ? <li onClick={this.handleEditableWord}>{this.props.lang.titles.editWord}</li> : null}
+						{!flashcard.userIsAuthor ? <li>{this.props.lang.titles.reportWordErrorToAuthor}</li> : null}
+						{!flashcard.userIsAuthor ? <li>{this.props.lang.titles.reportWordToAdmin}</li> : null}
 					</ul>
 				</div>
 			</div>

@@ -36,12 +36,11 @@
 	font-size:0.85rem;
 	font-weight:600;
 	color:#fbfbfb;
+	transition-duration:200ms;
 }
 
-.user_bar_basic_info--displayname {
-	font-size:0.8rem;
-	display:none;
-	color:rgba(255,255,255,0.85);
+.user_bar_basic_info--fullname:hover {
+	transform:scale(0.95);
 }
 
 @media (max-width: 800px) {

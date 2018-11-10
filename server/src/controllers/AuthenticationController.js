@@ -7,7 +7,18 @@ const mail = require("../config/transporter");
 Router.post("/signin", function(req, res) {
 	models.User.findOne({
 		where: {
-			email: req.body.email,
+			[Op.or]: [
+				{
+					email: {
+						[Op.eq]: req.body.email
+					}
+				}, 
+				{
+					username: {
+						[Op.eq]: req.body.email
+					}
+				}
+			],
 			password: req.body.password
 		},
 		include: [{

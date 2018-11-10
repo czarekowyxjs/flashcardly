@@ -28,7 +28,7 @@ class Navigation extends Component {
 						<ul onClick={this.changeDropDownUserBarMenuVisibility}>
 							<li><NavLink to="#" onClick={this.props.methods.handleAvatarClick}>{this.props.lang.titles.changeYourAvatar}</NavLink></li>
 							<li><NavLink to="/flashcards/create">{this.props.lang.titles.flashcardsCreator}</NavLink></li>
-							<li><NavLink to="/settings">{this.props.lang.nav.settings}</NavLink></li>
+							<li><NavLink to="/settings/primary">{this.props.lang.nav.settings}</NavLink></li>
 							<li><NavLink to="/signout">{this.props.lang.nav.logout}</NavLink></li>
 						</ul>
 					</div>

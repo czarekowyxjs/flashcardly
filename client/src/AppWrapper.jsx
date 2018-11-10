@@ -17,7 +17,7 @@ class AppWrapper extends Component {
   }
 
   fetchLang = async () => {
-    const langID = localStorage.getItem("lang") === null ? 2 : localStorage.getItem("lang");
+    const langID = localStorage.getItem("lang") === null ? 1 : localStorage.getItem("lang");
     try {
       const response = await axios.get(`/api/v1/service/language?lid=${langID}`);
 

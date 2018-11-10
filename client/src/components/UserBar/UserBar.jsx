@@ -14,7 +14,6 @@ class UserBar extends Component {
 				</div>
 				<div className="app_user_bar_basic_info">
 					<p className="user_bar_basic_info--fullname">{this.props.user.userData.username}</p>
-					<p className="user_bar_basic_info--displayname">{this.props.user.userData.email}</p>
 				</div>
 			</div>
 		);

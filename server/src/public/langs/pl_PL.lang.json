@@ -1,6 +1,7 @@
 {
 	"username": "Nazwa użytkownika",
 	"emailAddress": "Adres email",
+	"emailAddressOrUsername": "Adres email lub nazwa użytkownika",
 	"password": "Hasło",
 	"repeatPassword": "Powtórz hasło",
 	"nav": {
@@ -8,7 +9,11 @@
 		"logout": "Wyloguj się",
 		"privacy": "Polityka prywatności",
 		"cookies": "Ciasteczka",
-		"settings": "Ustawienia"
+		"settings": "Ustawienia",
+		"primary": "Podstawowe",
+		"securityAndPrivacy": "Prywatność i Bezpieczeństwo",
+		"sessions": "Sesje",
+		"deleteAccount": "Usuń konto"
 	},
 	"titles": {
 		"loginTitle": "Wejdź do Flashcardly",
@@ -23,9 +28,13 @@
 		"guessByWriting": "Zgaduj pisząc",
 		"deleteWord": "Usuń to słowo (nieodwracalnie)",
 		"editWord": "Edytuj słowo",
+		"reportWordErrorToAuthor": "Zgłoś błąd w tym słowie do autora",
+		"reportWordToAdmin": "Zgłoś to słowo do administracji",
 		"saveChanges": "Zapisz zmiany",
 		"changeYourAvatar": "Zmień swój avatar",
-		"wordFinder": "Znajdź słówko"
+		"wordFinder": "Znajdź słówko",
+		"primarySettings": "Podstawowe Ustawienia",
+		"changePassword": "Zmiana hasła"
 	},
 	"buttons": {
 		"login": "Zaloguj się",
@@ -50,11 +59,17 @@
 		"minutes": "minut",
 		"cancel": "Anuluj",
 		"or": "lub",
+		"save": "Zapisz",
+		"edit": "Edytuj",
 		"loading": "Ładowanie",
 		"loadingAccountData": "Ładowanie danych użytkownika",
 		"loadingGame": "Ładowanie gry",
 		"loadingFlashcard": "Ładowanie zestawu fiszek",
-		"sthInSth": "z"
+		"sthInSth": "z",
+		"login": "Logowanie",
+		"currentPassword": "Aktualne hasło",
+		"newPassword": "Nowe hasło",
+		"newPasswordRepeat": "Powtórz nowe hasło"
 	},
 	"contents": {
 		"registerUsernameDesc": "Nazwa użytkownika jest widoczna dla innych użytkowników. Pamiętaj, aby była unikalna",
@@ -74,7 +89,8 @@
 		"flashcardPreviewContain": "Ta fiszka zawiera ",
 		"standardLearnMode": "Standardowy tryb nauki",
 		"createNewSetOfFlashcards": "Stwórz nowy zestaw fiszek",
-		"emptyFlashcards": "Jeszcze nie posiadasz żadnych fiszek"
+		"emptyFlashcards": "Jeszcze nie posiadasz żadnych fiszek",
+		"changePasswordDesc": "Twoje hasło powinno być bezpieczne i silne. Nie zapomnij zmieniać hasła co jakiś czas."
 	},
 	"flashcardsIntroduce": [
 		{

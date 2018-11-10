@@ -8,7 +8,6 @@
 }
 
 .login_wrapper {
-	max-width:300px;
 	margin:15px;
 	display:flex;
 	flex-direction:column;
@@ -30,7 +29,7 @@
 }
 
 .login_body {
-	width:380px;
+	width:420px;
 	padding:12px 20px;
 	border-radius:3px;
 	background-color:#fbfbfb;
@@ -43,10 +42,10 @@
 }
 
 .login_body > form > label {
-	margin:8px 0px 5px 3px;
+	margin:9px 0px 6px 3px;
 	font-size:0.8rem;
 	font-weight:600;
-	color:#2e2e2e;
+	color:#494949;
 }
 
 .login_body > form > p {

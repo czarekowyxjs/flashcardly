@@ -33,8 +33,12 @@
 	justify-content:center;
 }
 
+.nav_global_directly > li > a {
+	transition-duration:200ms;
+}
+
 .nav_global_directly > li > a:hover {
-	
+	transform:scale(0.95);
 }
 
 .nav_global_directly > li:first-of-type {

@@ -74,7 +74,7 @@ class SingleWord extends Component {
 						 : this.props.wordData.secondColumnValue}
 					</span>
 				</div>
-				<SingleWordOptions lang={this.props.lang} wordData={this.props.wordData} methods={this.props.methods}/>
+				<SingleWordOptions flashcard={this.props.flashcard} lang={this.props.lang} wordData={this.props.wordData} methods={this.props.methods}/>
 			</div>
 		);
 	}

@@ -43,7 +43,7 @@ class Login extends Component {
 						</div>
 						<div className="login_body">
 							<form onSubmit={this.handleLoginFormSubmit}>
-								<label htmlFor="email">{lang.emailAddress}</label>
+								<label htmlFor="email">{lang.emailAddressOrUsername}</label>
 								<input
 									type="text"
 									id="email"
