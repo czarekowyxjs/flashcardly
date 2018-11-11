@@ -1,3 +1,9 @@
+export const settingsToInitial = () => {
+	return {
+		type: "SETTINGS_TO_INITIAL"
+	}
+}
+
 export const switchUsernameStatus = (processing, loaded, editable) => {
 	return {
 		type: "SWITCH_USERNAME_STATUS",

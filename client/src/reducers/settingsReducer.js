@@ -28,6 +28,8 @@ const initialState = {
 
 export default (state = initialState, action) => {
 	switch(action.type) {
+		case "SETTINGS_TO_INITIAL":
+			return initialState;
 		case "SWITCH_USERNAME_STATUS":
 			return {
 				...state,

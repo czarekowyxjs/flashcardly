@@ -7,7 +7,7 @@ import SettingsNav from './SettingsNav/SettingsNav.jsx';
 import SettingsPrimary from './SettingsPages/SettingsPrimary/SettingsPrimary.jsx';
 import SecurityAndPrivacy from './SettingsPages/SecurityAndPrivacy/SecurityAndPrivacy.jsx';
 import { updateUserUsername, updateUserEmail, updateUserPassword, updateEmailPrivacy, updateLoginByUsername } from "../../actions/userActions";
-import { switchUsernameStatus, switchEmailStatus, switchPasswordStatus } from '../../actions/settingsActions';
+import { settingsToInitial, switchUsernameStatus, switchEmailStatus, switchPasswordStatus } from '../../actions/settingsActions';
 
 import './Settings.css';
 
@@ -16,6 +16,7 @@ class Settings extends Component {
 		const user = this.props.user;
 		const settings = this.props.settings;
 		const methods = {
+			settingsToInitial: this.props.settingsToInitial,
 			updateUserUsername: this.props.updateUserUsername,
 			switchUsernameStatus: this.props.switchUsernameStatus,
 			updateUserEmail: this.props.updateUserEmail,
@@ -59,4 +60,4 @@ const mapStateToProps = state => {
 	}
 }
 
-export default connect(mapStateToProps, { updateUserUsername, switchUsernameStatus, switchEmailStatus, updateUserEmail, switchPasswordStatus, updateUserPassword, updateEmailPrivacy, updateLoginByUsername })(Settings);
+export default connect(mapStateToProps, { settingsToInitial, updateUserUsername, switchUsernameStatus, switchEmailStatus, updateUserEmail, switchPasswordStatus, updateUserPassword, updateEmailPrivacy, updateLoginByUsername })(Settings);

@@ -144,7 +144,7 @@ a {
 	flex-direction:row;
 	align-items:center;
 	border:1px solid rgba(0,0,0,0.03);
-	transition-duration:200ms;
+	transition-duration:600ms;
 }
 
 .flashcardly_toggle_btn > span > span {
@@ -155,7 +155,7 @@ a {
 	width:18px;
 	border-radius:50%;
 	left:4px;
-	transition-duration:200ms;
+	transition-duration:400ms;
 }
 
 .flashcardly_toggle_btn > input:checked + span {

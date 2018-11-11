@@ -10,9 +10,19 @@ class Navigation extends Component {
 		dropDownUserBarMenuVisibility: false
 	}
 
-	changeDropDownUserBarMenuVisibility = (e) => {
-		this.setState({
-			dropDownUserBarMenuVisibility: !this.state.dropDownUserBarMenuVisibility
+	componentWillUnmount() {
+		document.removeEventListener("click", this.changeDropDownUserBarMenuVisibility, false);
+	}
+
+	changeDropDownUserBarMenuVisibility = () => {
+		this.setState(prevState => ({
+			dropDownUserBarMenuVisibility: !prevState.dropDownUserBarMenuVisibility
+		}), () => {
+			if(this.state.dropDownUserBarMenuVisibility) {
+				document.addEventListener("click", this.changeDropDownUserBarMenuVisibility, false);
+			} else {
+				document.removeEventListener("click", this.changeDropDownUserBarMenuVisibility, false);
+			}
 		});
 	}
 
@@ -25,7 +35,7 @@ class Navigation extends Component {
 						<div className="nav_drop_down_menu_traingle"></div>
 					</div>
 					<div className="nav_drop_down_menu_menu">
-						<ul onClick={this.changeDropDownUserBarMenuVisibility}>
+						<ul>
 							<li><NavLink to="#" onClick={this.props.methods.handleAvatarClick}>{this.props.lang.titles.changeYourAvatar}</NavLink></li>
 							<li><NavLink to="/flashcards/create">{this.props.lang.titles.flashcardsCreator}</NavLink></li>
 							<li><NavLink to="/settings/primary">{this.props.lang.nav.settings}</NavLink></li>
@@ -51,7 +61,7 @@ class Navigation extends Component {
 						</div></li>
 						<li><NavLink to="/" className="nav_global_directly_item"><span>{lang.nav.flashcards}</span></NavLink></li>
 						<li><div className="nav_global_directly_item">
-							<DropDownMenu methods={methods} lang={lang}/>
+							<DropDownMenu methods={methods} lang={lang} />
 						</div></li>
 					</ul>
 				</nav>

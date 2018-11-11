@@ -11,6 +11,7 @@ class SettingsPrimary extends Component {
 	componentDidMount() {
 		const lang = this.props.user.lang;
 		document.title = lang.titles.primarySettings;
+		this.props.methods.settingsToInitial();
 	}
 
 	handleEditableOptionToggle = (e) => {
