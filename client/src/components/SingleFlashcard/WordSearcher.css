@@ -16,9 +16,8 @@
 	width:100%;
 	display:flex;
 	align-items:center;
-	justify-content:center;
-	flex-direction:column;
-	padding:0px 16px;
+	flex-direction:row;
+	padding:0px 6px 3px 6px;
 }
 
 .single_flashcard_word_searcher_body > form > input {
@@ -26,8 +25,8 @@
 }
 
 .single_flashcard_word_searcher_body > form > .flashcardly_btn_container {
-	justify-content:flex-end;
-	margin:9px 16px 9px 0px;
+	width:auto;
+	margin-left:12px;
 }
 
 .single_flashcard_word_searcher_bg {
