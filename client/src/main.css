@@ -118,6 +118,54 @@ a {
 	text-decoration:underline;	
 }
 
+.flashcardly_toggle_btn {
+	display:inline-block;
+	width:44px;
+	height:26px;
+	position:relative;
+}
+
+.flashcardly_toggle_btn > input {
+	width:0px;
+	height:0px;
+	opacity:0;
+}
+
+.flashcardly_toggle_btn > span {
+	position:absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	background-color:#b8b8b8;
+	cursor:pointer;
+	border-radius:100px;
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+	border:1px solid rgba(0,0,0,0.03);
+	transition-duration:200ms;
+}
+
+.flashcardly_toggle_btn > span > span {
+	display:inline-block;
+	position:absolute;
+	height:18px;
+	background-color:#fff;
+	width:18px;
+	border-radius:50%;
+	left:4px;
+	transition-duration:200ms;
+}
+
+.flashcardly_toggle_btn > input:checked + span {
+	background-color:#F15F79;
+}
+
+.flashcardly_toggle_btn > input:checked + span > span {
+	left:21px;
+}
+
 .flashcardly_dialog_bg {
 	position:fixed;
 	top:0;

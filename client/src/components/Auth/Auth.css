@@ -31,9 +31,9 @@
 .login_body {
 	width:420px;
 	padding:12px 20px;
-	border-radius:3px;
+	border-radius:2px;
 	background-color:#fbfbfb;
-	box-shadow:0px 1px 9px 0px rgba(0,0,0,.2);
+	box-shadow:0px 1px 8px 0px rgba(0,0,0,.3);
 }
 
 .login_body > form {

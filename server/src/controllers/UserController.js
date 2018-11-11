@@ -138,7 +138,72 @@ Router.put("/email", VerifyToken, function(req, res) {
 });
 
 Router.put("/password", VerifyToken, function(req, res) {
-	
+	return models.User.findOne({
+		where: {
+			uid: res.locals.uid,
+			password: req.body.currentPassword
+		}
+	})
+	.then(function(foundUser) {
+		if(foundUser) {
+			if(req.body.newPassword === req.body.newPasswordRepeat) {
+				return foundUser.updateAttributes({
+					password: req.body.newPassword
+				})
+				.then(function(updatedUser) {
+					return res.status(200).send({
+						error: false
+					});
+				});
+			} else {
+				return res.status(404).send({
+					error: true,
+					message: "Pasword are not compare"
+				});
+			}
+		} else {
+			return res.status(403).send({
+				error: true,
+				message: "Forbidden"
+			});
+		}
+	})
+});
+
+Router.put("/emailprivacy", VerifyToken, function(req, res) {
+	return models.User_options.findOne({
+		where: {
+			uid: res.locals.uid
+		}
+	})
+	.then(function(foundOptions) {
+		foundOptions.updateAttributes({
+			emailVisibility: !foundOptions.emailVisibility
+		})
+		.then(function(updatedOptions) {
+			return res.status(200).send({
+				error: false
+			})
+		})
+	})
+});
+
+Router.put("/loginbyusername", VerifyToken, function(req, res) {
+	return models.User_options.findOne({
+		where: {
+			uid: res.locals.uid
+		}
+	})
+	.then(function(foundOptions) {
+		foundOptions.updateAttributes({
+			loginByUsername: !foundOptions.loginByUsername
+		})
+		.then(function(updatedOptions) {
+			return res.status(200).send({
+				error: false
+			})
+		})
+	})
 });
 
 module.exports = Router;

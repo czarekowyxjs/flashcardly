@@ -34,7 +34,7 @@
 
 .settings_page {
 	width:100%;
-	padding:16px 20px;
+	padding:12px 20px;
 	display:flex;
 	flex-direction:column;
 	align-items:flex-start;
@@ -44,6 +44,7 @@
 	width:100%;
 	display:flex;
 	flex-direction:column;
+	margin:12px 0px;
 }
 
 .settings_edit_table_item {
@@ -114,9 +115,9 @@
 }
 
 .settings_edit_table-item--option__extended--static {
-	font-size:0.7rem;
+	font-size:0.8rem;
 	color:rgba(0,0,0,0.4);
-	margin:0px 3px;
+	margin:0px 4px;
 }
 
 .settings_input {
@@ -146,6 +147,7 @@
 	width:100%;
 	display:flex;
 	flex-direction:column;
+	margin:12px 0px;
 }
 
 .settings_edit_table_v2_title {
@@ -153,7 +155,6 @@
 	display:flex;
 	background-color:rgba(0,0,0,0);
 	border:1px solid rgba(0,0,0,0.1);
-	border-bottom:none;
 	border-top-left-radius:5px;
 	border-top-right-radius:5px;
 }
@@ -175,7 +176,8 @@
 	display:flex;
 	flex-direction:column;
 	background-color:rgba(0,0,0,0.02);
-	border:1px solid rgba(0,0,0,0.1)
+	border:1px solid rgba(0,0,0,0.1);
+	border-top:none;
 }
 
 .settings_edit_table_v2_item:last-of-type {
@@ -183,7 +185,7 @@
 	border-bottom-left-radius:5px;
 }
 
-.settings_edit_table_v2_item:hover > .settings_edit_table_v2_item--short > .settings_edit_table_v2_item--short_btn {
+.settings_edit_table_v2_item:hover > .settings_edit_table_v2_item--short > .settings_edit_table_v2_item--short_btn, .settings_edit_table_v2_item--short_btn.settings_edit_table_v2_item--short_btn--visible {
 	opacity:1;
 }
 
@@ -225,6 +227,7 @@
 .settings_edit_table_v2_item--short_desc > p {
 	font-size:0.8rem;
 	color:rgba(0,0,0,0.5);
+	margin:1px 0px;
 }
 
 .settings_edit_table_v2_item--short_btn {
@@ -258,7 +261,7 @@
 	display:flex;
 	flex-direction:row;
 	align-items:center;
-	margin:5px 0px;
+	margin:7px 0px;
 }
 
 .settings_edit_table_v2_item--extended_form_item > label {

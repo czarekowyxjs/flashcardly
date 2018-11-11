@@ -21,6 +21,14 @@ module.exports = {
       setAvatar: {
         type: Sequelize.BOOLEAN,
         defaultValue: false
+      },
+      emailVisibility: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false
+      },
+      loginByUsername: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false
       }
     }, {
       charset: 'utf8',

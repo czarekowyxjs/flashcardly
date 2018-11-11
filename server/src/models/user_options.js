@@ -20,6 +20,14 @@ module.exports = (sequelize, DataTypes) => {
       setAvatar: {
         type: DataTypes.BOOLEAN,
         defaultValue: false
+      },
+      emailVisibility: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+      },
+      loginByUsername: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
       }
   }, {
   	timestamps: false,

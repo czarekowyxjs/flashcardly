@@ -127,3 +127,91 @@
 .flashcardly_tiny_anim > span:nth-child(5) {
 	animation-delay:-0.4s;
 }
+
+.flashcardly_btn_loader {
+	width:100%;
+	height:100%;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+
+.flashcardly_btn_loader_wrapper {
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+	justify-content:space-between;
+	width:22px;
+	height:13px;
+}
+
+.flashcardly_btn_loader_wrapper > span {
+	display:inline-block;
+	background-color:#fff;
+	width:5px;
+	height:100%;
+	animation-name: anim3;
+	animation-duration:600ms;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+	border-radius:5px;
+}
+
+.flashcardly_btn_loader_wrapper > span:nth-child(1) {
+	animation-delay: 0s;
+}
+
+.flashcardly_btn_loader_wrapper > span:nth-child(2) {
+	animation-delay: -0.2s;
+}
+
+.flashcardly_btn_loader_wrapper > span:nth-child(3) {
+	animation-delay: -0.3s;
+}
+
+@keyframes anim3 {
+	0% {
+		height:0%;
+	}
+
+	50% {
+		height:100%;
+	}
+
+	100% {
+		height:0%;
+	}
+}
+
+@keyframes anim4 {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.flashcardly_circle_loader {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	width:100%;
+	height:100%;
+	padding:32px;
+}
+
+.flashcardly_circle_loader_spin {
+	width:50px;
+	height:50px;
+	background:transparent;
+	border:5px solid transparent;
+	border-top:5px solid rgba(0,0,0,0.3);
+	border-left:5px solid rgba(0,0,0,0.3);
+	border-radius:50%;
+	animation-name: anim4;
+	animation-duration:500ms;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+}

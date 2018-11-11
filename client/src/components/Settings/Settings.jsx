@@ -6,7 +6,7 @@ import Footer from '../Footer/Footer.jsx';
 import SettingsNav from './SettingsNav/SettingsNav.jsx';
 import SettingsPrimary from './SettingsPages/SettingsPrimary/SettingsPrimary.jsx';
 import SecurityAndPrivacy from './SettingsPages/SecurityAndPrivacy/SecurityAndPrivacy.jsx';
-import { updateUserUsername, updateUserEmail, updateUserPassword } from "../../actions/userActions";
+import { updateUserUsername, updateUserEmail, updateUserPassword, updateEmailPrivacy, updateLoginByUsername } from "../../actions/userActions";
 import { switchUsernameStatus, switchEmailStatus, switchPasswordStatus } from '../../actions/settingsActions';
 
 import './Settings.css';
@@ -21,7 +21,9 @@ class Settings extends Component {
 			updateUserEmail: this.props.updateUserEmail,
 			switchEmailStatus: this.props.switchEmailStatus,
 			updateUserPassword: this.props.updateUserPassword,
-			switchPasswordStatus: this.props.switchPasswordStatus
+			switchPasswordStatus: this.props.switchPasswordStatus,
+			updateEmailPrivacy: this.props.updateEmailPrivacy,
+			updateLoginByUsername: this.props.updateLoginByUsername
 		};
 
 		return (
@@ -38,7 +40,6 @@ class Settings extends Component {
 									<Switch>
 										<Route path={`${this.props.match.path}/primary`} render={(props) => <SettingsPrimary {...props} user={user} methods={methods} settings={settings} />}/>
 										<Route path={`${this.props.match.path}/privacy`} render={(props) => <SecurityAndPrivacy {...props} user={user} methods={methods} settings={settings} />}/>
-										<Route path={`${this.props.match.path}/sessions`} render={() => <h1>Sessions</h1>}/>
 									</Switch>
 								</div>
 							</div>
@@ -58,4 +59,4 @@ const mapStateToProps = state => {
 	}
 }
 
-export default connect(mapStateToProps, { updateUserUsername, switchUsernameStatus, switchEmailStatus, updateUserEmail, switchPasswordStatus, updateUserPassword })(Settings);
+export default connect(mapStateToProps, { updateUserUsername, switchUsernameStatus, switchEmailStatus, updateUserEmail, switchPasswordStatus, updateUserPassword, updateEmailPrivacy, updateLoginByUsername })(Settings);

@@ -11,7 +11,7 @@
 		"cookies": "Ciasteczka",
 		"settings": "Ustawienia",
 		"primary": "Podstawowe",
-		"securityAndPrivacy": "Prywatność i Bezpieczeństwo",
+		"securityAndPrivacy": "Prywatność i bezpieczeństwo",
 		"sessions": "Sesje",
 		"deleteAccount": "Usuń konto"
 	},
@@ -33,8 +33,11 @@
 		"saveChanges": "Zapisz zmiany",
 		"changeYourAvatar": "Zmień swój avatar",
 		"wordFinder": "Znajdź słówko",
-		"primarySettings": "Podstawowe Ustawienia",
-		"changePassword": "Zmiana hasła"
+		"primarySettings": "Podstawowe ustawienia",
+		"changePassword": "Zmiana hasła",
+		"emailPrivacy": "Widocznosć adresu email",
+		"privacy": "Prywatność",
+		"loginByUsername": "Logowanie za pomocą nazwy użytkownika"
 	},
 	"buttons": {
 		"login": "Zaloguj się",
@@ -90,7 +93,9 @@
 		"standardLearnMode": "Standardowy tryb nauki",
 		"createNewSetOfFlashcards": "Stwórz nowy zestaw fiszek",
 		"emptyFlashcards": "Jeszcze nie posiadasz żadnych fiszek",
-		"changePasswordDesc": "Twoje hasło powinno być bezpieczne i silne. Nie zapomnij zmieniać hasła co jakiś czas."
+		"changePasswordDesc": "Twoje hasło powinno być bezpieczne i silne. Nie zapomnij zmieniać hasła co jakiś czas.",
+		"emailPrivacyDesc": "Możesz wybrać, czy chcesz aby inni użytkownicy widzieli Twój adres email. Domyślnie ta opacja jest wyłączona.",
+		"loginByUsernameDesc": "Włącz logowanie za pomocą nazwy użytkownika. Możesz jednocześnie logować się za pomocą adres email lub nazwy użytkownika. Domyślnie ta opacja jest wyłączona."
 	},
 	"flashcardsIntroduce": [
 		{

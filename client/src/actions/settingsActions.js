@@ -30,3 +30,25 @@ export const switchPasswordStatus = (processing, loaded, editable) => {
 		}
 	}
 }
+
+export const switchEmailPrivacyStatus = (processing, loaded, editable) => {
+	return {
+		type: "SWITCH_EMAILPRIVACY_STATUS",
+		payload: {
+			processing,
+			loaded,
+			editable
+		}
+	}
+}
+
+export const switchLoginByUsernameStatus = (processing, loaded, editable) => {
+	return {
+		type: "SWITCH_LOGINBYUSERNAME_STATUS",
+		payload: {
+			processing,
+			loaded,
+			editable
+		}
+	}
+}

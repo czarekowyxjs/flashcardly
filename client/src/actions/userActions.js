@@ -1,6 +1,6 @@
 import axios from 'axios';
 import store from "../store";
-import { switchUsernameStatus, switchEmailStatus } from './settingsActions';
+import { switchUsernameStatus, switchEmailStatus, switchPasswordStatus, switchEmailPrivacyStatus, switchLoginByUsernameStatus } from './settingsActions';
 
 export const getFullFBUserData = (authResponse) => {
 	return dispatch => {
@@ -141,8 +141,78 @@ export const updateUserEmail = (email) => {
 	}
 }
 
-export const updateUserPassword = (current, newPassword, newPasswordRepeat) => {
-	return dispatch => {
-		console.log(current+" "+newPassword+" "+newPasswordRepeat);
+export const updateUserPassword = (currentPassword, newPassword, newPasswordRepeat) => {
+	return async dispatch => {
+		dispatch(switchPasswordStatus(true, false, true));
+		try {
+			const token = localStorage.getItem("token");
+			const response = await axios.put("/api/v1/users/password", {
+				currentPassword,
+				newPassword,
+				newPasswordRepeat
+			}, {
+				headers: {
+					authorization: token
+				}
+			});
+
+			if(response.status === 200) {
+				dispatch(switchPasswordStatus(false, true, false));				
+			}
+
+		} catch(e) {
+			dispatch(switchPasswordStatus(false, true, true));
+			console.log(e.response);
+		}
+	}
+}
+
+export const updateEmailPrivacy = () => {
+	return async dispatch => {
+		dispatch(switchEmailPrivacyStatus(true, false, false));
+		try {
+			const token = localStorage.getItem("token");
+			const userState = store.getState().user;
+			const response = await axios.put("/api/v1/users/emailprivacy", {}, {
+				headers: {
+					authorization: token
+				}
+			});
+
+			if(response.status === 200) {
+				userState.userData.User_option.emailVisibility = !userState.userData.User_option.emailVisibility;
+				dispatch(landUpUserData(userState.userData));
+			}
+
+		} catch(e) {
+			console.log(e.response);
+		} finally {
+			dispatch(switchEmailPrivacyStatus(false, true, false));
+		}
+	}
+}
+
+export const updateLoginByUsername = () => {
+	return async dispatch => {
+		dispatch(switchLoginByUsernameStatus(true, false, false));
+		try {
+			const token = localStorage.getItem("token");
+			const userState = store.getState().user;
+			const response = await axios.put("/api/v1/users/loginbyusername", {}, {
+				headers: {
+					authorization: token
+				}
+			});
+
+			if(response.status === 200) {
+				userState.userData.User_option.loginByUsername = !userState.userData.User_option.loginByUsername;
+				dispatch(landUpUserData(userState.userData));
+			}
+
+		} catch(e) {
+			console.log(e.response);
+		} finally {
+			dispatch(switchLoginByUsernameStatus(false, true, false));
+		}
 	}
 }

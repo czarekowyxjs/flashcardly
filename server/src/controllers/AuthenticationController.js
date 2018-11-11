@@ -3,50 +3,34 @@ const models = require("../models");
 const VerifyToken = require("../middlewares/VerifyToken");
 const Op = require('sequelize').Op;
 const mail = require("../config/transporter");
+const sequelize = require("sequelize");
 
 Router.post("/signin", function(req, res) {
-	models.User.findOne({
-		where: {
-			[Op.or]: [
-				{
-					email: {
-						[Op.eq]: req.body.email
-					}
-				}, 
-				{
-					username: {
-						[Op.eq]: req.body.email
-					}
-				}
-			],
-			password: req.body.password
-		},
-		include: [{
-			model: models.User_options,
-			/*where: {
-				emailConfirm: {
-					[Op.not]: false
-				}
-			}*/
-		}],
-		attributes: {
-			exclude: ['password']
-		}
-	})
+	const query = `SELECT * FROM Users INNER JOIN User_options ON Users.uid = User_options.uid WHERE (email=$bindEmail AND password=$bindPassword) OR ((email=$bindEmail OR username=$bindEmail) AND password=$bindPassword AND User_options.loginByUsername=1) LIMIT 1`;
+	//
+	const bind = {
+		bindEmail: req.body.email,
+		bindPassword: req.body.password
+	}
+	//
+	models.sequelize.query(query, { bind, type: models.sequelize.QueryTypes.SELECT })
 	.then(function(foundUser) {
-		if(foundUser) {
-
+		if(foundUser.length > 0) {
+			//
+			delete foundUser[0].password;
+			delete foundUser[0].emailHash;
+			//
 			return models.Token.create({
-				uid: foundUser.uid,
+				uid: foundUser[0].uid,
 				token: models.Token.generateToken()
 			})
 			.then(function(createdToken) {
 				delete createdToken.dataValues.createdAt;
 				delete createdToken.dataValues.updatedAt;
-				
+				//
 				return res.status(200).send({
 					error: false,
-					user: foundUser,
+					user: foundUser[0],
 					token: createdToken
 				});
 			})

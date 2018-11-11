@@ -13,6 +13,16 @@ const initialState = {
 		processing: false,
 		loaded: false,
 		editable: false
+	},
+	emailPrivacy: {
+		processing: false,
+		loaded: false,
+		editable: false
+	},
+	loginByUsername: {
+		processing: false,
+		loaded: false,
+		editable: false
 	}
 };
 
@@ -32,6 +42,16 @@ export default (state = initialState, action) => {
 			return {
 				...state,
 				password: action.payload
+			};
+		case "SWITCH_EMAILPRIVACY_STATUS":
+			return {
+				...state,
+				emailPrivacy: action.payload
+			};
+		case "SWITCH_LOGINBYUSERNAME_STATUS":
+			return {
+				...state,
+				loginByUsername: action.payload
 			};
 		default:
 			return state;

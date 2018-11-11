@@ -11,7 +11,7 @@
 		"cookies": "Cookies",
 		"settings": "Settings",
 		"primary": "Primary",
-		"securityAndPrivacy": "Security & Privacy",
+		"securityAndPrivacy": "Security and privacy",
 		"sessions": "Sessions",
 		"deleteAccount": "Delete account"
 	},
@@ -33,8 +33,11 @@
 		"saveChanges": "Save your changes",
 		"changeYourAvatar": "Change your avatar",
 		"wordFinder": "Word finder",
-		"primarySettings": "Primary Settings",
-		"changePassword": "Change password"
+		"primarySettings": "Primary settings",
+		"changePassword": "Change password",
+		"emailPrivacy": "Visibility of email address",
+		"privacy": "Privacy",
+		"loginByUsername": "Login by username"
 	},
 	"buttons": {
 		"login": "Log In",
@@ -90,7 +93,9 @@
 		"standardLearnMode": "Standard learn mode",
 		"createNewSetOfFlashcards": "Create new set of flashcards",
 		"emptyFlashcards": "You don't have any flashcards yet",
-		"changePasswordDesc": "Your password should be secure and strong. Password should be changing so often."
+		"changePasswordDesc": "Your password should be secure and strong. Password should be changing so often.",
+		"emailPrivacyDesc": "You can choose, if you want other users to see your email address. By default this option is turned off.",
+		"loginByUsernameDesc": "Turn on login using your username. You can concurentlly use email address or username to login. By default this option is turned off."
 	},
 	"flashcardsIntroduce": [
 		{
