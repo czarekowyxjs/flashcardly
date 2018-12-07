@@ -5,19 +5,11 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER.UNSIGNED,
         unique: true
       },
-      termsAccept: {
-        type: DataTypes.BOOLEAN,
-        defaultValue: false
-      },
       flashcardIntro: {
         type: DataTypes.BOOLEAN,
         defaultValue: false
       },
       emailConfirm: {
-        type: DataTypes.BOOLEAN,
-        defaultValue: false
-      },
-      setAvatar: {
         type: DataTypes.BOOLEAN,
         defaultValue: false
       },

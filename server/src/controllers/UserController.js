@@ -4,7 +4,7 @@ const VerifyToken = require("../middlewares/VerifyToken");
 const models = require("../models");
 
 Router.put("/options/introflashcard", VerifyToken, function(req, res) {
-	models.User_options.update({
+	return models.User_options.update({
 		flashcardIntro: true
 	}, {
 		where: {
@@ -12,12 +12,12 @@ Router.put("/options/introflashcard", VerifyToken, function(req, res) {
 		}
 	})
 	.then(function(updatedOptions) {
-		res.status(200).send({
+		return res.status(200).send({
 			error: false
 		});
 	})
 	.catch(function(err) {
-		res.status(500).send({
+		return res.status(500).send({
 			error: true,
 			message: "Server error"
 		});
@@ -25,7 +25,7 @@ Router.put("/options/introflashcard", VerifyToken, function(req, res) {
 });
 
 Router.put("/avatar", VerifyToken, function(req, res) {
-	models.User.update({
+	return models.User.update({
 		avatarUrl: req.body.avatarUrl
 	}, {
 		where: {
@@ -34,13 +34,13 @@ Router.put("/avatar", VerifyToken, function(req, res) {
 	})
 	.then(function(updatedUser) {
 		if(updatedUser) {
-			res.status(200).send({
+			return res.status(200).send({
 				error: false
 			});
 		}
 	})
 	.catch(function(err) {
-		res.status(500).send({
+		return res.status(500).send({
 			error: true,
 			message: "Server error"
 		});

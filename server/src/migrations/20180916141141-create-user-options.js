@@ -6,19 +6,11 @@ module.exports = {
         type: Sequelize.INTEGER.UNSIGNED,
         unique: true
       },
-      termsAccept: {
-        type: Sequelize.BOOLEAN,
-        defaultValue: false
-      },
       flashcardIntro: {
         type: Sequelize.BOOLEAN,
         defaultValue: false
       },
       emailConfirm: {
-        type: Sequelize.BOOLEAN,
-        defaultValue: false
-      },
-      setAvatar: {
         type: Sequelize.BOOLEAN,
         defaultValue: false
       },

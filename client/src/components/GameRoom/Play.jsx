@@ -5,6 +5,8 @@ import { fetchFlashcardToGame, fetchFlashcardToGameLoaded } from '../../actions/
 import Loader from '../Commons/Loader/Loader.jsx';
 import CircleLoader from '../Commons/Loader/CircleLoader.jsx';
 
+import './GameRoom.css';
+
 const Standard = lazy(() => import('./Standard/Standard.jsx'));
 
 class Play extends Component {

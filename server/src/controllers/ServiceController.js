@@ -8,7 +8,7 @@ Router.get("/language", function(req, res) {
 
 	const langs = ['pl_PL', 'en_EN', 'de_DE'];
 	const langJSON = require(`../public/langs/${langs[lid]}.lang.json`);
-	res.status(200).send({
+	return res.status(200).send({
 		lang: langJSON
 	});
 });

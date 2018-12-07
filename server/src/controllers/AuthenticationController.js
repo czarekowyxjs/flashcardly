@@ -6,7 +6,7 @@ const mail = require("../config/transporter");
 const sequelize = require("sequelize");
 
 Router.post("/signin", function(req, res) {
-	const query = `SELECT * FROM Users INNER JOIN User_options ON Users.uid = User_options.uid WHERE (email=$bindEmail AND password=$bindPassword) OR ((email=$bindEmail OR username=$bindEmail) AND password=$bindPassword AND User_options.loginByUsername=1) LIMIT 1`;
+	const query = `SELECT * FROM Users INNER JOIN User_options ON Users.uid = User_options.uid WHERE ((email=$bindEmail AND password=$bindPassword) OR ((email=$bindEmail OR username=$bindEmail) AND password=$bindPassword AND User_options.loginByUsername=1)) AND User_options.emailConfirm = 1 LIMIT 1`;
 	//
 	const bind = {
 		bindEmail: req.body.email,
@@ -206,9 +206,6 @@ Router.post("/signup", function(req, res, next) {
 		}
 	});
 }, function(req, res) {
-	return res.status(200).send({
-			error: false
-	});
 	const mailSettings = {
 		from: '"Flashcardly" <mailer.bot.service@gmail.com>',
 		to: req.createdUser.user.dataValues.email,

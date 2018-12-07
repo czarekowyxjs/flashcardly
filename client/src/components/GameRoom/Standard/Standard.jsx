@@ -91,7 +91,7 @@ class Standard extends Component {
 							<span>{this.props.flashcard.flashcardData.title}</span>
 							<Link to={`/flashcards/${this.props.flashcard.flashcardData.fid}`}><IoMdShareAlt/></Link>
 						</div>
-						<p>{this.props.lang.contents.standardLearnMode}</p>
+						<p>{this.props.lang.titles.standardLearning}</p>
 					</div>
 					<div className="standard_game_window_num">
 						<span>{`${this.state.actualWord+1} ${this.props.lang.shorts.sthInSth} ${this.props.flashcard.flashcardData.Words.length}`}</span>
