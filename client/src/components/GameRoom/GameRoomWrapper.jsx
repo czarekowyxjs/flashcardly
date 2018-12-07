@@ -4,7 +4,6 @@ import Header from '../Header/Header.jsx';
 import Footer from '../Footer/Footer.jsx';
 import Play from './Play.jsx';
 
-
 class GameRoomWrapper extends Component {
 	render() {
 		return (

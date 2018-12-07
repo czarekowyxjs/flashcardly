@@ -6,9 +6,19 @@ class SingleWordOptions extends Component {
 		optionsVisibility: false
 	}
 
+	componentWillUnmount() {
+		document.removeEventListener("click", this.toggleOptionsVisibility, false);
+	}
+
 	toggleOptionsVisibility = () => {
-		this.setState({
-			optionsVisibility: !this.state.optionsVisibility
+		this.setState(prevState => ({
+			optionsVisibility: !prevState.optionsVisibility
+		}), () => {
+			if(this.state.optionsVisibility) {
+				document.addEventListener("click", this.toggleOptionsVisibility, false);
+			} else {
+				document.removeEventListener("click", this.toggleOptionsVisibility, false);
+			}
 		});		
 	}
 

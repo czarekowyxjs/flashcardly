@@ -1,9 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component, Suspense, lazy } from 'react';
 import { connect } from 'react-redux';
 import { toggleCheckLearnedWord } from '../../actions/flashcardActions';
 import { fetchFlashcardToGame, fetchFlashcardToGameLoaded } from '../../actions/gameActions';
 import Loader from '../Commons/Loader/Loader.jsx';
-import Standard from './Standard/Standard.jsx';
+import CircleLoader from '../Commons/Loader/CircleLoader.jsx';
+
+const Standard = lazy(() => import('./Standard/Standard.jsx'));
 
 class Play extends Component {
 	search = {}
@@ -30,7 +32,11 @@ class Play extends Component {
 
 		switch(parseInt(this.search.get("type"), 10)) {
 			case 1:
-				return <Standard lang={this.props.user.lang} flashcard={this.props.flashcard} game={this.props.game} methods={methods}/>;
+				return (
+					<Suspense fallback={<CircleLoader/>}>
+						<Standard lang={this.props.user.lang} flashcard={this.props.flashcard} game={this.props.game} methods={methods}/>
+					</Suspense>
+					);
 			default:
 				return null;
 		}

@@ -23,20 +23,20 @@ Router.post('/create', VerifyToken, function(req, res) {
 
 	if(!errors) {
 		const uid = res.locals.uid;
-		models.Flashcard.create({
+		return models.Flashcard.create({
 			title: req.body.title,
 			firstColumnName: req.body.firstCol,
 			secondColumnName: req.body.secondCol,
 			author: uid
 		})
 		.then(function(createdFlashcard) {
-			models.User.findOne({
+			return models.User.findOne({
 				where: {
 					uid: uid
 				}
 			})
 			.then(function(foundUser) {
-				res.status(200).send({
+				return res.status(200).send({
 					error: false,
 					flashcard: createdFlashcard,
 					author: foundUser	
@@ -44,7 +44,7 @@ Router.post('/create', VerifyToken, function(req, res) {
 			});
 		});
 	} else {
-		res.status(404).send({
+		return res.status(404).send({
 			error: true,
 			errors
 		});
@@ -61,19 +61,19 @@ Router.post("/word/create", VerifyToken, CheckFlashcardAuthor, AntiWordSpam, fun
 	const errors = req.validationErrors();
 
 	if(!errors) {
-		models.Word.create({
+		return models.Word.create({
 			fid: req.body.fid,
 			firstColumnValue: req.body.firstColWord,
 			secondColumnValue: req.body.secondColWord
 		})
 		.then(function(createdWord) {
-			res.status(200).send({
+			return res.status(200).send({
 				error: false,
 				word: createdWord
 			});
 		});
 	} else {
-		res.status(404).send({
+		return res.status(404).send({
 			error: true,
 			errors
 		});		
@@ -85,7 +85,7 @@ Router.post("/word/create", VerifyToken, CheckFlashcardAuthor, AntiWordSpam, fun
 */
 Router.get('/:fid', VerifyToken, function(req, res) {
 	const fid = req.params.fid;
-	models.Flashcard.findOne({
+	return models.Flashcard.findOne({
 		where: {
 			fid: fid
 		},
@@ -100,13 +100,13 @@ Router.get('/:fid', VerifyToken, function(req, res) {
 	.then(function(foundFlashcard) {
 		if(foundFlashcard) {
 
-			models.User.findOne({
+			return models.User.findOne({
 				where: {
 					uid: foundFlashcard.author
 				}
 			})
 			.then(function(foundUser) {
-				res.status(200).send({
+				return res.status(200).send({
 					error: false,
 					flashcard: foundFlashcard,
 					author: foundUser
@@ -114,14 +114,14 @@ Router.get('/:fid', VerifyToken, function(req, res) {
 			});
 
 		} else {
-			res.status(404).send({
+			return res.status(404).send({
 				error: true,
 				message: 'Unknown flashcard'
 			});
 		}
 	})
 	.catch(function(err) {
-		res.status(500).send({
+		return res.status(500).send({
 			error: true
 		});
 	});
@@ -170,13 +170,13 @@ Router.get('/', VerifyToken, function(req, res) {
 		query.offset = parseInt(req.query.limit)*parseInt(req.query.page);
 	}
 
-	models.Flashcard.findAll(query)
+	return models.Flashcard.findAll(query)
 	.then(function(foundFlashcards) {
 		let isMore = true;
 		if(foundFlashcards.length < parseInt(req.query.limit)) {
 			isMore = false;
 		}
-		res.status(200).send({
+		return res.status(200).send({
 			flashcards: foundFlashcards,
 			isMore
 		});
@@ -187,13 +187,13 @@ Router.get('/', VerifyToken, function(req, res) {
 	Delete word from set
 */
 Router.post('/word/delete', VerifyToken, CheckFlashcardAuthor, function(req, res) {
-	models.Word.destroy({
+	return models.Word.destroy({
 		where: {
 			wid: req.body.wid
 		}
 	})
 	.then(function(deletedWord) {
-		res.status(200).send({
+		return res.status(200).send({
 			error: false,
 			wid: req.body.wid
 		});
@@ -210,7 +210,7 @@ Router.put('/word/update', VerifyToken, CheckFlashcardAuthor, function(req, res)
 
 	if(!errors) {
 
-		models.Word.update({
+		return models.Word.update({
 			firstColumnValue: req.body.firstColWord,
 			secondColumnValue: req.body.secondColWord
 		}, {
@@ -219,14 +219,14 @@ Router.put('/word/update', VerifyToken, CheckFlashcardAuthor, function(req, res)
 			}
 		})
 		.then(function(updatedWord) {
-			res.status(200).send({
+			return res.status(200).send({
 				error: false,
 				wid: req.body.wid
 			});
 		});
 
 	} else {
-		res.status(404).send({
+		return res.status(404).send({
 			error: true,
 			errors
 		});			
@@ -238,7 +238,7 @@ Router.put('/word/update', VerifyToken, CheckFlashcardAuthor, function(req, res)
 */
 Router.put("/word/learned", VerifyToken, CheckFlashcardAuthor, function(req, res) {
 	console.log(req.body);
-	models.Word.findOne({
+	return models.Word.findOne({
 		where: {
 			wid: req.body.wid
 		}
@@ -249,7 +249,7 @@ Router.put("/word/learned", VerifyToken, CheckFlashcardAuthor, function(req, res
 				learned: !foundWord.learned
 			})
 			.then(function(updatedWord) {
-				res.status(200).send({
+				return res.status(200).send({
 					word: updatedWord
 				});
 			});

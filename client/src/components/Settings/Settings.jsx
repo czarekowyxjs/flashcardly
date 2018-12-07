@@ -1,15 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component, Suspense, lazy } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Header from '../Header/Header.jsx';
 import Footer from '../Footer/Footer.jsx';
 import SettingsNav from './SettingsNav/SettingsNav.jsx';
-import SettingsPrimary from './SettingsPages/SettingsPrimary/SettingsPrimary.jsx';
-import SecurityAndPrivacy from './SettingsPages/SecurityAndPrivacy/SecurityAndPrivacy.jsx';
+import CircleLoader from "../Commons/Loader/CircleLoader.jsx";
 import { updateUserUsername, updateUserEmail, updateUserPassword, updateEmailPrivacy, updateLoginByUsername } from "../../actions/userActions";
 import { settingsToInitial, switchUsernameStatus, switchEmailStatus, switchPasswordStatus } from '../../actions/settingsActions';
 
 import './Settings.css';
+
+const SettingsPrimary = lazy(() => import('./SettingsPages/SettingsPrimary/SettingsPrimary.jsx'));
+const SecurityAndPrivacy = lazy(() => import('./SettingsPages/SecurityAndPrivacy/SecurityAndPrivacy.jsx'));
 
 class Settings extends Component {
 	render() {
@@ -38,10 +40,12 @@ class Settings extends Component {
 									<SettingsNav user={user} {...this.props}/>
 								</div>
 								<div className="settings_body_wrapper">
-									<Switch>
-										<Route path={`${this.props.match.path}/primary`} render={(props) => <SettingsPrimary {...props} user={user} methods={methods} settings={settings} />}/>
-										<Route path={`${this.props.match.path}/privacy`} render={(props) => <SecurityAndPrivacy {...props} user={user} methods={methods} settings={settings} />}/>
-									</Switch>
+									<Suspense fallback={<CircleLoader/>}>
+										<Switch>
+											<Route path={`${this.props.match.path}/primary`} render={(props) => <SettingsPrimary {...props} user={user} methods={methods} settings={settings} />}/>
+											<Route path={`${this.props.match.path}/privacy`} render={(props) => <SecurityAndPrivacy {...props} user={user} methods={methods} settings={settings} />}/>
+										</Switch>
+									</Suspense>
 								</div>
 							</div>
 						</div>
