@@ -1,14 +1,14 @@
 .settings_wrapper {
 	width:100%;
 	display:flex;
-	flex-direction:row;
+	flex-direction:column;
 	background-color:#fbfbfb;
 	box-shadow:0px 2px 5px 0px rgba(0,0,0,0.3);
 	border-radius:2px;
 }
 
 .settings_nav_wrapper {
-	min-width:240px;
+	width:100%;
 	border-right:1px solid rgba(0,0,0,0.15);
 }
 
@@ -71,7 +71,7 @@
 
 .settings_edit_table_item--key {
 	font-weight:600;
-	min-width:150px;
+	min-width:100px;
 }
 
 .settings_edit_table_item--value {
@@ -79,6 +79,9 @@
 	display:flex;
 	flex-direction:row;
 	align-items:center;
+	word-wrap: break-word;
+	overflow-wrap:break-word;
+	word-break:break-all;
 }
 
 .settings_edit_table_item--option {
@@ -121,7 +124,7 @@
 }
 
 .settings_input {
-	width:40%;
+	width:50%;
 	min-width:100px;
 	max-width:250px;
 	background:none;
@@ -245,9 +248,7 @@
 }
 
 .settings_edit_table_v2_item--extended_form {
-	max-width:800px;
-	width:600px;
-	min-width:200px;
+	width:100%;
 }
 
 .settings_edit_table_v2_item--extended_form > form {
@@ -259,21 +260,54 @@
 .settings_edit_table_v2_item--extended_form_item {
 	width:100%;
 	display:flex;
-	flex-direction:row;
+	flex-direction:column;
 	align-items:center;
 	margin:7px 0px;
 }
 
+.settings_edit_table_v2_item--extended_form_item > input {
+	width:100%;
+}
+
 .settings_edit_table_v2_item--extended_form_item > label {
-	text-align:right;
-	width:30%;
-	max-width:200px;
+	text-align:left;
+	width:100%;
 	font-size:0.8rem;
 	color:#2e2e2e;
 	font-weight:600;
-	margin-right:5px;
+	margin-bottom:3px;
 }
 
 .settings_edit_table_v2_item--extended_form_item.flashcardly_btn_container {
 	margin:12px 0px 0px 0px;
+}
+
+@media (min-width:800px) {
+	.settings_wrapper {
+		flex-direction:row;
+	}
+
+	.settings_nav_wrapper {
+		max-width:240px;
+		width:40%;
+		border-right:1px solid rgba(0,0,0,0.15);
+	}	
+
+	.settings_edit_table_v2_item--extended_form {
+		max-width:800px;
+		width:600px;
+		min-width:200px;
+	}
+
+	.settings_edit_table_v2_item--extended_form_item {
+		flex-direction:row;
+	}
+
+	.settings_edit_table_v2_item--extended_form_item > label {
+		text-align:right;
+		width:30%;
+		max-width:200px;
+		margin-right:5px;
+		margin-bottom:0px;
+	}
 }
