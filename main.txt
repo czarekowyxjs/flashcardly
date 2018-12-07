@@ -1,4 +1,0 @@
-* Complete flashcard intro
-* Add close btn to word searcher
-* Word searcher for mobiles(max/min-width)
-* Word searcher - change scrollInto
