@@ -1,0 +1,133 @@
+.standard_game_window {
+	width:100%;
+	height:100%;
+	display:flex;
+	flex-direction:column;
+	justify-content:space-between;
+}
+
+.standard_game_wrapper {
+	width:100%;
+	height:100%;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+	align-items:center;
+}
+
+.standard_game_arrow {
+	height:100%;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	font-size:4rem;
+	cursor:pointer;
+	opacity:0.8;
+	transition-duration:200ms;
+}
+
+.standard_game_arrow:hover {
+	opacity:1;
+}
+
+.standard_game_word_wrapper {
+	padding:64px 0px;
+	display:flex;
+	flex-direction:row;
+}
+
+.standard_game_word {
+	width:100%;
+}
+
+.standard_game_word > span {
+	width:100%;
+	font-size:3.5rem;
+	font-weight:600;
+	word-wrap:break-word;
+	overflow-wrap:break-word;
+	word-break:break-all;
+	hyphens: auto;
+}
+
+.standard_game_footer {
+	width:100%;
+	display:flex;
+	flex-flow:row wrap;
+	align-items:center;
+	justify-content:space-between;
+	padding:7px 12px;
+}
+
+.standard_game_info, .standard_game_options {
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+	font-size:0.75rem;
+}
+
+.standard_game_info > * {
+	padding:0px 7px;
+}
+
+.standard_game_info_box {
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+	opacity:0.8;
+	transition-duration:200ms;
+}
+
+.standard_game_info_box:hover {
+	opacity:1;
+}
+
+.standard_game_info_box > span:last-of-type {
+	margin-left:3px;
+	font-weight:600;
+}
+
+.standard_game_option {
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+	opacity:0.8;
+	cursor:pointer;
+	transition-duration:200ms;
+	padding:0px 5px;
+}
+
+.standard_game_option:hover {
+	opacity:1;
+}
+
+.standard_game_option > span {
+	font-weight:600;
+}
+
+.standard_game_option > i {
+	margin-left:3px;
+	font-size:1rem;
+}
+
+@media (max-width: 600px) {
+	.standard_game_word_wrapper {
+		padding:32px 0px;
+	}
+
+	.standard_game_footer {
+		flex-direction:column;
+		align-items:center;
+	}
+
+	.standard_game_info, .standard_game_options {
+		width:100%;
+		flex-direction:column;
+		align-items:center;
+	}
+
+	.standard_game_info_box, .standard_game_option {
+		padding:3px 0px;
+		font-size:0.8rem;
+	}
+}

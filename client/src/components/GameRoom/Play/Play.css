@@ -1,0 +1,89 @@
+.game_room_play_wrapper {
+	width:100%;
+	display:flex;
+	flex-direction:column;
+}
+
+.play_window {
+	width:100%;
+	box-shadow:0px 2px 4px 0px rgba(0,0,0,0.2);
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:flex-start;
+	transition-duration:400ms;
+}
+
+.play_window--fullscreen {
+	position:fixed;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	z-index:999;
+}
+
+.play_window.play_window--light {
+	background-color:#fff;
+	color:#2e2e2e;
+}
+
+.play_window.play_window--dark {
+	color:#fff;
+	background-color:#2e2e2e;
+}
+
+.play_window_header {
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+	padding:12px 16px 16px 16px;
+}
+
+.play_info_title > span {
+	font-size:1rem;
+	font-weight:600;
+}
+
+.play_info_title > a {
+	color:#0099cc;
+	margin-left:2px;
+	font-size:0.95rem;
+	transition-duration:200ms;
+}
+
+.play_info_title > a:hover {
+	color:#006699;
+}
+
+.play_window_header_options {
+	
+}
+
+.play_window_header_options > ul {
+	list-style-type:none;
+	display:flex;
+	flex-direction:row;
+}
+
+.play_window_header_options > ul > li {
+	padding:0px 1px;
+	cursor:pointer;
+	opacity:0.8;
+	font-size:1.44rem;
+	transition-duration:200ms;
+}
+
+.play_window_header_options > ul > li:hover {
+	opacity:1;
+}
+
+.play_window_body {
+	height:100%;
+	display:flex;
+	flex-direction:column;
+}
+
+.play_window_header, .play_window_body {
+	width:100%;
+}

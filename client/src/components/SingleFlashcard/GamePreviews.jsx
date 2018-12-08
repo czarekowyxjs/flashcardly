@@ -9,7 +9,7 @@ class GamePreviews extends Component {
 		}
 		switch(gameType) {
 			case "standard":
-				return this.props.history.replace("/gameroom/play?type=1&fid="+this.props.flashcard.flashcardData.fid);
+				return this.props.history.replace(`/gameroom/play?fid=${this.props.flashcard.flashcardData.fid}&type=${gameType}`);
 			case "guessStandard":
 				return this.props.history.replace("/gameroom/play?type=2&fid="+this.props.flashcard.flashcardData.fid);
 			default:

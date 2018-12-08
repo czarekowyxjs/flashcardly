@@ -19,9 +19,6 @@ export const RequireAuth = (Component) => {
 
 		render() {
 			const lang = this.props.user.lang;
-			if(!this.props.user.auth.loaded && this.props.user.userData.username && this.props.user.auth.processing) {
-				return <Component {...this.props}/>;
-			}
 			if(!this.props.user.auth.loaded) {
 				return <Loader message={lang.shorts.loadingAccountData}/>;
 			}

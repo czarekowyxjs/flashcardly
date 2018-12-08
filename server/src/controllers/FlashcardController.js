@@ -184,6 +184,36 @@ Router.get('/', VerifyToken, function(req, res) {
 });
 
 /**
+	Primary one flashcard data
+*/
+Router.get("/primary/:fid", VerifyToken, function(req, res) {
+	return models.Flashcard.findOne({
+		where: {
+			fid: req.params.fid
+		}
+	})
+	.then(function(foundFlashcard) {
+		if(foundFlashcard) {
+			return res.status(200).send({
+				error: false,
+				flashcard: foundFlashcard
+			});
+		} else {
+			return res.status(404).send({
+				error: true,
+				message: "Flashcard not found"
+			});
+		}
+	})
+	.catch(function(err) {
+		return res.status(500).send({
+			error: true,
+			message: "Internal server error"
+		});
+	});
+});
+
+/**
 	Delete word from set
 */
 Router.post('/word/delete', VerifyToken, CheckFlashcardAuthor, function(req, res) {

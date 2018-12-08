@@ -30,7 +30,6 @@ export const localAuth = () => {
 					authorization: token
 				}
 			});
-
 			if(response.status === 200) {
 				localStorage.setItem("token", response.data.token);
 				dispatch(landUpUserData(response.data.user));

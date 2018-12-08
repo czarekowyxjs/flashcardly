@@ -1,7 +1,8 @@
 const models = require("../models");
 
 module.exports = function(req, res, next) {
-	models.User.findOne({
+	console.log(req.headers);
+	return models.User.findOne({
 		include: [{
 			model: models.Token,
 			where: {
@@ -13,8 +14,9 @@ module.exports = function(req, res, next) {
 		if(foundUser) {
 			res.locals.uid = foundUser.uid;
 			next();
+			return null;
 		} else {
-			res.status(404).send({
+			return res.status(404).send({
 				error: true,
 				message: "Permission denied"
 			});
