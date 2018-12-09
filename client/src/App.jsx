@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Login from './components/Auth/Login.jsx';
 import Register from './components/Auth/Register.jsx';
-import Dashboard from './components/Dashboard/Dashboard.jsx';
 import Flashcards from './components/Flashcards/Flashcards.jsx';
 import Settings from './components/Settings/Settings.jsx';
 import Privacy from './components/Privacy/Privacy.jsx';
@@ -21,7 +20,7 @@ class App extends Component {
       		<Switch>
       			<Route path="/signin" component={RequireAuthReverse(Login)}/>
             <Route path="/signup" component={RequireAuthReverse(Register)}/>
-      			<Route path="/" exact={true} component={RequireAuth(Dashboard)}/>
+      			<Route path="/" exact={true} component={RequireAuth(Flashcards)}/>
             <Route path="/flashcards" component={RequireAuth(Flashcards)}/>
             <Route path="/settings" component={RequireAuth(Settings)}/>
             <Route path="/gameroom" component={RequireAuth(GameRoom)}/>

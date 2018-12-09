@@ -6,10 +6,15 @@
 
 .searcher_bar_btn_open {
 	transition-duration:200ms;
+	opacity:0.6;
 }
 
 .searcher_bar_btn_open:hover {
-	opacity:0.6;
+	opacity:0.8;
+}
+
+.searcher_bar_btn_open:active {
+	opacity:1;
 }
 
 .searcher_bar_btn_open > button {
@@ -23,5 +28,88 @@
 }
 
 .searcher_bar_btn_open > button > i {
-	font-size:1.1rem;
+	font-size:1.4rem;
+}
+
+.searcher_bar_window {
+	position:fixed;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	background:rgba(0,0,0,0.9);
+	z-index:999;
+	display:flex;
+	flex-direction:column;
+}
+
+.searcher_bar_header {
+	width:100%;
+	display:flex;
+	flex-direction:row;
+	justify-content:flex-end;
+}
+
+.searcher_bar_header_close_btn {
+	color:#fff;
+	font-size:2.6rem;
+	padding:6px 6px 0px 0px;
+	opacity:0.3;
+	font-weight:400;
+	transition-duration:300ms;
+}
+
+.searcher_bar_header_close_btn:hover {
+	opacity:0.4;
+}
+
+.searcher_bar_form {
+	padding-bottom:20vh;
+	width:100%;
+	height:100%;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+
+.searcher_bar_form > form {
+	width:70%;
+	position:relative;
+}
+
+.searcher_bar_form > form > input, .searcher_bar_form > form > label {
+	color:#fff;
+	font-size:1.5rem;
+	font-weight:400;
+	font-family:'Arial', sans-serif;
+}
+
+.searcher_bar_form > form > input {
+	background:none;
+	border:none;
+	padding:7px 0px;
+	width:100%;
+	border-bottom:2px solid rgba(255,255,255, 0.6);
+}
+
+.searcher_bar_form > form > input:focus {
+	border-bottom:2px solid rgba(255,255,255, 1);
+}
+
+.searcher_bar_form > form > label {
+	position:absolute;
+	left:0px;
+	bottom:9px;
+	opacity:0.1;
+	cursor:auto;
+}
+
+.searcher_bar_form > form > input:focus + label {
+	opacity:0.15;
+}
+
+@media (max-width:600px) {
+	.searcher_bar_form > form {
+		width:90%;
+	}
 }

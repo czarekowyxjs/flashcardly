@@ -73,11 +73,11 @@ class Navigation extends Component {
 							? (<li className="nav_global_directly_hr"><NavLink to="/" className="nav_global_directly_item nav_global_directly_item--hov1"><span>{lang.nav.flashcards}</span></NavLink></li>)
 							: null
 						}
-						<li className="nav_global_directly_hr"><div className="nav_global_directly_item">
+						<li><div className="nav_global_directly_item">
 							<SearcherBar lang={lang}/>
 						</div></li>
-						<li><div className="nav_global_directly_item">
-							<DropDownMenu methods={methods} lang={lang}/>
+						<li><div className="nav_global_directly_item nav_global_directly_item--col">
+							<DropDownMenu visibility={this.state.dropDownUserBarMenuVisibility} methods={methods} lang={lang}/>
 						</div></li>
 					</ul>
 				</nav>

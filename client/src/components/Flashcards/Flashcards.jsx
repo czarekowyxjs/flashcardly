@@ -5,6 +5,7 @@ import Footer from '../Footer/Footer.jsx';
 import CreateFlashcards from '../CreateFlashcards/CreateFlashcards.jsx';
 import SingleFlashcard from '../SingleFlashcard/SingleFlashcard.jsx';
 import OwnFlashcards from '../OwnFlashcards/OwnFlashcards.jsx';
+import SingleFlashcardEdit from '../SingleFlashcardEdit/SingleFlashcardEdit.jsx';
 
 import "./Flashcards.css";
 
@@ -19,7 +20,8 @@ class Flashcards extends Component {
 							<Switch>
 								<Route path={`${this.props.match.path}`} render={(props) => <OwnFlashcards {...props}/>} exact={true}/>
 								<Route path={`${this.props.match.path}/create`} render={(props) => <CreateFlashcards {...props}/>}/>
-								<Route path={`${this.props.match.path}/:fid`} render={(props) => <SingleFlashcard {...props}/>}/>
+								<Route path={`${this.props.match.path}/:fid`} render={(props) => <SingleFlashcard {...props}/>} exact={true}/>
+								<Route path={`${this.props.match.path}/:fid/settings`} render={(props) => <SingleFlashcardEdit {...props}/>}/>
 							</Switch>
 						</div>
 					</div>

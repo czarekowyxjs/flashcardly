@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { IoIosSync } from 'react-icons/io';
+import { FiRefreshCcw } from 'react-icons/fi';
 import { FaCheck } from 'react-icons/fa';
 
 class SingleWord extends Component {
@@ -15,7 +15,7 @@ class SingleWord extends Component {
 				</div>
 				<div className="standard_game_word_options">
 					<ul>
-						<li className="word_options_reverse_card" onClick={this.props.methods.reverseCard}><IoIosSync/></li>
+						<li className="word_options_reverse_card" onClick={this.props.methods.reverseCard}><FiRefreshCcw/></li>
 						<li className={`word_options_check--${this.props.word.learned ? "checked" : "notchecked"}`} onClick={this.handleToggleCheckWord}><FaCheck/></li>
 					</ul>
 				</div>

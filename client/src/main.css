@@ -196,8 +196,8 @@ a {
 }
 
 .flashcardly_dialog {
-	width:90%;
-	min-width:300px;
+	width:96%;
+	min-width:200px;
 	max-width:500px;
 	background-color:#fbfbfb;
 	border-radius:2px;

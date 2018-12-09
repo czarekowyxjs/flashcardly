@@ -64,7 +64,7 @@
 }
 
 .flashcard_preview_table_desc > p {
-	font-size:0.8rem;
+	font-size:0.75rem;
 	padding:8px;
 	transition:color 200ms linear;
 	color:rgba(0,0,0,0.4);

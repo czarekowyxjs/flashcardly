@@ -1,0 +1,45 @@
+.flashcard_edit_header {
+	width:100%;
+	display:flex;
+	flex-direction:column;
+}
+
+.flashcard_edit_header_title {
+	width:100%;
+	background-image:linear-gradient(#535353, #3d3d3d);
+	display:flex;
+	flex-direction:row;
+	align-items:flex-end;
+	padding:7px 9px;
+	border-top-left-radius:1px;
+	border-top-right-radius:1px;
+	border-bottom:1px solid rgba(0,0,0,0.2);
+	text-align:center;
+}
+
+.flashcard_edit_header_title > a {
+	width:100%;
+	height:100%;
+	color:#fff;
+	font-size:0.75rem;
+	font-weight:600;
+	opacity:0.8;
+	cursor:pointer;
+}
+
+.flashcard_edit_header_title > a:hover {
+	opacity:1;
+}
+
+.flashcard_edit_header_body {
+	width:100%;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+}
+
+.flashcard_edit_panel {
+	width:96%;
+	display:flex;
+	flex-direction:column;
+}

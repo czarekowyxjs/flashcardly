@@ -58,3 +58,14 @@ export const switchLoginByUsernameStatus = (processing, loaded, editable) => {
 		}
 	}
 }
+
+export const switchFlashcardTitleStatus = (processing, loaded, editable) => {
+	return {
+		type: "SWITCH_FLASHCARDTITLE_STATUS",
+		payload: {
+			processing,
+			loaded,
+			editable
+		}
+	}
+}

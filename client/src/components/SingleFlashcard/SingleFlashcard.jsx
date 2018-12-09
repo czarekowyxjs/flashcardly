@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { FiSettings, FiTrash } from 'react-icons/fi';
 import { fetchFlashcardSet, setFetchFlashcardLoaded, addNewWordToSet, returnFlashcardToInitial, deleteWord, setWordAsEditable, setWordAsNotEditable, editWord } from '../../actions/flashcardActions';
 import { confirmFlashcardIntroduce } from '../../actions/userActions';
 import TableOfFlashcardWords from './TableOfFlashcardWords.jsx';
@@ -84,6 +85,14 @@ class SingleFlashcard extends Component {
 									<Link to={`/users/${this.props.flashcard.authorData.uid}`}>{this.props.flashcard.authorData.username}</Link>
 								</p>
 							</div>
+						</div>
+						<div className="single_flashcard_options">
+							<Link to={`${this.props.location.pathname}/settings`} className="single_flashcard_options_item">
+								<FiSettings/>
+							</Link>
+							<Link to="/" className="single_flashcard_options_item">
+								<FiTrash/>
+							</Link>
 						</div>
 					</div>
 					<div className="single_flashcard_body">

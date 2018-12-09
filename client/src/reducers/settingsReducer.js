@@ -1,4 +1,7 @@
 const initialState = {
+	/**
+		Options for user settings
+	*/
 	username: {
 		processing: false,
 		loaded: false,
@@ -20,6 +23,14 @@ const initialState = {
 		editable: false
 	},
 	loginByUsername: {
+		processing: false,
+		loaded: false,
+		editable: false
+	},
+	/**
+		Options for flashcard settings
+	*/
+	flashcardTitle: {
 		processing: false,
 		loaded: false,
 		editable: false
@@ -54,6 +65,11 @@ export default (state = initialState, action) => {
 			return {
 				...state,
 				loginByUsername: action.payload
+			};
+		case "SWITCH_FLASHCARDTITLE_STATUS":
+			return {
+				...state,
+				flashcardTitle: action.payload
 			};
 		default:
 			return state;
