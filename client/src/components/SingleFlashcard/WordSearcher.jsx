@@ -79,7 +79,7 @@ class WordSearcher extends Component {
 							<form onSubmit={this.handleWordSearcherSubmit}>
 								<input 
 									type="text" 
-									className="flashcardly_input"
+									className="flashcardly_modest_input"
 									value={this.state.searchValue}
 									onChange={this.handleSearchChange}
 									name="searchValue"

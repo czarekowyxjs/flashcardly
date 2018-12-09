@@ -25,7 +25,7 @@ class ChangePasswordForm extends Component {
 						<label htmlFor="currentPassword">{lang.shorts.currentPassword}</label>
 						<input 
 							type="password" 
-							className="settings_input"
+							className="flashcardly_modest_input settings_input"
 							name="currentPassword"
 							value={this.state.currentPassword}
 							onChange={this.handleInputEdit}
@@ -35,7 +35,7 @@ class ChangePasswordForm extends Component {
 						<label htmlFor="newPassword">{lang.shorts.newPassword}</label>
 						<input 
 							type="password" 
-							className="settings_input"
+							className="flashcardly_modest_input settings_input"
 							name="newPassword"
 							value={this.state.newPassword}
 							onChange={this.handleInputEdit}
@@ -45,7 +45,7 @@ class ChangePasswordForm extends Component {
 						<label htmlFor="newPasswordRepeat">{lang.shorts.newPasswordRepeat}</label>
 						<input 
 							type="password" 
-							className="settings_input"
+							className="flashcardly_modest_input settings_input"
 							name="newPasswordRepeat"
 							value={this.state.newPasswordRepeat}
 							onChange={this.handleInputEdit}

@@ -71,7 +71,10 @@
 
 .settings_edit_table_item--key {
 	font-weight:600;
+	width:50%;
+	max-width:170px;
 	min-width:100px;
+	padding:0px 2px;
 }
 
 .settings_edit_table_item--value {
@@ -127,19 +130,6 @@
 	width:50%;
 	min-width:100px;
 	max-width:250px;
-	background:none;
-	border:none;
-	background-color:#fbfbfb;
-	border:1px solid rgba(0,0,0,0.15);
-	border-radius:3px;
-	padding:4px 6px;
-	font-size:0.9rem;
-	color:rgba(0,0,0,0.5);
-}
-
-.settings_input:focus {
-	border:1px solid rgba(0,0,0,0.3);
-	color:#2e2e2e;
 }
 
 .settings_loader_wrapper {

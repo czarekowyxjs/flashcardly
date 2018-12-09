@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateUserAvatar } from '../../actions/userActions';
 import Navigation from '../Navigation/Navigation.jsx';
-import TopAsides from '../Asides/TopAsides/TopAsides.jsx';
 import AvatarPopUp from './AvatarPopUp/AvatarPopUp.jsx';
 
 class Header extends Component {
@@ -35,9 +34,6 @@ class Header extends Component {
 				}
 				<div className="app_header_row">
 					<Navigation lang={this.props.user.lang} user={this.props.user} methods={methods}/>
-				</div>
-				<div className="app_header_row">
-					<TopAsides/>
 				</div>
 			</div>
 		);

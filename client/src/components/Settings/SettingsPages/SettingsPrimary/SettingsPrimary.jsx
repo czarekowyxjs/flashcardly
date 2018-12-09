@@ -65,7 +65,7 @@ class SettingsPrimary extends Component {
 										value={this.state.username} 
 										name="username" 
 										onChange={this.handleInputChange}
-										className="settings_input"
+										className="flashcardly_modest_input settings_input"
 									/>
 									: user.userData.username
 								}
@@ -99,7 +99,7 @@ class SettingsPrimary extends Component {
 										value={this.state.email} 
 										name="email" 
 										onChange={this.handleInputChange}
-										className="settings_input"
+										className="flashcardly_modest_input settings_input"
 									/>
 									: user.userData.email
 								}

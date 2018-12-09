@@ -1,21 +1,24 @@
 .app_user_bar {
+	height:100%;
+	width:100%;
 	display:flex;
 	flex-direction:row;
 	align-items:center;
 	justify-content:flex-start;
-	padding:0px 0px 0px 0px;
 }
 
 .app_user_bar_av {
-	position:relative;
 	margin-right:7px;
+	max-width:30px;
+	max-height:30px;
+	min-width:24px;
+	min-height:24px;
 }
 
 .app_user_bar_av > img {
 	border-radius:100%;
-	margin-top:3px;
-	width:32px;
-	height:32px;
+	width:100%;
+	height:100%;
 	cursor:pointer;
 	transition:transform 200ms linear;
 }
@@ -25,7 +28,7 @@
 }
 
 .app_user_bar_av > img:active {
-	transform:scale(0.3);
+	transform:scale(0.6);
 }
 
 .app_user_bar_basic_info {
@@ -37,10 +40,12 @@
 	font-weight:600;
 	color:#fbfbfb;
 	transition-duration:200ms;
+	text-overflow:ellipsis;
+	white-space:nowrap;
 }
 
 .user_bar_basic_info--fullname:hover {
-	transform:scale(0.95);
+	
 }
 
 @media (max-width: 800px) {

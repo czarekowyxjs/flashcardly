@@ -1,0 +1,27 @@
+.searcher_bar {
+	display:flex;
+	flex-direction:row;
+	align-items:flex-end;
+}
+
+.searcher_bar_btn_open {
+	transition-duration:200ms;
+}
+
+.searcher_bar_btn_open:hover {
+	opacity:0.6;
+}
+
+.searcher_bar_btn_open > button {
+	margin-top:3px;
+	background:none;
+	border:none;
+	cursor:pointer;
+	color:#fff;
+	display:flex;
+	flex-direction:row;
+}
+
+.searcher_bar_btn_open > button > i {
+	font-size:1.1rem;
+}

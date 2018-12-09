@@ -22,6 +22,7 @@
 
 .single_flashcard_word_searcher_body > form > input {
 	width:100%;
+	margin-top:1px;
 }
 
 .single_flashcard_word_searcher_body > form > .flashcardly_btn_container {

@@ -28,8 +28,8 @@ export const getUserScreenParameters = () => {
 	return {
 		type: "GET_SCREEN_PARAMETERS",
 		payload: {
-			width: window.screen.availWidth,
-			height: window.screen.availHeight
+			width: window.innerWidth,
+			height: window.innerHeight
 		}
 	};
 };

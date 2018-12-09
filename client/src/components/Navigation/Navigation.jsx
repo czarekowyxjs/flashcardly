@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import UserBar from "../UserBar/UserBar.jsx";
 import DropDownMenu from './DropDownMenu.jsx';
+import SearcherBar from '../Searcher/SearcherBar/SearcherBar.jsx';
 
 import "./Navigation.css";
 
@@ -28,6 +29,8 @@ class Navigation extends Component {
 
 	renderDropDownUserBarMenu = () => {
 		if(!this.state.dropDownUserBarMenuVisibility) return null;
+		const user = this.props.user;
+		const lang = this.props.lang;
 		return (
 			<div className="nav_drop_down_menu">
 				<div className="nav_drop_down_menu_content">
@@ -36,10 +39,15 @@ class Navigation extends Component {
 					</div>
 					<div className="nav_drop_down_menu_menu">
 						<ul>
-							<li><NavLink to="#" onClick={this.props.methods.handleAvatarClick}>{this.props.lang.titles.changeYourAvatar}</NavLink></li>
-							<li><NavLink to="/flashcards/create">{this.props.lang.titles.flashcardsCreator}</NavLink></li>
-							<li><NavLink to="/settings/primary">{this.props.lang.nav.settings}</NavLink></li>
-							<li><NavLink to="/signout">{this.props.lang.nav.logout}</NavLink></li>
+							{
+								user.screen.width <= 600 
+								? (<li><NavLink to="/">{lang.nav.flashcards}</NavLink></li>)
+								: null
+							}
+							<li><NavLink to="#" onClick={this.props.methods.handleAvatarClick}>{lang.titles.changeYourAvatar}</NavLink></li>
+							<li><NavLink to="/flashcards/create">{lang.titles.flashcardsCreator}</NavLink></li>
+							<li><NavLink to="/settings/primary">{lang.nav.settings}</NavLink></li>
+							<li><NavLink to="/signout">{lang.nav.logout}</NavLink></li>
 						</ul>
 					</div>
 				</div>
@@ -49,6 +57,7 @@ class Navigation extends Component {
 
 	render() {
 		const lang = this.props.lang;
+		const user = this.props.user;
 		const methods = this.props.methods;
 		methods.renderDropDownUserBarMenu = this.renderDropDownUserBarMenu;
 		methods.changeDropDownUserBarMenuVisibility = this.changeDropDownUserBarMenuVisibility;
@@ -56,12 +65,19 @@ class Navigation extends Component {
 			<div className="app_nav_global">
 				<nav>
 					<ul className="nav_global_directly">
-						<li><div className="nav_global_directly_item">
+						<li className="nav_global_directly_hr"><div className="nav_global_directly_item nav_global_directly_item--hov1">
 							<UserBar user={this.props.user} methods={methods}/>
 						</div></li>
-						<li><NavLink to="/" className="nav_global_directly_item"><span>{lang.nav.flashcards}</span></NavLink></li>
+						{
+							user.screen.width > 600 
+							? (<li className="nav_global_directly_hr"><NavLink to="/" className="nav_global_directly_item nav_global_directly_item--hov1"><span>{lang.nav.flashcards}</span></NavLink></li>)
+							: null
+						}
+						<li className="nav_global_directly_hr"><div className="nav_global_directly_item">
+							<SearcherBar lang={lang}/>
+						</div></li>
 						<li><div className="nav_global_directly_item">
-							<DropDownMenu methods={methods} lang={lang} />
+							<DropDownMenu methods={methods} lang={lang}/>
 						</div></li>
 					</ul>
 				</nav>
