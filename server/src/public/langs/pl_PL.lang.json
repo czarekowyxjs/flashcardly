@@ -72,7 +72,11 @@
 		"login": "Logowanie",
 		"currentPassword": "Aktualne hasło",
 		"newPassword": "Nowe hasło",
-		"newPasswordRepeat": "Powtórz nowe hasło"
+		"newPasswordRepeat": "Powtórz nowe hasło",
+		"actualColumn": "Aktualna kolumna",
+		"wordNumber": "Numer słowa",
+		"shuffleWords": "Przetasuj słowa",
+		"reverseCard": "Odwróć kartę"
 	},
 	"contents": {
 		"registerUsernameDesc": "Nazwa użytkownika jest widoczna dla innych użytkowników. Pamiętaj, aby była unikalna",

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import { MdNavigateNext, MdNavigateBefore } from 'react-icons/md';
 import { IoIosSync, IoIosRefresh } from 'react-icons/io';
 import SingleWord from './SingleWord.jsx';
@@ -11,7 +12,8 @@ class Standard extends Component {
 		actualWord: 0,
 		firstColumn: true,
 		words: [],
-		loaded: false
+		loaded: false,
+		processingWordLearned: false
 	}
 
 	componentDidMount() {
@@ -70,12 +72,49 @@ class Standard extends Component {
 		}));
 	}
 
+	toggleCheckWordLearned = wid => {
+		if(this.state.processingWordLearned) return;
+		let words = this.state.words;
+		for(let i = 0;i < words.length;++i) {
+			if(parseInt(wid, 10) === parseInt(words[i].wid, 10)) {
+				words[i].learned = !words[i].learned;
+				break;
+			}
+		}
+
+		this.setState(prevState => ({
+			words: words,
+			processingWordLearned: !prevState.processingWordLearned
+		}), async () => {
+			try {
+				const token = localStorage.getItem("token");
+				const response = await axios.put("/api/v1/flashcards/word/learned", {
+					wid
+				}, {
+					headers: {
+						authorization: token
+					}
+				});
+
+				if(response.status === 200) {
+					this.setState(prevState => ({
+						processingWordLearned: !prevState.processingWordLearned
+					}));
+				}
+
+			} catch(e) {
+				console.log(e.response);
+			}
+		});
+	}
+
 	render() {
 		if(!this.state.loaded) return <p>Loading</p>;
 
-		const methods = {
-			reverseCard: this.reverseCard
-		};
+		const lang = this.props.lang;
+		let methods = this.props.methods;
+		methods.reverseCard = this.reverseCard;
+		methods.toggleCheckWordLearned = this.toggleCheckWordLearned;
 
 		return (
 			<div className="standard_game_window">
@@ -92,7 +131,7 @@ class Standard extends Component {
 					<div className="standard_game_info">
 						<div className="standard_game_info_box">
 							<span>
-								Column name: 
+								{`${lang.shorts.actualColumn}:`}
 							</span>
 							<span>
 								{
@@ -104,7 +143,7 @@ class Standard extends Component {
 						</div>
 						<div className="standard_game_info_box">
 							<span>
-								Word number: 
+								{`${lang.shorts.wordNumber}:`}
 							</span>
 							<span>
 								{`${this.state.actualWord+1}/${this.state.count}`}
@@ -114,7 +153,7 @@ class Standard extends Component {
 					<div className="standard_game_options">
 						<div onClick={this.handleShuffleWords} className="standard_game_option">
 							<span>
-								Shuffle words
+								{lang.shorts.shuffleWords}
 							</span>
 							<i>
 								<IoIosRefresh/>
@@ -122,7 +161,7 @@ class Standard extends Component {
 						</div>
 						<div onClick={this.reverseCard} className="standard_game_option">
 							<span>
-								Reverse card
+								{lang.shorts.reverseCard}
 							</span>
 							<i>
 								<IoIosSync/>

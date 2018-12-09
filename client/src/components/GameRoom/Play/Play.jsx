@@ -49,9 +49,13 @@ class Play extends Component {
 	}
 
 	renderGamePlayGround = () => {
+		const methods = {
+			
+		};
+
 		switch(this.parsedParams.type) {
 			case "standard":
-				return <FetchFlashcard light={this.state.colorMode === "light" ? false : true} lang={this.props.user.lang} fid={this.parsedParams.fid} Component={Standard}/>;
+				return <FetchFlashcard methods={methods} light={this.state.colorMode === "light" ? false : true} lang={this.props.user.lang} fid={this.parsedParams.fid} Component={Standard}/>;
 			default:
 				return;
 		}

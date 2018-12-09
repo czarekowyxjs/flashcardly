@@ -72,7 +72,11 @@
 		"login": "Login",
 		"currentPassword": "Current password",
 		"newPassword": "New password",
-		"newPasswordRepeat": "Repeat new password"
+		"newPasswordRepeat": "Repeat new password",
+		"actualColumn": "Actual column",
+		"wordNumber": "Word number",
+		"shuffleWords": "Shuffle words",
+		"reverseCard": "Reverse card"
 	},
 	"contents": {
 		"registerUsernameDesc": "It's your username, visible for other users. Remember: Your username should be unique.",

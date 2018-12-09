@@ -267,7 +267,6 @@ Router.put('/word/update', VerifyToken, CheckFlashcardAuthor, function(req, res)
 	Toggle check learned word
 */
 Router.put("/word/learned", VerifyToken, CheckFlashcardAuthor, function(req, res) {
-	console.log(req.body);
 	return models.Word.findOne({
 		where: {
 			wid: req.body.wid
@@ -275,7 +274,7 @@ Router.put("/word/learned", VerifyToken, CheckFlashcardAuthor, function(req, res
 	})
 	.then(function(foundWord) {
 		if(foundWord) {
-			foundWord.updateAttributes({
+			return foundWord.updateAttributes({
 				learned: !foundWord.learned
 			})
 			.then(function(updatedWord) {

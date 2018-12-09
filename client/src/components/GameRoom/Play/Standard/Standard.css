@@ -50,6 +50,52 @@
 	hyphens: auto;
 }
 
+.standard_game_word_options {
+	
+}
+
+.standard_game_word_options > ul {
+	list-style-type:none;
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+}
+
+.standard_game_word_options > ul > li {
+	font-size:2rem;
+	cursor:pointer;
+	padding:0px 5px;
+	transition-duration:200ms;
+}
+
+.standard_game_word_options > ul > li.word_options_reverse_card {
+	color:#0099cc;
+}
+
+.standard_game_word_options > ul > li.word_options_reverse_card:hover {
+	transform:scale(0.9);
+}
+
+.standard_game_word_options > ul > li.word_options_reverse_card:active {
+	transform:scale(0.5);
+}
+
+.word_options_check--checked {
+	color:#e96443;
+}
+
+.word_options_check--checked:hover {
+	color:#904e95;
+}
+
+.word_options_check--notchecked {
+	opacity:0.5;
+}
+
+.word_options_check--notchecked:hover {
+	opacity:1;
+}
+
 .standard_game_footer {
 	width:100%;
 	display:flex;

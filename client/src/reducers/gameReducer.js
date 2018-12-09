@@ -20,16 +20,6 @@ export default (state = initialState, action) => {
 				...state,
 				primaryFlashcardLoadedData: action.payload
 			};
-		case "FETCH_FLASHCARD_GAME_LOADED":
-			return {
-				...state,
-				fetchFlashcardGameLoaded: action.payload
-			};
-		case "SET_GAMEABLE":
-			return {
-				...state,
-				gameable: action.payload
-			};
 		default:
 			return state;
 	}
