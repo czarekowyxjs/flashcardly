@@ -43,8 +43,10 @@ class SecurityAndPrivacy extends Component {
 				</div>
 				<div className="settings_page">
 					<div className="settings_edit_table_v2">
-						<div className="settings_edit_table_v2_title">
-							<h3>{lang.shorts.login}</h3>
+						<div className="settings_edit_table_v2_header">
+							<div className="settings_edit_table_v2_title">
+								<h3>{lang.shorts.login}</h3>
+							</div>
 						</div>
 						<div className="settings_edit_table_v2_items">
 							<ChangePassword user={user} settings={settings} methods={methods} />
@@ -52,8 +54,10 @@ class SecurityAndPrivacy extends Component {
 						</div>
 					</div>
 					<div className="settings_edit_table_v2">
-						<div className="settings_edit_table_v2_title">
-							<h3>{lang.titles.privacy}</h3>
+						<div className="settings_edit_table_v2_header">
+							<div className="settings_edit_table_v2_title">
+								<h3>{lang.titles.privacy}</h3>
+							</div>
 						</div>
 						<div className="settings_edit_table_v2_items">
 							<EmailPrivacy user={user} settings={settings} methods={methods} />

@@ -7,6 +7,7 @@ import { confirmFlashcardIntroduce } from '../../actions/userActions';
 import TableOfFlashcardWords from './TableOfFlashcardWords.jsx';
 import GamePreviews from './GamePreviews.jsx';
 import ProcessUnixTime from '../../helpers/ProcessUnixTime.js';
+import CustomError from '../CustomError/CustomError.jsx';
 import Loader from '../Commons/Loader/Loader.jsx';
 import Introduce from './Introduce.jsx';
 
@@ -53,8 +54,11 @@ class SingleFlashcard extends Component {
 	}
 
 	render() {
-
 		const lang = this.props.user.lang;
+		if(this.props.flashcard.error.status) {
+			return <CustomError h={this.props.flashcard.error.h} m={this.props.flashcard.error.m}/>
+		}
+		//
 		if(!this.props.flashcard.fetchFlashcardLoaded) {
 			return <Loader message={lang.shorts.loadingFlashcard}/>;
 		}
@@ -86,14 +90,18 @@ class SingleFlashcard extends Component {
 								</p>
 							</div>
 						</div>
-						<div className="single_flashcard_options">
+						{
+							this.props.flashcard.userIsAuthor 
+							?(<div className="single_flashcard_options">
 							<Link to={`${this.props.location.pathname}/settings`} className="single_flashcard_options_item">
 								<FiSettings/>
 							</Link>
 							<Link to="/" className="single_flashcard_options_item">
 								<FiTrash/>
 							</Link>
-						</div>
+						</div>)
+							: null
+						}
 					</div>
 					<div className="single_flashcard_body">
 						<GamePreviews lang={lang} {...this.props}/>

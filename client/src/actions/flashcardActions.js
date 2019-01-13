@@ -12,6 +12,20 @@ export const returnFlashcardToInitial = () => {
 };
 
 /**
+	Customize error
+*/
+export const setFlashcardError = (status, h, m) => {
+	return {
+		type: "SET_FLASHCARD_ERROR",
+		payload: {
+			status,
+			h,
+			m
+		}
+	}
+}
+
+/**
 	FLASHCARD CREATOR
 */
 export const createNewFlashcard = (flashcard) => {
@@ -80,7 +94,7 @@ export const fetchFlashcardSet = (flashcardID) => {
 
 			dispatch(setFetchFlashcardLoaded(true));
 		} catch(e) {	
-			console.log(e.response);
+			dispatch(setFlashcardError(true, "Permission denied", "You don't have permissions to watch this page."))
 		}
 	};	
 };
@@ -343,6 +357,12 @@ export const updateColumnsNames = (firstColumnName, secondColumnName) => {
 	return landUpFlashcardData(flashcardData);
 }
 
+export const updateIsPrivate = () => {
+	let flashcardData = store.getState().flashcard.flashcardData;
+	flashcardData.isPrivate = !flashcardData.isPrivate;
+	return landUpFlashcardData(flashcardData);	
+}
+
 export const updateFlashcardSettings = (fid, optionName, newValue) => {
 	return async dispatch => {
 		dispatch(switchFlashcardEditStatus(optionName, true, false, true));
@@ -364,6 +384,9 @@ export const updateFlashcardSettings = (fid, optionName, newValue) => {
 						break;
 					case "columnsNames":
 						dispatch(updateColumnsNames(newValue.firstColumnName, newValue.secondColumnName));
+						break;
+					case "isPrivate":
+						dispatch(updateIsPrivate());
 						break;
 					default:
 						break;

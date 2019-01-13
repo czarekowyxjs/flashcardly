@@ -23,6 +23,10 @@ module.exports = {
         type: Sequelize.STRING(20),
         required: true
       },
+      isPrivate: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false
+      },
       createdAt: {
         type: Sequelize.STRING(99)
       }

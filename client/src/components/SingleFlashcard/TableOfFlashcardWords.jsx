@@ -67,11 +67,14 @@ class TableOfFlashcardWords extends Component {
 					</div>
 				</div>
 				<AddWordForm lang={this.props.lang} methods={this.props.methods} flashcard={flashcard} searched={this.state.searched}/>
+
 				{this.renderTableItems(flashcard.flashcardData.Words)}
-				{!flashcard.addWordLoaded
+				
+				{
+					!flashcard.addWordLoaded
 					? <AddWordLoader/> 
 					: null
-					}
+				}
 			</div>
 		);
 	}

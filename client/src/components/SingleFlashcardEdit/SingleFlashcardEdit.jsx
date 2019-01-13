@@ -35,6 +35,8 @@ class SingleFlashcardEdit extends Component {
 				return this.props.updateFlashcardSettings(this.props.flashcard.flashcardData.fid, e.target.dataset.name, value.title);
 			case "columnsNames":
 				return this.props.updateFlashcardSettings(this.props.flashcard.flashcardData.fid, e.target.dataset.name, value);
+			case "isPrivate":
+				return this.props.updateFlashcardSettings(this.props.flashcard.flashcardData.fid, e.target.dataset.name, value);
 			default:
 				return null;
 		}

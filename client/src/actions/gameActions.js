@@ -20,7 +20,7 @@ export const fetchFlashcardPrimary = (flashcardID) => {
 			}
 
 		} catch(e) {
-
+			console.log(e.response);
 		} finally {
 			dispatch(fetchFlashcardPrimaryStatus(false, true));
 		}

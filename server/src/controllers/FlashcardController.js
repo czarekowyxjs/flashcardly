@@ -98,6 +98,13 @@ Router.get('/:fid', VerifyToken, function(req, res) {
 		]
 	})
 	.then(function(foundFlashcard) {
+		if(foundFlashcard.isPrivate && res.locals.uid != foundFlashcard.author) {
+			return res.status(403).send({
+				error: true,
+				m: "Permission denied"
+			});
+		}
+
 		if(foundFlashcard) {
 
 			return models.User.findOne({

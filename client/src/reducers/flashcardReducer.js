@@ -6,7 +6,12 @@ const initialState = {
 	flashcardData: {},
 	authorData: {},
 	userIsAuthor: false,
-	emptyFlashcardSet: false
+	emptyFlashcardSet: false,
+	error: {
+		status: false,
+		h: "",
+		m: ""
+	}
 };
 
 export default (state = initialState, action) => {
@@ -48,6 +53,11 @@ export default (state = initialState, action) => {
 				...state,
 				flashcardData: action.payload
 			};
+		case "SET_FLASHCARD_ERROR":
+			return {
+				...state,
+				error: action.payload
+			}
 		default:
 			return state;
 	}

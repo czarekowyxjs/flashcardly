@@ -143,13 +143,20 @@
 	margin:12px 0px;
 }
 
-.settings_edit_table_v2_title {
+.settings_edit_table_v2_header {
 	width:100%;
 	display:flex;
+	flex-direction:row;
+	align-items:center;
+	justify-content:space-between;
 	background-color:rgba(0,0,0,0);
 	border:1px solid rgba(0,0,0,0.1);
 	border-top-left-radius:5px;
-	border-top-right-radius:5px;
+	border-top-right-radius:5px;	
+}
+
+.settings_edit_table_v2_title {
+	width:100%;
 }
 
 .settings_edit_table_v2_title > h3 {

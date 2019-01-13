@@ -85,4 +85,28 @@ Router.put("/columnsNames", VerifyToken, CheckFlashcardAuthor, function(req, res
 	}
 });
 
+Router.put("/isPrivate", VerifyToken, CheckFlashcardAuthor, function(req, res) {
+	const isPrivate = req.body.isPrivate;
+
+	return models.Flashcard.update({
+		isPrivate: isPrivate
+	}, {
+		where: {
+			fid: req.body.fid
+		}
+	})
+	.then(function(updatedFlashcard) {
+		return res.status(200).send({
+			error: false,
+			m: "OK"
+		});
+	})
+	.catch(function(error) {
+		return res.status(500).send({
+			error: true,
+			m: "Server error"
+		});
+	});
+});
+
 module.exports = Router;

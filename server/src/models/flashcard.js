@@ -22,6 +22,10 @@ module.exports = (sequelize, DataTypes) => {
     	type: DataTypes.STRING(20),
     	required: true
     },
+    isPrivate: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
     createdAt: {
     	type: DataTypes.STRING(99)
     }
