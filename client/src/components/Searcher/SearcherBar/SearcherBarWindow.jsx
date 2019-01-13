@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { IoIosClose } from 'react-icons/io';
+import SearcherBarResults from './SearcherBarResults/SearcherBarResults.jsx';
 
 class SearcherBarWindow extends Component {
 	state = {
@@ -7,51 +7,67 @@ class SearcherBarWindow extends Component {
 	}
 
 	componentDidMount() {
-		let labelVisibility = false;
-		if(this.props.search.query.length === 0) labelVisibility = true;
-		this.setState({
-			labelVisibility: labelVisibility
-		});
+		this.searcherBarQueryRef.focus();
+	}
+
+	componentWillUnmount() {
+		this.props.methods.updateQuery("");
 	}
 
 	handleQueryChange = (e) => {
-		let labelVisibility = false;
-		if(e.target.value.length === 0) labelVisibility = true;
-		this.setState({
+
+		let labelVisibility = true;
+		const self = this;
+		const value = e.target.value;
+
+		if(value.length > 0) labelVisibility = false;
+
+		return this.setState({
 			labelVisibility: labelVisibility
+		}, () => {
+			self.props.methods.updateQuery(value);
+			self.props.methods.executeSearchQuery();
 		});
-		this.props.methods.updateQuery(e.target.value);
 	}
 
-	handleSearcherSubmit = (e) => {
+	handleSearcherBarSubmit = (e) => {
 		e.preventDefault();
-		this.props.methods.handleSearchSubmit();
+		this.props.methods.executeSearchQuery();
 	}
 
 	render() {
 		const search = this.props.search;
-		const methods = this.props.methods;
 		return (
 			<div className="searcher_bar_window">
-				<div className="searcher_bar_header">
-					<div className="searcher_bar_header_close_btn" onClick={methods.handleSearchVisibility}>
-						<IoIosClose/>
-					</div>
+				<div className="nav_drop_down_menu_traingle_wrapper">
+					<div className="nav_drop_down_menu_traingle"></div>
 				</div>
-				<div className="searcher_bar_form">
-					<form onSubmit={this.handleSearcherSubmit}>
-						<input
-							type="text"
-							value={search.query}
-							onChange={this.handleQueryChange}
-							id="query"
-						/>
-						{
-							this.state.labelVisibility
-							? (<label htmlFor="query">Type your query...</label>)
-							: null
-						}
-					</form>
+				<div className="searcher_bar_window_container">
+					<div className="searcher_bar_window_type">
+						<form className="searcher_form" onSubmit={this.handleSearcherBarSubmit}>
+							<div className="searcher_input">
+								<input 
+									type="text" 
+									id="query"
+									value={search.query}
+									onChange={this.handleQueryChange}
+									data-name="protected"
+									ref={el => this.searcherBarQueryRef = el}
+								/>
+								{
+									this.state.labelVisibility
+									? (<label htmlFor="query" data-name="protected">Type your query...</label>)
+									: null
+								}
+							</div>
+							<div className="searcher_submit" data-name="protected">
+								<button data-name="protected" type="submit" className="flashcardly_btn flashcardly_btn--common" disabled={
+										search.searcherBar.processing ? true : false
+									}>Search</button>
+							</div>
+						</form>
+					</div>
+					<SearcherBarResults search={search}/>
 				</div>
 			</div>
 		)

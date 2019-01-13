@@ -87,7 +87,11 @@ a {
 	font-size:0.7rem;
 	font-weight:600;
 	cursor:pointer;
-	transition:border-radius 200ms linear;
+	transition-duration:200ms;
+}
+
+.flashcardly_btn:disabled, .flashcardly_btn:disabled:hover {
+	background:linear-gradient(#bbbbbb, #8a8a8a);
 }
 
 .flashcardly_btn:active {

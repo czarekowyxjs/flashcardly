@@ -13,7 +13,7 @@ Router.post("/signin", function(req, res) {
 		bindPassword: req.body.password
 	}
 	//
-	models.sequelize.query(query, { bind, type: models.sequelize.QueryTypes.SELECT })
+	return models.sequelize.query(query, { bind, type: models.sequelize.QueryTypes.SELECT })
 	.then(function(foundUser) {
 		if(foundUser.length > 0) {
 			//

@@ -1,6 +1,12 @@
 const initialState = {
 	query: "",
-	searcherVisibility: false
+	searcherBar: {
+		processing: false,
+		loaded: false
+	},
+	results: [],
+	offset: 0,
+	limit: 5
 };
 
 export default (state = initialState, action) => {
@@ -8,12 +14,25 @@ export default (state = initialState, action) => {
 		case "UPDATE_SEARCH_QUERY":
 			return {
 				...state,
-				query: action.payload
+				query: action.payload,
+				results: [],
+				searcherBar: {
+					processing: false,
+					loaded: false
+				},
+				offset: 0,
+				limit: 5
 			};
-		case "SET_SEARCHER_VISIBILITY":
+		case "UPDATE_SEARCHER_BAR":
 			return {
 				...state,
-				searcherVisibility: action.payload
+				searcherBar: action.payload
+			};
+		case "UPDATE_SEARCH_DATA":
+			return {
+				...state,
+				results: action.payload.results,
+				offset: action.payload.offset
 			};
 		default:
 			return state;

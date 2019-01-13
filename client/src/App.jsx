@@ -9,6 +9,7 @@ import GameRoom from './components/GameRoom/GameRoom.jsx';
 import { RequireAuth, RequireAuthReverse } from './hocs/RequireAuth.jsx';
 import Logout from './components/Logout/Logout.jsx';
 import ConfirmEmail from './components/ConfirmEmail/ConfirmEmail.jsx';
+import Redirect from './components/Redirect/Redirect.jsx';
 
 import "./Layout.css";
 
@@ -27,6 +28,7 @@ class App extends Component {
             <Route path="/privacy" component={Privacy}/>
             <Route path="/signout" component={Logout}/>
             <Route path="/confirm/:hash" component={ConfirmEmail}/>
+            <Route path="/redirect/:url" component={Redirect}/>
       		</Switch>
       	</BrowserRouter>
       </div>

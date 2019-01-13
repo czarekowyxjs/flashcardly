@@ -9,6 +9,7 @@ const FlashcardController = require("./controllers/FlashcardController");
 const FlashcardSettingsController = require("./controllers/FlashcardSettingsController");
 const UserController = require("./controllers/UserController");
 const ServiceController = require("./controllers/ServiceController");
+const SearchController = require("./controllers/SearchController");
 
 const app = express();
 require("dotenv");
@@ -28,6 +29,7 @@ app.use('/api/v1/flashcards', FlashcardController);
 app.use("/api/v1/flashcards/settings", FlashcardSettingsController);
 app.use('/api/v1/users', UserController);
 app.use('/api/v1/service', ServiceController);
+app.use("/api/v1/service/search", SearchController);
 //
 if(process.env.NODE_ENV == "production") {
 	app.use("/*", function(req, res) {
