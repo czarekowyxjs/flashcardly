@@ -1,37 +1,32 @@
 import React, { Component } from 'react';
-import CircleLoader from '../../../Commons/Loader/CircleLoader.jsx';
+import ChangeFlashcardTitleExtended from './ChangeFlashcardTitleExtended.jsx';
 
 class ChangeFlashcardTitle extends Component {
 	render() {
 		const settings = this.props.settings;
 		const flashcard = this.props.flashcard;
 		const lang = this.props.lang;
+		const methods = this.props.methods;
 		return (
-			<div className={`settings_edit_table_v2_item ${settings.flashcardTitle.editable ? "settings_edit_table_v2_item--active" : null}`}>
+			<div className={`settings_edit_table_v2_item ${settings.flashcardEdit.actualEditable === "title" && settings.flashcardEdit.editable ? "settings_edit_table_v2_item--active" : null}`}>
 				<div className="settings_edit_table_v2_item--short">
 					<div className="settings_edit_table_v2_item--short_desc">
-						<h4>Flashcard title</h4>
-						<p>Title of your set of flashcards should refer to content of this one.</p>
+						<h4>{lang.titles.changeFlashcardTitle}</h4>
+						<p>{lang.contents.changeFlashcardTitleDesc}</p>
 					</div>
 					<div className="settings_edit_table_v2_item--short_btn">
-						<button className="flashcardly_url_btn" data-name="flashcardTitle" onClick={this.props.methods.handleEditableOptionsToggle}>
+						<button className="flashcardly_url_btn" data-name="title" onClick={methods.handleEditOptionsToggle}>
 							{
-								settings.flashcardTitle.editable
+								settings.flashcardEdit.actualEditable === "title" && settings.flashcardEdit.editable
 								? lang.shorts.cancel
-								: lang.shorts.edit
+								: lang.shorts.edit 
 							}
 						</button>
 					</div>
 				</div>
 				{
-					settings.flashcardTitle.editable
-					? (<div className="settings_edit_table_v2_item--extended">
-					{
-						settings.flashcardTitle.processing && !settings.flashcardTitle.loaded
-						? <CircleLoader/>
-						: "xd"
-					}
-					</div>)
+					settings.flashcardEdit.actualEditable === "title" && settings.flashcardEdit.editable
+					? <ChangeFlashcardTitleExtended lang={lang} flashcard={flashcard} settings={settings} methods={methods}/>
 					: null
 				}
 			</div>

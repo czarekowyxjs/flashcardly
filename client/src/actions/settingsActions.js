@@ -59,10 +59,11 @@ export const switchLoginByUsernameStatus = (processing, loaded, editable) => {
 	}
 }
 
-export const switchFlashcardTitleStatus = (processing, loaded, editable) => {
+export const switchFlashcardEditStatus = (actualEditable, processing, loaded, editable) => {
 	return {
-		type: "SWITCH_FLASHCARDTITLE_STATUS",
+		type: "SWITCH_FLASHCARD_EDIT_STATUS",
 		payload: {
+			actualEditable,
 			processing,
 			loaded,
 			editable

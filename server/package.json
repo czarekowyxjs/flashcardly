@@ -1,6 +1,6 @@
 {
   "name": "server",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Api for flashcardly app",
   "main": "server.js",
   "scripts": {
@@ -25,16 +25,16 @@
     "cors": "^2.8.5",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
-    "express-validator": "^5.3.0",
+    "express-validator": "^5.3.1",
     "helmet": "^3.15.0",
     "mysql2": "^1.6.4",
     "nodemailer": "^4.7.0",
-    "sequelize": "^4.41.2",
+    "sequelize": "^4.42.0",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
     "concurrently": "^4.1.0",
-    "nodemon": "^1.18.7"
+    "nodemon": "^1.18.9"
   },
   "engines": {
     "node": "8.12.0",

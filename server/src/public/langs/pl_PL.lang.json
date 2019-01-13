@@ -21,8 +21,8 @@
 		"yourFlashcards": "Twoje fiszki",
 		"language": "Język",
 		"flashcardsSetTitle": "Tytuł zestawu fiszek",
-		"nameFirstColumn": "Tytuł pierwszej kolumny",
-		"nameSecondColumn": "Tytuł drugiej kolumny",
+		"nameFirstColumn": "Nazwa pierwszej kolumny",
+		"nameSecondColumn": "Nazwa drugiej kolumny",
 		"flashcardsCreator": "Kreator fiszek",
 		"standardLearning": "Standardowa nauka",
 		"guessByWriting": "Zgadywanie przez pisanie",
@@ -37,7 +37,11 @@
 		"changePassword": "Zmiana hasła",
 		"emailPrivacy": "Widocznosć adresu email",
 		"privacy": "Prywatność",
-		"loginByUsername": "Logowanie za pomocą nazwy użytkownika"
+		"loginByUsername": "Logowanie za pomocą nazwy użytkownika",
+		"primaryFlashcardSettings": "Podstawowe ustawienia fiszki",
+		"changeFlashcardTitle": "Zmiana nazwy fiszki",
+		"newFlashcardTitle": "Nowa nazwa fiszki",
+		"changeColumnsNames": "Zmień nazwy kolumn"
 	},
 	"buttons": {
 		"login": "Zaloguj się",
@@ -76,7 +80,8 @@
 		"actualColumn": "Aktualna kolumna",
 		"wordNumber": "Numer słowa",
 		"shuffleWords": "Przetasuj słowa",
-		"reverseCard": "Odwróć kartę"
+		"reverseCard": "Odwróć kartę",
+		"backTo": "Wróć do"
 	},
 	"contents": {
 		"registerUsernameDesc": "Nazwa użytkownika jest widoczna dla innych użytkowników. Pamiętaj, aby była unikalna",
@@ -98,7 +103,9 @@
 		"emptyFlashcards": "Jeszcze nie posiadasz żadnych fiszek",
 		"changePasswordDesc": "Twoje hasło powinno być bezpieczne i silne. Nie zapomnij zmieniać hasła co jakiś czas.",
 		"emailPrivacyDesc": "Możesz wybrać, czy chcesz aby inni użytkownicy widzieli Twój adres email. Domyślnie ta opacja jest wyłączona.",
-		"loginByUsernameDesc": "Włącz logowanie za pomocą nazwy użytkownika. Możesz jednocześnie logować się za pomocą adres email lub nazwy użytkownika. Domyślnie ta opacja jest wyłączona."
+		"loginByUsernameDesc": "Włącz logowanie za pomocą nazwy użytkownika. Możesz jednocześnie logować się za pomocą adres email lub nazwy użytkownika. Domyślnie ta opacja jest wyłączona.",
+		"changeFlashcardTitleDesc": "Tytuł zestawu fiszek jest bardzo ważny. Powinien być unikatowy i zgodny z zawartością.",
+		"changeColumnsNamesDesc": "Nazwy kolumn ułatwiają rozpoznanie treści fiszki."
 	},
 	"flashcardsIntroduce": [
 		{

@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { IoIosArrowRoundBack } from 'react-icons/io';
-import { fetchFlashcardSet, setFetchFlashcardLoaded, returnFlashcardToInitial } from '../../actions/flashcardActions';
-import { switchFlashcardTitleStatus } from '../../actions/settingsActions';
+import { fetchFlashcardSet, setFetchFlashcardLoaded, returnFlashcardToInitial, updateFlashcardSettings } from '../../actions/flashcardActions';
+import { switchFlashcardEditStatus } from '../../actions/settingsActions';
 import Loader from '../Commons/Loader/Loader.jsx';
 import EditPanel from './EditPanel/EditPanel.jsx';
 
@@ -21,6 +20,26 @@ class SingleFlashcardEdit extends Component {
 		}		
 	}
 
+	handleEditOptionsToggle = (e) => {
+		if(e.target.dataset.name !== this.props.settings.flashcardEdit.actualEditable) {
+			return this.props.switchFlashcardEditStatus(e.target.dataset.name, false, false, true);
+		}
+		
+		return this.props.switchFlashcardEditStatus(e.target.dataset.name, false, false, !this.props.settings.flashcardEdit.editable);
+	}
+
+	handleOptionSubmit = (e,value) => {
+		e.preventDefault();
+		switch(e.target.dataset.name) {
+			case "title":
+				return this.props.updateFlashcardSettings(this.props.flashcard.flashcardData.fid, e.target.dataset.name, value.title);
+			case "columnsNames":
+				return this.props.updateFlashcardSettings(this.props.flashcard.flashcardData.fid, e.target.dataset.name, value);
+			default:
+				return null;
+		}
+	}
+
 	render() {
 		const lang = this.props.user.lang;
 		if(!this.props.flashcard.fetchFlashcardLoaded) {
@@ -29,8 +48,9 @@ class SingleFlashcardEdit extends Component {
 		const flashcard = this.props.flashcard;
 		const settings = this.props.settings;
 		const methods = {
-			switchFlashcardTitleStatus: this.props.switchFlashcardTitleStatus
-		};
+			handleEditOptionsToggle: this.handleEditOptionsToggle,
+			handleOptionSubmit: this.handleOptionSubmit
+		}
 
 		return (
 			<div className="flashcards_window">
@@ -38,7 +58,7 @@ class SingleFlashcardEdit extends Component {
 					<div className="flashcard_edit_header">
 						<div className="flashcard_edit_header_title">
 							<Link to={`/flashcards/${this.props.match.params.fid}`}>
-								<span>Back to </span>
+								<span>{lang.shorts.backTo} </span>
 								<span>{flashcard.flashcardData.title}</span>
 							</Link>
 						</div>
@@ -60,4 +80,4 @@ const mapStateToProps = state => {
 	}
 }
 
-export default connect(mapStateToProps, { fetchFlashcardSet, setFetchFlashcardLoaded, returnFlashcardToInitial, switchFlashcardTitleStatus })(SingleFlashcardEdit);
+export default connect(mapStateToProps, { fetchFlashcardSet, setFetchFlashcardLoaded, returnFlashcardToInitial, switchFlashcardEditStatus, updateFlashcardSettings })(SingleFlashcardEdit);

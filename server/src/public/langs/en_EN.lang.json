@@ -37,7 +37,11 @@
 		"changePassword": "Change password",
 		"emailPrivacy": "Visibility of email address",
 		"privacy": "Privacy",
-		"loginByUsername": "Login by username"
+		"loginByUsername": "Login by username",
+		"primaryFlashcardSettings": "Primary flashcard settings",
+		"changeFlashcardTitle": "Change flashcard title",
+		"newFlashcardTitle": "New flashcard title",
+		"changeColumnsNames": "Change columns names"
 	},
 	"buttons": {
 		"login": "Log In",
@@ -76,7 +80,8 @@
 		"actualColumn": "Actual column",
 		"wordNumber": "Word number",
 		"shuffleWords": "Shuffle words",
-		"reverseCard": "Reverse card"
+		"reverseCard": "Reverse card",
+		"backTo": "Back to"
 	},
 	"contents": {
 		"registerUsernameDesc": "It's your username, visible for other users. Remember: Your username should be unique.",
@@ -100,7 +105,9 @@
 		"emptyFlashcards": "You don't have any flashcards yet",
 		"changePasswordDesc": "Your password should be secure and strong. Password should be changing so often.",
 		"emailPrivacyDesc": "You can choose, if you want other users to see your email address. By default this option is turned off.",
-		"loginByUsernameDesc": "Turn on login using your username. You can concurentlly use email address or username to login. By default this option is turned off."
+		"loginByUsernameDesc": "Turn on login using your username. You can concurentlly use email address or username to login. By default this option is turned off.",
+		"changeFlashcardTitleDesc": "Title of flashcard is very important. This one should be unique and according to content.",
+		"changeColumnsNamesDesc": "Columns names make it easier to recognize the content of flashcard."
 	},
 	"flashcardsIntroduce": [
 		{

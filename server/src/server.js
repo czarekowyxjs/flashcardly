@@ -6,6 +6,7 @@ const cors = require("cors");
 const helmet = require("helmet");
 const AuthenticationController = require("./controllers/AuthenticationController");
 const FlashcardController = require("./controllers/FlashcardController");
+const FlashcardSettingsController = require("./controllers/FlashcardSettingsController");
 const UserController = require("./controllers/UserController");
 const ServiceController = require("./controllers/ServiceController");
 
@@ -24,6 +25,7 @@ app.use(validator());
 //
 app.use('/api/v1/authentication', AuthenticationController);
 app.use('/api/v1/flashcards', FlashcardController);
+app.use("/api/v1/flashcards/settings", FlashcardSettingsController);
 app.use('/api/v1/users', UserController);
 app.use('/api/v1/service', ServiceController);
 //

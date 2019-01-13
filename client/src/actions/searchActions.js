@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 export const updateQuery = query => {
 	return {
 		type: "UPDATE_SEARCH_QUERY",

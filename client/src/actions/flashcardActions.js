@@ -1,5 +1,6 @@
 import axios from 'axios';
 import store from "../store";
+import { switchFlashcardEditStatus } from './settingsActions';
 
 /**
 	Return to initial state
@@ -324,3 +325,54 @@ export const toggleCheckLearnedWord = wid => {
 		}
 	};
 };
+
+/**
+	Flashcard settings
+*/
+
+export const updateFlashcardTitle = (newTitle) => {
+	let flashcardData = store.getState().flashcard.flashcardData;
+	flashcardData.title = newTitle;
+	return landUpFlashcardData(flashcardData);
+}
+
+export const updateColumnsNames = (firstColumnName, secondColumnName) => {
+	let flashcardData = store.getState().flashcard.flashcardData;
+	flashcardData.firstColumnName = firstColumnName;
+	flashcardData.secondColumnName = secondColumnName;
+	return landUpFlashcardData(flashcardData);
+}
+
+export const updateFlashcardSettings = (fid, optionName, newValue) => {
+	return async dispatch => {
+		dispatch(switchFlashcardEditStatus(optionName, true, false, true));
+		try {
+			const token = localStorage.getItem("token");
+			const response = await axios.put("/api/v1/flashcards/settings/"+optionName, {
+				fid: fid,
+				[optionName]: newValue
+			}, {
+				headers: {
+					authorization: token
+				}
+			});
+
+			if(response.status === 200) {
+				switch(optionName) {
+					case "title":
+						dispatch(updateFlashcardTitle(newValue));
+						break;
+					case "columnsNames":
+						dispatch(updateColumnsNames(newValue.firstColumnName, newValue.secondColumnName));
+						break;
+					default:
+						break;
+				}
+				dispatch(switchFlashcardEditStatus("", false, true, false));
+			}
+
+		} catch(e) {
+			console.log(e.response);
+		}
+	}
+}

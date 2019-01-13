@@ -30,7 +30,8 @@ const initialState = {
 	/**
 		Options for flashcard settings
 	*/
-	flashcardTitle: {
+	flashcardEdit: {
+		actualEditable: "",
 		processing: false,
 		loaded: false,
 		editable: false
@@ -66,10 +67,10 @@ export default (state = initialState, action) => {
 				...state,
 				loginByUsername: action.payload
 			};
-		case "SWITCH_FLASHCARDTITLE_STATUS":
+		case "SWITCH_FLASHCARD_EDIT_STATUS":
 			return {
 				...state,
-				flashcardTitle: action.payload
+				flashcardEdit: action.payload
 			};
 		default:
 			return state;

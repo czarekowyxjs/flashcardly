@@ -1,28 +1,21 @@
 import React, { Component } from 'react';
 import ChangeFlashcardTitle from './ChangeFlashcardTitle/ChangeFlashcardTitle.jsx';
+import ChangeColumnsNames from './ChangeColumnsNames/ChangeColumnsNames.jsx';
 
 class EditPanel extends Component {
-	handleEditableOptionsToggle = (e) => {
-		const dataName = e.target.dataset.name;
-		switch(dataName) {
-			case "flashcardTitle":
-				return this.props.methods.switchFlashcardTitleStatus(false, false, !this.props.settings.flashcardTitle.editable);
-			default:
-				return;
-		}
-	}
-
 	render() {
-		let methods = this.props.methods;
-		methods.handleEditableOptionsToggle = this.handleEditableOptionsToggle;
+		const settings = this.props.settings;
+		const flashcard = this.props.flashcard;
+		const lang = this.props.lang;
 		return (
 			<div className="flashcard_edit_panel">
 				<div className="settings_edit_table_v2">
 					<div className="settings_edit_table_v2_title">
-						<h3>Table</h3>
+						<h3>{lang.titles.primaryFlashcardSettings}</h3>
 					</div>
 					<div className="settings_edit_table_v2_items">
-						<ChangeFlashcardTitle methods={methods} settings={this.props.settings} flashcard={this.props.flashcard} lang={this.props.lang}/>
+						<ChangeFlashcardTitle methods={this.props.methods} settings={settings} lang={lang} flashcard={flashcard}/>
+						<ChangeColumnsNames methods={this.props.methods} settings={settings} lang={lang} flashcard={flashcard}/>
 					</div>
 				</div>
 			</div>
