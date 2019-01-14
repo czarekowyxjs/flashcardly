@@ -79,7 +79,10 @@ export const localAuthReverse = () => {
 export const logoutLocal = () => {
 	return async dispatch => {
 		try {
+
 			const token = localStorage.getItem("token");
+			localStorage.removeItem("token");
+			dispatch(setLoggedStatus(false));
 			const response = await axios.post("/api/v1/authentication/signout", {}, {
 				headers: {
 					authorization: token
@@ -87,8 +90,7 @@ export const logoutLocal = () => {
 			});
 
 			if(response.status === 200) {
-				localStorage.removeItem("token");
-				dispatch(setLoggedStatus(false));
+
 			}
 			
 		} catch(e) {
