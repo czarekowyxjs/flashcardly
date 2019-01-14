@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SearcherBarResults from './SearcherBarResults/SearcherBarResults.jsx';
+import { MdClose } from 'react-icons/md';
 
 class SearcherBarWindow extends Component {
 	state = {
@@ -65,6 +66,9 @@ class SearcherBarWindow extends Component {
 								<button data-name="protected" type="submit" className="flashcardly_btn flashcardly_btn--common" disabled={
 										search.searcherBar.processing ? true : false
 									}>{lang.shorts.search}</button>
+							</div>
+							<div className="searcher_close">
+								<MdClose/>
 							</div>
 						</form>
 					</div>

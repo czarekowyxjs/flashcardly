@@ -103,3 +103,46 @@
 .searcher_submit {
 	padding:0px 5px;
 }
+
+.searcher_close {
+	color:rgba(0,0,0,0.4);
+	margin-right:5px;
+	margin-top:6px;
+	font-size:1.3rem;
+	display:none;
+	transition-duration:200ms;
+}
+
+.searcher_close:hover {
+	color:rgba(0,0,0,0.7);
+}
+
+@media (max-width:600px) {
+	.searcher_bar_window {
+		position:fixed;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+		max-width:100%;
+		width:100vw;
+		z-index:999;
+	}
+
+	.searcher_bar_window > .nav_drop_down_menu_traingle_wrapper {
+		display:none;
+	}
+
+	.searcher_bar_window_container {
+		height:100%;
+		border-radius:0px;
+	}
+
+	.searcher_bar_window_type {
+		border-bottom:1px solid rgba(0,0,0,0.08);
+	}
+
+	.searcher_close {
+		display:inline-block;
+	}
+}

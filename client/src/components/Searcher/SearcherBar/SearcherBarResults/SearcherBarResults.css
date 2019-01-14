@@ -49,3 +49,9 @@
 	font-size:0.95rem;
 	font-weight:400;
 }
+
+@media (max-width:600px) {
+	.searcher_bar_results {
+		border:none;
+	}
+}
