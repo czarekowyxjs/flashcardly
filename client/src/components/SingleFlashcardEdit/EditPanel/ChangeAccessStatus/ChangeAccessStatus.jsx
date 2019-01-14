@@ -10,8 +10,8 @@ class ChangeAccessStatus extends Component {
 			<div className={`settings_edit_table_v2_item`}>
 				<div className="settings_edit_table_v2_item--short">
 					<div className="settings_edit_table_v2_item--short_desc">
-						<h4>Private status</h4>
-						<p>Set status of your flashcard as private.</p>
+						<h4>{lang.titles.privateStatus}</h4>
+						<p>{lang.contents.privateStatusDesc}</p>
 					</div>
 					<div className="settings_edit_table_v2_item--short_btn settings_edit_table_v2_item--short_btn--visible">
 						<label className="flashcardly_toggle_btn">

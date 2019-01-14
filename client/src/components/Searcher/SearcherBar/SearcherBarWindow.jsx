@@ -37,6 +37,7 @@ class SearcherBarWindow extends Component {
 
 	render() {
 		const search = this.props.search;
+		const lang = this.props.lang;
 		return (
 			<div className="searcher_bar_window">
 				<div className="nav_drop_down_menu_traingle_wrapper">
@@ -63,7 +64,7 @@ class SearcherBarWindow extends Component {
 							<div className="searcher_submit" data-name="protected">
 								<button data-name="protected" type="submit" className="flashcardly_btn flashcardly_btn--common" disabled={
 										search.searcherBar.processing ? true : false
-									}>Search</button>
+									}>{lang.shorts.search}</button>
 							</div>
 						</form>
 					</div>

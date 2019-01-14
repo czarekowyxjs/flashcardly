@@ -41,7 +41,8 @@
 		"primaryFlashcardSettings": "Primary flashcard settings",
 		"changeFlashcardTitle": "Change flashcard title",
 		"newFlashcardTitle": "New flashcard title",
-		"changeColumnsNames": "Change columns names"
+		"changeColumnsNames": "Change columns names",
+		"privateStatus": "Private status"
 	},
 	"buttons": {
 		"login": "Log In",
@@ -81,7 +82,8 @@
 		"wordNumber": "Word number",
 		"shuffleWords": "Shuffle words",
 		"reverseCard": "Reverse card",
-		"backTo": "Back to"
+		"backTo": "Back to",
+		"search": "Search"
 	},
 	"contents": {
 		"registerUsernameDesc": "It's your username, visible for other users. Remember: Your username should be unique.",
@@ -107,7 +109,8 @@
 		"emailPrivacyDesc": "You can choose, if you want other users to see your email address. By default this option is turned off.",
 		"loginByUsernameDesc": "Turn on login using your username. You can concurentlly use email address or username to login. By default this option is turned off.",
 		"changeFlashcardTitleDesc": "Title of flashcard is very important. This one should be unique and according to content.",
-		"changeColumnsNamesDesc": "Columns names make it easier to recognize the content of flashcard."
+		"changeColumnsNamesDesc": "Columns names make it easier to recognize the content of flashcard.",
+		"privateStatusDesc": "If you set your flashcard as private, it won't be possible to find and watch this one by other users."
 	},
 	"flashcardsIntroduce": [
 		{
