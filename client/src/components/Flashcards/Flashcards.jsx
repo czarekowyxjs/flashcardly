@@ -1,13 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component, Suspense, lazy } from 'react';
 import { Switch, Route } from 'react-router-dom';
+import CircleLoader from '../Commons/Loader/CircleLoader.jsx';
 import Header from '../Header/Header.jsx';
 import Footer from '../Footer/Footer.jsx';
-import CreateFlashcards from '../CreateFlashcards/CreateFlashcards.jsx';
-import SingleFlashcard from '../SingleFlashcard/SingleFlashcard.jsx';
 import OwnFlashcards from '../OwnFlashcards/OwnFlashcards.jsx';
-import SingleFlashcardEdit from '../SingleFlashcardEdit/SingleFlashcardEdit.jsx';
 
 import "./Flashcards.css";
+
+const SingleFlashcardEdit = lazy(() => import("../SingleFlashcardEdit/SingleFlashcardEdit.jsx"));
+const CreateFlashcards = lazy(() => import("../CreateFlashcards/CreateFlashcards.jsx"));
+const SingleFlashcard = lazy(() => import("../SingleFlashcard/SingleFlashcard.jsx"));
 
 class Flashcards extends Component {
 	render() {
@@ -17,12 +19,14 @@ class Flashcards extends Component {
 					<Header/>
 					<div className="app_body">
 						<div className="app_body_content">
-							<Switch>
-								<Route path={`${this.props.match.path}`} render={(props) => <OwnFlashcards {...props}/>} exact={true}/>
-								<Route path={`${this.props.match.path}/create`} render={(props) => <CreateFlashcards {...props}/>}/>
-								<Route path={`${this.props.match.path}/:fid`} render={(props) => <SingleFlashcard {...props}/>} exact={true}/>
-								<Route path={`${this.props.match.path}/:fid/settings`} render={(props) => <SingleFlashcardEdit {...props}/>}/>
-							</Switch>
+							<Suspense fallback={<CircleLoader/>}>
+								<Switch>
+									<Route path={`${this.props.match.path}`} render={(props) => <OwnFlashcards {...props}/>} exact={true}/>
+									<Route path={`${this.props.match.path}/create`} render={(props) => <CreateFlashcards {...props}/>}/>
+									<Route path={`${this.props.match.path}/:fid`} render={(props) => <SingleFlashcard {...props}/>} exact={true}/>
+									<Route path={`${this.props.match.path}/:fid/settings`} render={(props) => <SingleFlashcardEdit {...props}/>}/>
+								</Switch>
+							</Suspense>
 						</div>
 					</div>
 					<Footer/>

@@ -37,7 +37,7 @@ class AvatarPopUp extends Component {
 	loadImages = () => {
 		const self = this;
 
-		this.state.avatars.map((key, index) => {
+		this.state.avatars.forEach((key, index) => {
 			const src = `/img/avatars/${key}`;
 			const img = new Image();
 			img.onload = (e) => {
