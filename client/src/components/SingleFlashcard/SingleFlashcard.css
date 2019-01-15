@@ -24,7 +24,7 @@
 }
 
 .flashcard_header_title_direct > h3 {
-	color:#2e2e2e;
+	color:#4c4c4c;
 	font-weight:600;
 	font-size:1rem;
 }
@@ -37,15 +37,13 @@
 	
 }
 
-.flashcard_header_title_user > p > span {
-	color:rgba(0,0,0,0.7);
-	font-size:0.75rem;
-	margin:0px 3px;
+.flashcard_header_title_user > p > span, .flashcard_header_title_user > p > time {
+	color:#666666;
+	font-size:0.75rem;	
 }
 
-.flashcard_header_title_user > p > time {
-	color:rgba(0,0,0,0.7);
-	font-size:0.75rem;	
+.flashcard_header_title_user > p > span {
+	margin:0px 3px;
 }
 
 .flashcard_header_title_user > p > span:first-child {

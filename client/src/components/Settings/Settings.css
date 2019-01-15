@@ -28,7 +28,7 @@
 
 .settings_title > h3 {
 	font-size:1rem;
-	color:#464646;
+	color:#4c4c4c;
 	font-weight:600;
 }
 
@@ -75,6 +75,7 @@
 	max-width:170px;
 	min-width:100px;
 	padding:0px 2px;
+	color:#4c4c4c;
 }
 
 .settings_edit_table_item--value {
@@ -220,13 +221,13 @@
 }
 
 .settings_edit_table_v2_item--short_desc > h4 {
-	color:#2e2e2e;
+	color:#4c4c4c;
 	font-size:0.9rem;
 }
 
 .settings_edit_table_v2_item--short_desc > p {
 	font-size:0.8rem;
-	color:rgba(0,0,0,0.5);
+	color:#666666;
 	margin:1px 0px;
 }
 
@@ -270,7 +271,7 @@
 	text-align:left;
 	width:100%;
 	font-size:0.8rem;
-	color:#2e2e2e;
+	color:#4c4c4c;
 	font-weight:600;
 	margin-bottom:3px;
 }

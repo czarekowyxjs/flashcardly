@@ -18,14 +18,14 @@
 	background-color:rgba(0,0,0,0.02);
 	border-radius:2px;
 	border:1px solid rgba(0,0,0,0.1);
-	box-shadow:0px 1px 2px 0px rgba(0,0,0,0.3);
+	box-shadow:0px 1px 1px 0px rgba(0,0,0,0.3);
 	cursor:pointer;
 	transition:box-shadow 150ms linear, border 150ms linear;
 }
 
 .single_flashcard_game:hover {
 	border:1px solid rgba(0,0,0,0.2);
-	box-shadow:0px 1px 2px 0px rgba(0,0,0,0.5);
+	box-shadow:0px 1px 1px 0px rgba(0,0,0,0.4);
 }
 
 .single_flashcard_game_header {
@@ -37,7 +37,7 @@
 }
 
 .single_flashcard_game_header > p {
-	color:rgba(0,0,0,0.7);
+	color:#666666;
 	letter-spacing:0.2px;
 	font-size:0.8rem;
 	font-weight:600;

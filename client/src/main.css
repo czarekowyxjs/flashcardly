@@ -1,7 +1,7 @@
 html {
 	box-sizing:border-box;
 	font-size:14px;
-	color:#414141;
+	color:#4c4c4c;
 	font-family:'Arial', sans-serif;
 }
 
@@ -47,7 +47,7 @@ a {
 	box-shadow:0px 1px 3px 0px rgba(0,0,0,0.4);
 	border-radius:3px;
 	padding:6px 12px;
-	color:#2e2e2e;
+	color:#4c4c4c;
 	font-size:0.9rem;
 }
 
@@ -59,12 +59,12 @@ a {
 	border-radius:3px;
 	padding:4px 6px;
 	font-size:0.9rem;
-	color:rgba(0,0,0,0.5);
+	color:#666666;
 }
 
 .flashcardly_modest_input:focus {
 	border:1px solid rgba(0,0,0,0.3);
-	color:#2e2e2e;
+	color:#4c4c4c;
 }
 
 .flashcardly_input:focus {
@@ -117,7 +117,7 @@ a {
 }
 
 .flashcardly_btn--white {
-	color:rgba(0,0,0,0.9);
+	color:#4c4c4c;
 	background:linear-gradient(#f6f6f6, #dedede);
 }
 

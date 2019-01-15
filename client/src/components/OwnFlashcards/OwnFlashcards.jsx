@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getManyFlashcards, clearOwnFlashcards } from '../../actions/flashcardActions';
-import PlusCircleBtn from '../Commons/PlusBtn/PlusCircleBtn.jsx';
 import SingleFlashcardPreview from '../SingleFlashcardPreview/SingleFlashcardPreview.jsx';
 import TinyLoader from '../Commons/Loader/TinyLoader.jsx';
+import FlashcardAddBtn from '../Commons/FlashcardAddBtn/FlashcardAddBtn.jsx';
 
 class OwnFlashcards extends Component {
 	componentDidMount() {
@@ -33,31 +32,14 @@ class OwnFlashcards extends Component {
 			<div className="flashcards_window">
 				<div className="flashcards_block">
 					<div className="flashcards_block_header">
-						{
-							this.props.user.screen.width <= 800 
-							? null 
-							: (<div className="flashcards_block_add_btn">
-								<Link to="/flashcards/create">
-									<PlusCircleBtn onClick={this.goToFlashcardCreator}/>
-								</Link>
-							</div>)
-						}
 						<div className="flashcards_block_header_title">
 							<h3>{lang.titles.yourFlashcards}</h3>
 						</div>
 					</div>
 					<div className="flashcards_block_body">
-						{
-							this.props.user.screen.width <= 800 
-							?(<div className="flashcards_add_flashcard_body_btn">
-								<Link to="/flashcards/create" className="flashcardly_btn flashcardly_btn--light-blue">
-									<span>{lang.contents.createNewSetOfFlashcards}</span>
-								</Link>
-							</div>)
-							: null
-						}
 						<div className="flashcards_block_previews">
-							{this.props.user.ownFlashcards.length > 0 ? this.renderFlashcardPreviews() : (this.props.user.ownFlashcardsLoaded ? <p>{lang.contents.emptyFlashcards}</p> : null)}
+							<FlashcardAddBtn/>
+							{this.props.user.ownFlashcards.length > 0 ? this.renderFlashcardPreviews() : null}
 							{this.props.user.ownFlashcardsLoaded ? null : <TinyLoader/>}
 						</div>
 						{
