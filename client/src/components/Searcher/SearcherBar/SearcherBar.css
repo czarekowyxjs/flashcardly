@@ -106,9 +106,10 @@
 
 .searcher_close {
 	color:rgba(0,0,0,0.4);
-	margin-right:5px;
+	margin-right:8px;
+	margin-left:3px;
 	margin-top:6px;
-	font-size:1.3rem;
+	font-size:1.5rem;
 	display:none;
 	transition-duration:200ms;
 }
@@ -144,5 +145,17 @@
 
 	.searcher_close {
 		display:inline-block;
+	}
+
+	.searcher_input > label, .searcher_input > input {
+		font-size:1rem;
+	}
+
+	.searcher_input > label {
+		top:18px;
+	}
+
+	.searcher_input > input {
+		padding:18px 6px;
 	}
 }

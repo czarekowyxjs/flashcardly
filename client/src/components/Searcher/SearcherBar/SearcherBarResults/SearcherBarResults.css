@@ -40,7 +40,7 @@
 
 .search_bar_resultes_user_username, .search_bar_resultes_flashcard_title {
 	width:100%;
-	padding:7px 12px 7px 12px
+	padding:7px 12px 7px 12px;
 }
 
 .search_bar_resultes_user_username > p, .search_bar_resultes_flashcard_title > p {
@@ -53,5 +53,15 @@
 @media (max-width:600px) {
 	.searcher_bar_results {
 		border:none;
+		padding:9px 0px;
+	}
+
+	.search_bar_resultes_user_username, .search_bar_resultes_flashcard_title {
+		width:100%;
+		padding:9px 12px 9px 12px;
+	}
+
+	.search_bar_resultes_user_username > p, .search_bar_resultes_flashcard_title > p {
+		font-size:1.2rem;
 	}
 }
