@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     avatarUrl: {
       type: DataTypes.STRING(999),
-      defaultValue: ""
+      defaultValue: "male_av_1.png"
     },
   	createdAt: {
   		type: DataTypes.STRING(99)

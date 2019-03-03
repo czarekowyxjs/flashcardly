@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import "./SingleFlashcardPreview.css";
 
@@ -26,7 +27,7 @@ class SingleFlashcardPreview extends Component {
 						</div>
 					</div>
 					<div className="flashcard_preview_btn">
-						<a href={`/flashcards/${flashcard.fid}`} className="flashcardly_btn flashcardly_btn--white">{flashcard.Words.length === 0 ? lang.buttons.addFirstWord : lang.buttons.learn}</a>
+						<Link to={`/flashcards/${flashcard.fid}`} className="flashcardly_btn flashcardly_btn--white">{flashcard.Words.length === 0 ? lang.buttons.addFirstWord : lang.buttons.learn}</Link>
 					</div>
 				</div>
 			</div>

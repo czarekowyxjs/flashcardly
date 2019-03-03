@@ -1,0 +1,54 @@
+.guessByWritting_starter, .guessByWritting_starter > div {
+	width:100%;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+}
+
+.guessByWritting_starter_header {
+
+}
+
+.guessByWritting_starter_header > h3 {
+	font-size:0.9rem;
+}
+
+.guessByWritting_starter_header > p {
+	font-size:0.8rem;
+	opacity:0.9;
+	margin-top:3px;
+}
+
+.guessByWritting_starter_header > ol {
+	padding-left:15px;
+	padding-top:5px;
+	font-size:0.85rem;
+	opacity:0.9;
+}
+
+.guessByWritting_starter_body {
+
+}
+
+.guessByWritting_starter_type, .guessByWritting_starter_play {
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+	padding:25px;
+	padding-bottom:10px;
+}
+
+.guessByWritting_starter_type--hidden {
+	display:none;
+}
+
+.guessByWritting_starter_type > button, .guessByWritting_starter_play > button:nth-child(1) {
+	font-size:0.9rem;
+}
+
+.guessByWritting_starter_type > span, .guessByWritting_starter_play > span {
+	opacity:0.6;
+	font-weight:600;
+	font-size:0.7rem;
+	margin:0px 4px;
+}

@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { FiSettings, FiTrash } from 'react-icons/fi';
 import { fetchFlashcardSet, setFetchFlashcardLoaded, addNewWordToSet, returnFlashcardToInitial, deleteWord, setWordAsEditable, setWordAsNotEditable, editWord } from '../../actions/flashcardActions';
 import { confirmFlashcardIntroduce } from '../../actions/userActions';
+import SingleFlashcardHeader from './SingleFlashcardHeader.jsx';
 import TableOfFlashcardWords from './TableOfFlashcardWords.jsx';
 import GamePreviews from './GamePreviews.jsx';
-import ProcessUnixTime from '../../helpers/ProcessUnixTime.js';
 import CustomError from '../CustomError/CustomError.jsx';
 import Loader from '../Commons/Loader/Loader.jsx';
 import Introduce from './Introduce.jsx';
@@ -76,33 +74,7 @@ class SingleFlashcard extends Component {
 					? <Introduce user={this.props.user} methods={methods}/>
 					: null}
 				<div className="flashcards_block">
-					<div className="single_flashcard_header">
-						<div className="single_flashcard_header_title">
-							<div className="flashcard_header_title_direct">
-								<h3>{this.props.flashcard.flashcardData.title}</h3>
-							</div>
-							<div className="flashcard_header_title_user">
-								<p>
-									<span>{lang.shorts.created}</span>
-									<time>{ProcessUnixTime(this.props.flashcard.flashcardData.createdAt, lang)}</time> 
-									<span>{lang.shorts.by}</span>
-									<Link to={`/users/${this.props.flashcard.authorData.uid}`}>{this.props.flashcard.authorData.username}</Link>
-								</p>
-							</div>
-						</div>
-						{
-							this.props.flashcard.userIsAuthor 
-							?(<div className="single_flashcard_options">
-							<Link to={`${this.props.location.pathname}/settings`} className="single_flashcard_options_item">
-								<FiSettings/>
-							</Link>
-							<Link to="/" className="single_flashcard_options_item">
-								<FiTrash/>
-							</Link>
-						</div>)
-							: null
-						}
-					</div>
+					<SingleFlashcardHeader {...this.props}/>
 					<div className="single_flashcard_body">
 						<GamePreviews lang={lang} {...this.props}/>
 						<TableOfFlashcardWords lang={lang} flashcard={this.props.flashcard} methods={methods}/>

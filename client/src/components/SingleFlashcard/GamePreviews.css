@@ -1,10 +1,12 @@
 .single_flashcard_games {
 	width:100%;
 	padding:18px 16px 18px 16px;
+	display:flex;
+	flex-direction:row;
+	justify-content:flex-start;
 }
 
 .single_flashcard_games_wrapper {
-	width:100%;
 	display:flex;
 	flex-flow:row wrap;
 }

@@ -8,7 +8,9 @@ import { fetchFlashcardPrimary } from "../../../actions/gameActions";
 import ParseQueryURL from "../../../helpers/ParseQueryURL";
 import FetchFlashcard from '../../../hocs/FetchFlashcard.jsx';
 import CircleLoader from "../../Commons/Loader/CircleLoader.jsx";
+//
 import Standard from './Standard/Standard.jsx';
+import GuessByWritting from './GuessByWritting/GuessByWritting.jsx';
 
 import "./Play.css";
 
@@ -56,6 +58,8 @@ class Play extends Component {
 		switch(this.parsedParams.type) {
 			case "standard":
 				return <FetchFlashcard methods={methods} light={this.state.colorMode === "light" ? false : true} lang={this.props.user.lang} fid={this.parsedParams.fid} Component={Standard}/>;
+			case "guessStandard":
+				return <GuessByWritting methods={methods} light={this.state.colorMode === "light" ? false : true} lang={this.props.user.lang} fid={this.parsedParams.fid}/>
 			default:
 				return;
 		}

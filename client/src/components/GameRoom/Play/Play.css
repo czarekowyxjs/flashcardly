@@ -37,7 +37,7 @@
 	display:flex;
 	flex-direction:row;
 	justify-content:space-between;
-	padding:12px 16px 16px 16px;
+	padding:12px 16px 8px 16px;
 }
 
 .play_info_title > span {

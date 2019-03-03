@@ -4,8 +4,7 @@ const initialState = {
 		loaded: false
 	},
 	primaryFlashcardLoadedData: {},
-	fetchFlashcardGameLoaded: false,
-	gameable: false
+	fetchFlashcardGameLoaded: false
 };
 
 export default (state = initialState, action) => {

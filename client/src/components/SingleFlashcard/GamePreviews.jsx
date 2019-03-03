@@ -11,7 +11,7 @@ class GamePreviews extends Component {
 			case "standard":
 				return this.props.history.replace(`/gameroom/play?fid=${this.props.flashcard.flashcardData.fid}&type=${gameType}`);
 			case "guessStandard":
-				return this.props.history.replace("/gameroom/play?type=2&fid="+this.props.flashcard.flashcardData.fid);
+				return this.props.history.replace(`/gameroom/play?fid=${this.props.flashcard.flashcardData.fid}&type=${gameType}`);
 			default:
 				return;
 		}
@@ -24,6 +24,13 @@ class GamePreviews extends Component {
 					<div className="single_flashcard_game" onClick={(e) => this.enterToGameRoom(e, "standard")}>
 						<div className="single_flashcard_game_header">
 							<p>{this.props.lang.titles.standardLearning}</p>
+						</div>
+					</div>
+				</div>
+				<div className="single_flashcard_games_wrapper">
+					<div className="single_flashcard_game" onClick={(e) => this.enterToGameRoom(e, "guessStandard")}>
+						<div className="single_flashcard_game_header">
+							<p>{this.props.lang.titles.guessByWriting}</p>
 						</div>
 					</div>
 				</div>

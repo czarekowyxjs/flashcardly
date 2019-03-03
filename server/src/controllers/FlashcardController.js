@@ -146,7 +146,7 @@ Router.get('/', VerifyToken, function(req, res) {
 		include: [{
 			model: models.User,
 			attributes: {
-				exclude: ['createdAt', 'displayName']
+				exclude: ['createdAt', 'displayName', 'password', 'sex', 'emailHash', 'email']
 			}
 		}, {
 			model: models.Word
@@ -161,6 +161,19 @@ Router.get('/', VerifyToken, function(req, res) {
 				[Op.like]: req.query.title+'%'			
 			}
 		}
+	}
+	//
+	if(req.query.fields) {
+		query.attributes = req.query.fields.split(",");
+		console.log(query.attributes);
+	}
+	//
+	if(req.query.noWords) {
+		query.include = null;
+	}
+	//
+	if(req.query.fid) {
+		query.where.fid = parseInt(req.query.fid, 10);
 	}
 	//
 	if(req.query.limit) {

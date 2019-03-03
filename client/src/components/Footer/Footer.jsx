@@ -23,7 +23,7 @@ class Footer extends Component {
 					</div>
 					<div className="flashcardly_footer_info">
 						<a href="https://github.com/czarekowyxjs" rel="noopener noreferrer" target="_BLANK">Cezary Góralski</a>
-						<span> &copy; 2018</span>
+						<span> &copy; 2019</span>
 					</div>
 				</div>
 			</div>

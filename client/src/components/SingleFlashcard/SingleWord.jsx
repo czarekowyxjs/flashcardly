@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import SingleWordOptions from './SingleWordOptions.jsx';
 import { IoIosCheckmark } from 'react-icons/io';
 
+import "./SingleWord.css";
+
 class SingleWord extends Component {
 	state = {
 		firstColWord: this.props.wordData.firstColumnValue,
