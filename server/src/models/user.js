@@ -48,6 +48,7 @@ module.exports = (sequelize, DataTypes) => {
     User.hasOne(models.Token, { foreignKey: 'uid' });
     User.hasOne(models.User_options, { foreignKey: "uid" });
     User.hasMany(models.Flashcard, { foreignKey: 'author' });
+    User.hasMany(models.GuessByWrittingGames, { foreignKey: 'uid' });
   };
 
   User.getFullUserData = function(userToken) {

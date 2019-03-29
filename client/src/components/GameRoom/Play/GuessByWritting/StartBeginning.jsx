@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 
 class StartBeginning extends Component {
 	render() {
-		const columnsNames = this.props.columnsNames;
+		const columnsNames = {
+			first: this.props.flashcard.firstColumnName,
+			second: this.props.flashcard.secondColumnName
+		};
+		
 		const methods = this.props.methods;
-		console.log(this.props);
 
 		return (
 			<div>

@@ -1,20 +1,21 @@
+.guessByWritting_starter {
+	padding:30px 24px 20px 24px;
+}
+
 .guessByWritting_starter, .guessByWritting_starter > div {
 	width:100%;
+	height:100%;
 	display:flex;
 	flex-direction:column;
 	align-items:center;
 }
 
-.guessByWritting_starter_header {
-
-}
-
 .guessByWritting_starter_header > h3 {
-	font-size:0.9rem;
+	font-size:1.3rem;
 }
 
 .guessByWritting_starter_header > p {
-	font-size:0.8rem;
+	font-size:0.9rem;
 	opacity:0.9;
 	margin-top:3px;
 }
@@ -22,8 +23,12 @@
 .guessByWritting_starter_header > ol {
 	padding-left:15px;
 	padding-top:5px;
-	font-size:0.85rem;
+	font-size:0.9rem;
 	opacity:0.9;
+}
+
+.guessByWritting_starter_header > ol > li {
+	padding:1px 3px;
 }
 
 .guessByWritting_starter_body {

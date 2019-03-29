@@ -90,6 +90,14 @@ a {
 	transition-duration:200ms;
 }
 
+.flashcardly_btn.lightBorder {
+	border:1px solid rgba(255,255,255,0.25);
+}
+
+.flashcardly_btn.darkBorder {
+	border:1px solid rgba(0,0,0,0.1);
+}
+
 .flashcardly_btn:disabled, .flashcardly_btn:disabled:hover {
 	background:linear-gradient(#bbbbbb, #8a8a8a);
 }

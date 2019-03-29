@@ -33,9 +33,9 @@ class GuessByWritting extends Component {
 			<div className="guessStandard_window">
 				<div className="guessStandard_wrapper">
 					{
-						this.state.started
-						? <Game {...this.props} selectedGameType={this.state.selectedGameType}/>
-						: <Start {...this.props} methods={methods} selectedGameType={this.state.selectedGameType}/>
+						!this.state.started
+						? <Start {...this.props} methods={methods} selectedGameType={this.state.selectedGameType}/>
+						: <Game {...this.props} methods={methods} selectedGameType={this.state.selectedGameType}/>
 					}
 				</div>
 			</div>

@@ -59,7 +59,7 @@ class Play extends Component {
 			case "standard":
 				return <FetchFlashcard methods={methods} light={this.state.colorMode === "light" ? false : true} lang={this.props.user.lang} fid={this.parsedParams.fid} Component={Standard}/>;
 			case "guessStandard":
-				return <GuessByWritting methods={methods} light={this.state.colorMode === "light" ? false : true} lang={this.props.user.lang} fid={this.parsedParams.fid}/>
+				return <FetchFlashcard methods={methods} light={this.state.colorMode === "light" ? false : true} lang={this.props.user.lang} fid={this.parsedParams.fid} Component={GuessByWritting}/>;
 			default:
 				return;
 		}

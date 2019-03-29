@@ -118,15 +118,6 @@ class Standard extends Component {
 
 		return (
 			<div className="standard_game_window">
-				<div className="standard_game_wrapper">
-					<div className="standard_game_arrow standard_game_back" onClick={(e) => this.changeWord(e, "back")}>
-						<MdNavigateBefore/>
-					</div>
-					<SingleWord methods={methods} firstColumn={this.state.firstColumn} word={this.state.words[this.state.actualWord]}/>
-					<div className="standard_game_arrow standard_game_next" onClick={(e) => this.changeWord(e, "next")}>
-						<MdNavigateNext/>
-					</div>
-				</div>
 				<div className="standard_game_footer">
 					<div className="standard_game_info">
 						<div className="standard_game_info_box">
@@ -167,6 +158,15 @@ class Standard extends Component {
 								<IoIosSync/>
 							</i>
 						</div>
+					</div>
+				</div>
+				<div className="standard_game_wrapper">
+					<div className="standard_game_arrow standard_game_back" onClick={(e) => this.changeWord(e, "back")}>
+						<MdNavigateBefore/>
+					</div>
+					<SingleWord methods={methods} firstColumn={this.state.firstColumn} word={this.state.words[this.state.actualWord]}/>
+					<div className="standard_game_arrow standard_game_next" onClick={(e) => this.changeWord(e, "next")}>
+						<MdNavigateNext/>
 					</div>
 				</div>
 			</div>

@@ -37,7 +37,7 @@ class FetchFlashcard extends React.Component {
 	render() {
 		if(!this.state.loaded) return <CircleLoader light={this.props.light}/>;
 		const Component = this.props.Component;
-		return <Component methods={this.props.methods} lang={this.props.lang} flashcard={this.state.flashcardData}/>;
+		return <Component methods={this.props.methods} lang={this.props.lang} flashcard={this.state.flashcardData} light={this.props.light}/>;
 	}
 }
 

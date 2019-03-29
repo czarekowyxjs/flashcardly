@@ -1,0 +1,117 @@
+.guessByWritting_game, .guessByWritting_counter {
+	width:100%;
+	height:100%;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+}
+
+.guessByWritting_counter {
+	padding:30px 20px 20px 20px;
+}
+
+.guessByWritting_counter > span {
+	font-size:2.5rem;
+}
+
+.guessByWritting_counter > i {
+	font-size:5rem;
+	padding:15px;
+}
+
+.gsb_game_win {
+	width:100%;
+	height:100%;
+	display:flex;
+	flex-direction:column;
+}
+
+.guessByWritting_result_bg {
+	width:100%;
+	height:30px;
+	min-height:30px;
+	background-image:linear-gradient(#bbbbbb, #818181);
+	display:flex;
+	flex-direction:row;
+}
+
+.guessByWritting_result_time {
+	height:100%;
+	width:100%;
+	transition-duration:1000ms;
+	background-image:linear-gradient(#6699ff, #006699);
+}
+
+.gsb_game_wrapper {
+	width:100%;
+	height:100%;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	padding:6rem 10px 7rem 10px;
+}
+
+.gsb_game_word {
+	width:100%;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+}
+
+.gsb_game_word_native {
+	
+}
+
+.gsb_game_word_native > span {
+	font-size:4.5rem;
+	font-weight:600;
+}
+
+.gsb_game_word_translate {
+	padding-top:20px;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	width:95%;
+	max-width:450px;
+}
+
+.gsb_game_input {
+	width:100%;
+	background:none;
+	border:none;
+	font-size:1.3rem;
+	padding:8px 12px;
+	border-radius:3px;
+}
+
+.gsb_game_input.dark {
+	background:#fbfbfb;
+	color:#2e2e2e;
+}
+
+.gsb_game_input.light {
+	background:#2e2e2e;
+	color:#fbfbfb;
+}
+
+.gsb_game_word_translate_info {
+	width:100%;
+	padding:0px 3px;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+	align-items:flex-start;
+}
+
+.gsb_game_word_translate_info > button {
+	margin-top:7px;
+}
+
+.gsb_game_word_translate_info > span {
+	margin-top:3px;
+	font-weight:600;
+	font-size:0.8rem;
+}

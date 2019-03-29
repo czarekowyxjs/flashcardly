@@ -10,6 +10,7 @@ const FlashcardSettingsController = require("./controllers/FlashcardSettingsCont
 const UserController = require("./controllers/UserController");
 const ServiceController = require("./controllers/ServiceController");
 const SearchController = require("./controllers/SearchController");
+const GuessByWrittingGameController = require("./controllers/GuessByWrittingGameController");
 
 const app = express();
 require("dotenv");
@@ -30,13 +31,12 @@ app.use("/api/v1/flashcards/settings", FlashcardSettingsController);
 app.use('/api/v1/users', UserController);
 app.use('/api/v1/service', ServiceController);
 app.use("/api/v1/service/search", SearchController);
+app.use("/api/v1/game/gbw", GuessByWrittingGameController);
 //
 if(process.env.NODE_ENV == "production") {
 	app.use("/*", function(req, res) {
 		res.sendFile(__dirname+"/public/build/index.html");
 	});
-} else {
-
 }
 
 const server = app.listen(process.env.PORT || 3001, function() {

@@ -42,6 +42,7 @@ module.exports = (sequelize, DataTypes) => {
   Flashcard.associate = function(models) {
     Flashcard.belongsTo(models.User, { foreignKey: 'author' });
     Flashcard.hasMany(models.Word, { foreignKey: 'fid' });
+    Flashcard.hasMany(models.GuessByWrittingGames, { foreignKey: 'fid' });
   };
   return Flashcard;
 };

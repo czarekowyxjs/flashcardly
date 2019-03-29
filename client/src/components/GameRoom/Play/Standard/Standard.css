@@ -31,7 +31,7 @@
 }
 
 .standard_game_word_wrapper {
-	padding:64px 0px;
+	padding:100px 0px;
 	display:flex;
 	flex-direction:row;
 }
@@ -99,10 +99,10 @@
 .standard_game_footer {
 	width:100%;
 	display:flex;
-	flex-flow:row wrap;
+	flex-direction:row;
 	align-items:center;
 	justify-content:space-between;
-	padding:7px 12px;
+	padding:12px 5px;
 }
 
 .standard_game_info, .standard_game_options {
@@ -159,10 +159,13 @@
 @media (max-width: 600px) {
 	.standard_game_word_wrapper {
 		padding:32px 0px;
+		max-height:100%;
+		height:auto;
 	}
 
 	.standard_game_footer {
 		flex-direction:column;
+		justify-content:flex-start;
 		align-items:center;
 	}
 
@@ -175,5 +178,9 @@
 	.standard_game_info_box, .standard_game_option {
 		padding:3px 0px;
 		font-size:0.8rem;
+	}
+
+	.standard_game_info_box > span:last-of-type {
+		margin:none;
 	}
 }
