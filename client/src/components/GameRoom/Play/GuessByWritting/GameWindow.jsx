@@ -18,6 +18,7 @@ class GameWindow extends Component {
 	}
 
 	componentDidMount() {
+		console.log(this.props.flashcard);
 		this.initGame();
 	}
 
@@ -44,79 +45,23 @@ class GameWindow extends Component {
 		this.setState({
 			wordChecking: true
 		}, () => {
-			this.checkWord();
+			
 		});
 	}
 
-	checkWord = async () => {	
-		try {
-			const token = localStorage.getItem("token");
-
-			const response = await axios.put("/api/v1/game/gbw/check", {
-				input: this.state.inputWord,
-				wid: this.state.words[this.state.wordNum].wid,
-				gbwid: this.state.game.gbwid,
-				selectedGameType: this.props.selectedGameType
-			}, {
-				headers: {
-					authorization: token
-				}
-			});
-			console.log(response);
-			if(response.status === 200) {
-				this.setState(prevState => {
-
-					let newWordNum;
-					let newGame = prevState.game;
-					let finished = false;
-
-					if(prevState.wordNum+1 === prevState.game.wordsAmount) finished = true;
-					else newWordNum = prevState.wordNum+1;
-
-					if(response.data.result) newGame = newGame.result+1;
-
-					return {
-						wordChecking: false,
-						wordNum: newWordNum,
-						game: newGame,
-						finished: finished,
-						inputWord: ''
-					};
-				});
+	initGame = () => {
+		this.setState(prevState => {
+			const flashcard = this.props.flashcard;
+			const words = ShuffleArray(flashcard.Words);
+			const duration = words.length*15;
+			this.interval = setInterval(this.updateTimerDuration, 1000);
+			return {
+				loaded: true,
+				words,
+				duration,
+				staticDuration: duration
 			}
-
-		} catch(e) {
-			console.log(e.response);
-		}
-	}
-
-	initGame = async () => {
-		try {
-			const token = localStorage.getItem("token");
-			const fid = this.props.flashcard.fid;
-			const response = await axios.post("/api/v1/game/gbw/create", {
-				fid: fid
-			}, {
-				headers: {
-					authorization: token
-				}
-			});
-			
-			if(response.status === 200) {
-				this.setState({
-					loaded: true,
-					game: response.data.game,
-					duration: response.data.duration,
-					staticDuration: response.data.duration,
-					words: ShuffleArray(this.props.flashcard.Words)
-				}, () => {
-					this.interval = setInterval(this.updateTimerDuration, 1000);
-				});
-			}
-
-		} catch(e) {
-			console.log(e.response);
-		}
+		})
 	}
 
 	render() {

@@ -40,7 +40,6 @@ export const localAuth = () => {
 		} catch(e) {
 			dispatch(setLoggedStatus(false));
 			dispatch(setAuthState(true, false));
-			console.clear();
 		}
 	}
 }

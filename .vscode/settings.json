@@ -1,4 +1,7 @@
 {
     "editor.tabSize": 2,
-    "editor.fontSize": 18
+    "editor.fontSize": 16,
+    "editor.fontWeight": "bold",
+    "editor.mouseWheelZoom": true,
+    "editor.wordWrap": true
 }
