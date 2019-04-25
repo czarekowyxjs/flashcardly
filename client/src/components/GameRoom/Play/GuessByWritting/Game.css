@@ -49,10 +49,10 @@
 	display:flex;
 	justify-content:center;
 	align-items:center;
-	padding:6rem 10px 7rem 10px;
+	padding:7rem 10px 8rem 10px;
 }
 
-.gsb_game_word {
+.gsb_game_word, .gsb_game_word > div {
 	width:100%;
 	display:flex;
 	flex-direction:column;
@@ -61,12 +61,20 @@
 }
 
 .gsb_game_word_native {
-	
+	display:flex;
+	flex-direction:column;
+	align-items:center;
 }
 
 .gsb_game_word_native > span {
-	font-size:4.5rem;
+	font-size:5rem;
 	font-weight:600;
+}
+
+.gsb_game_word_right > span {
+	font-size:2.5rem;
+	font-weight:600;
+	opacity:0.5;
 }
 
 .gsb_game_word_translate {
@@ -110,8 +118,58 @@
 	margin-top:7px;
 }
 
-.gsb_game_word_translate_info > span {
-	margin-top:3px;
+.gsb_game_word_translate_info > span, .gsb_game_word_curryup > span {
 	font-weight:600;
 	font-size:0.8rem;
+}
+
+.gsb_game_word_translate_info > span {
+	margin-top:3px;
+}
+
+.gsb_game_word_curryup > span {
+	margin-right:8px;
+}
+
+.gsb_game_word_curryup {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	width:100%;
+	margin-top:1.6rem;
+}
+
+.finished_gbw {
+	display:flex;
+	flex-direction:column;
+	max-width:600px;
+}
+
+.finished_gbw_header {
+	font-size:1.2rem;
+	font-weight:600;
+	padding:3px 0px;
+}
+
+.finished_gbw_body {
+	display:flex;
+	flex-direction:column;
+}
+
+.finished_gbw_body > p {
+	padding:1px 3px;
+	font-size:1rem;
+}
+
+.finished_gbw_body > p > span {
+	opacity:0.8;
+}
+
+.finished_gbw_body > p > a {
+	color:#0099cc;
+	margin:0px 0.3rem;
+}
+
+.finished_gbw_body > p > a:hover {
+	color:#006699;
 }

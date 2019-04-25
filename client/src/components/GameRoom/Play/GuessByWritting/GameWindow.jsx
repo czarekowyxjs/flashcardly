@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import ShuffleArray from '../../../../helpers/ShuffleArray';
 import CircleLoader from "../../../Commons/Loader/CircleLoader.jsx";
 import GameWindowResult from './GameWindowResult.jsx';
+import GameWindowWord from "./GameWindowsWord.jsx";
+import WordChecking from './WordChecking.jsx';
+import Finished from './Finished.jsx';
 
 class GameWindow extends Component {
 	state = {
@@ -11,14 +13,13 @@ class GameWindow extends Component {
 		finished: false,
 		duration: 0,
 		staticDuration: 0,
-		game: {},
 		words: [],
 		wordNum: 0,
-		inputWord: ""
+		result: 0,
+		good: false
 	}
 
 	componentDidMount() {
-		console.log(this.props.flashcard);
 		this.initGame();
 	}
 
@@ -28,24 +29,58 @@ class GameWindow extends Component {
 
 	updateTimerDuration = () => {
 		this.setState(prevState => {
-			if(prevState.duration === 0) clearInterval(this.interval);
+			if(prevState.duration <= 0) {
+				clearInterval(this.interval);
+				return {
+					finished: true
+				}
+			}
 			else return {
 				duration: prevState.duration-1
 			}
 		});
 	}
 
-	onChangeInputWord = (e) => {
-		this.setState({
-			inputWord: e.target.value
+	checkWord = (word) => {
+		this.setState(prevState => {
+			
+			let good = false;
+
+			if(this.props.selectedGameType === "firstToSecond") {
+				if(prevState.words[prevState.wordNum].secondColumnValue === word) good = true;
+			} else {
+				if(prevState.words[prevState.wordNum].firstColumnValue === word) good = true;
+			}
+
+			let result = prevState.result;
+
+			if(good) result += 1;
+
+			return {
+				result,
+				wordChecking: true,
+				good
+			}
+
 		});
 	}
 
-	handleCheckWordBtn = () => {
-		this.setState({
-			wordChecking: true
+	confirmCheckedWord = (e) => {
+		if(e.type === "keyup" && e.key !== "Enter") return;
+		this.setState(prevState => {
+			let wordNum = prevState.wordNum;
+			let finished = false;
+
+			if(prevState.words.length-1 === wordNum) finished = true;
+			else wordNum += 1;
+
+			return {
+				wordNum,
+				finished,
+				wordChecking: false
+			}
 		}, () => {
-			
+			if(this.state.finished) clearInterval(this.interval);
 		});
 	}
 
@@ -53,7 +88,7 @@ class GameWindow extends Component {
 		this.setState(prevState => {
 			const flashcard = this.props.flashcard;
 			const words = ShuffleArray(flashcard.Words);
-			const duration = words.length*15;
+			const duration = words.length*10;
 			this.interval = setInterval(this.updateTimerDuration, 1000);
 			return {
 				loaded: true,
@@ -65,37 +100,35 @@ class GameWindow extends Component {
 	}
 
 	render() {
-		if(!this.state.loaded || this.state.wordChecking) return <CircleLoader light={this.props.light}/>
+		console.log(this.state);
+		let methods = this.props.methods;
+		methods.checkWord = this.checkWord;
+		methods.confirmCheckedWord = this.confirmCheckedWord;
+
+		if(!this.state.loaded) return <CircleLoader light={this.props.light}/>
+
 		return (
 			<div className="gsb_game_win">
 				<div className="gsb_game_wrapper">
 					<div className="gsb_game_word">
-						<div className="gsb_game_word_native">
-							<span>
-								{
-									this.props.selectedGameType === "firstToSecond"
-									? this.state.words[this.state.wordNum].firstColumnValue
-									: this.state.words[this.state.wordNum].secondColumnValue
-								}
-							</span>
-						</div>
-						<div className="gsb_game_word_translate">
-							<input
-								type="text"
-								className={`gsb_game_input ${this.props.light ? "dark" : "light"}`}
-								value={this.state.inputWord}
-								onChange={this.onChangeInputWord}
-							/>
-							<div className="gsb_game_word_translate_info">
-								<span>Your translation</span>
-								<button
-									className={`flashcardly_btn ${this.props.light ? "lightBorder" : "darkBorder"} flashcardly_btn--common`}
-									onClick={this.handleCheckWordBtn}
-								>
-									Check
-								</button>
-							</div>
-						</div>
+						{
+							this.state.finished && !this.state.wordChecking
+							? <Finished result={this.state.result} duration={this.state.duration} staticDuration={this.state.staticDuration} flashcard={this.props.flashcard}/>
+							: null
+						}
+
+						{
+							!this.state.finished && !this.state.wordChecking
+							? <GameWindowWord word={this.state.words[this.state.wordNum]} selectedGameType={this.props.selectedGameType} light={this.props.light} lang={this.props} methods={methods}/>
+							: null
+						}
+
+						{
+							!this.state.finished && this.state.wordChecking
+							? <WordChecking good={this.state.good} word={this.state.words[this.state.wordNum]} selectedGameType={this.props.selectedGameType} methods={methods}/>
+							: null
+						}
+	
 					</div>
 				</div>
 				<GameWindowResult {...this.props} data={this.state}/>
