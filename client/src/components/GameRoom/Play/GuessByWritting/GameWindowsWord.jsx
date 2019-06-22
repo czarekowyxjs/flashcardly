@@ -40,6 +40,8 @@ class GameWindowWord extends Component {
 
   render() {
 
+    const lang = this.props.lang;
+
     return (
       <div>
         <div className="gsb_game_word_native">
@@ -60,10 +62,10 @@ class GameWindowWord extends Component {
               />
             <div className="gsb_game_word_translate_info">
               <span>
-                Type your translation
+                { lang.shorts.typeYourTranslation }
               </span>
               <button className="flashcardly_btn flashcardly_btn--common" onClick={this.handleSubmit}>
-                Check
+                { lang.shorts.check }
               </button>
             </div>
         </div>

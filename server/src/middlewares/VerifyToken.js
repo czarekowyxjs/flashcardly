@@ -1,7 +1,6 @@
 const models = require("../models");
 
 module.exports = function(req, res, next) {
-	console.log(req.headers);
 	return models.User.findOne({
 		include: [{
 			model: models.Token,

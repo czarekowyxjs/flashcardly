@@ -8,13 +8,14 @@ class StartBeginning extends Component {
 		};
 		
 		const methods = this.props.methods;
+		const lang = this.props.lang;
 
 		return (
 			<div>
 				<div className="guessByWritting_starter_header">
-					<h3>Guess by Writting</h3>
+					<h3>{ lang.titles.guessByWriting }</h3>
 					<p>
-						Hello, if you want to start to play GuessByWrtiing, you have to select type of playing.
+						{ lang.contents.guessByWritting.beginningDesc }
 					</p>
 				</div>
 				<div className="guessByWritting_starter_body">
@@ -23,14 +24,14 @@ class StartBeginning extends Component {
 							onClick={() => methods.updateSelectedGameType("firstToSecond")} 
 							className="flashcardly_url_btn"
 						>
-							{`${columnsNames.first} to ${columnsNames.second}`}
+							{`${columnsNames.first} ${lang.shorts.translateTo} ${columnsNames.second}`}
 						</button>
-						<span>or</span>
+						<span>{ lang.shorts.or }</span>
 						<button 
 							onClick={() => methods.updateSelectedGameType("secondToFirst")} 
 							className="flashcardly_url_btn"
 						>
-							{`${columnsNames.second} to ${columnsNames.first}`}
+							{`${columnsNames.second} ${lang.shorts.translateTo} ${columnsNames.first}`}
 						</button>
 					</div>				
 				</div>

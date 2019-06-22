@@ -3,17 +3,16 @@ import React, { Component } from 'react';
 class StartFinish extends Component {
 	render() {
 		const methods = this.props.methods;
+		const lang = this.props.lang;
 		return (
 			<div>
 				<div className="guessByWritting_starter_header">
-					<h3>Guess by Writting - Start</h3>
-					<p>
-						<b>Important!</b> Okey, you choosen your game type. It's a few important points for you.
-					</p>
+					<h3>{`${lang.titles.guessByWriting} - ${lang.shorts.startGame}`}</h3>
+					<p dangerouslySetInnerHTML={{ __html: lang.contents.guessByWritting.important }}></p>
 					<ol>
-						<li>When you click "Let's play" you will have 3 second for preparing to game.</li>
-						<li>While playing you will have 15 second to translate each word. Time is summed up.</li>
-						<li>If you leave while playing, game will save your actual result.</li>
+						<li>{ lang.contents.guessByWritting.points.p1 }</li>
+						<li>{ lang.contents.guessByWritting.points.p2 }</li>
+						<li>{ lang.contents.guessByWritting.points.p3 }</li>
 					</ol>
 				</div>
 				<div className="guessByWritting_starter_body">
@@ -22,14 +21,14 @@ class StartFinish extends Component {
 							onClick={() => methods.updateSelectedGameType("")}
 							className="flashcardly_url_btn"
 						>
-							Back
+							{ lang.shorts.back }
 						</button>
-						<span>or</span>
+						<span>{ lang.shorts.or }</span>
 						<button 
 							onClick={methods.prepareGameToStart}
 							className="flashcardly_btn flashcardly_btn--common"
 						>
-							Let's play
+							{ lang.shorts.startGameBtn }
 						</button>
 					</div>
 				</div>

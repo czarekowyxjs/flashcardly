@@ -65,9 +65,13 @@
 		"hours": "godzin",
 		"minute": "minutę",
 		"minutes": "minut",
+		"seconds": "sekund",
+		"second": "sekundę",
 		"cancel": "Anuluj",
 		"or": "lub",
 		"save": "Zapisz",
+		"back": "Wróć",
+		"startGameBtn": "Rozpocznij grę",
 		"edit": "Edytuj",
 		"loading": "Ładowanie",
 		"loadingAccountData": "Ładowanie danych użytkownika",
@@ -83,7 +87,15 @@
 		"shuffleWords": "Przetasuj słowa",
 		"reverseCard": "Odwróć kartę",
 		"backTo": "Wróć do",
-		"search": "Szukaj"
+		"search": "Szukaj",
+		"uWillStartFor": "Zaczniesz grę za",
+		"translateTo": "tłumacz na",
+		"startGame": "Rozpoczęcie gry",
+		"typeYourTranslation": "Wpisz swoje tłumaczenie",
+		"check": "Sprawdź",
+		"continue": "Kontynuuj",
+		"rightAnswer": "Twoja odpowiedź jest poprawna",
+		"badAnswer": "Twoja odpowiedź jest nieprawidłowa"
 	},
 	"contents": {
 		"registerUsernameDesc": "Nazwa użytkownika jest widoczna dla innych użytkowników. Pamiętaj, aby była unikalna",
@@ -108,7 +120,23 @@
 		"loginByUsernameDesc": "Włącz logowanie za pomocą nazwy użytkownika. Możesz jednocześnie logować się za pomocą adres email lub nazwy użytkownika. Domyślnie ta opacja jest wyłączona.",
 		"changeFlashcardTitleDesc": "Tytuł zestawu fiszek jest bardzo ważny. Powinien być unikatowy i zgodny z zawartością.",
 		"changeColumnsNamesDesc": "Nazwy kolumn ułatwiają rozpoznanie treści fiszki.",
-		"privateStatusDesc": "Jeżeli ustawisz fiszkę jako prwytną, to inni użytkownicy nie będą mieli możliwości jej znaleźć i przeglądać."
+		"privateStatusDesc": "Jeżeli ustawisz fiszkę jako prwytną, to inni użytkownicy nie będą mieli możliwości jej znaleźć i przeglądać.",
+		"guessByWritting": {
+			"beginningDesc": "Cześć, aby rozpocząć grę, musisz wybrać sposób gry.",
+			"important": "<b>Ważne!</b> Świetnie, wybrałeś jak chcesz grać, teraz pozostało Ci zapoznać się z kilkoma ważnymi podpunktami.",
+			"points": {
+				"p1": "Gdy rozpoczniesz grę, będziesz miał 3 sekundy na przygotowanie się.",
+				"p2": "Podczas gry, masz 15 sekund na przetlumaczenie każdego słowa.",
+				"p3": "Jeśli wyjdziesz w trakcie gry, stracisz aktualny rezultat."
+			},
+			"finishTitle": "Ukończyłeś Zgadywanie przez pisanie dla",
+			"itTook": "Zajęło Ci to",
+			"youAnswerdCorrectly": "Odpowiedziałeś poprawnie",
+			"times": "razy z",
+			"playAgainDesc": "Jeśli chcesz, to możesz",
+			"playAgain": "Zagrać ponownie",
+			"orBackTo": "lub wrócić do"
+		}
 	},
 	"flashcardsIntroduce": [
 		{

@@ -6,7 +6,7 @@ import "./Game.css";
 
 class Game extends Component {
 	state = {
-		playing: true
+		playing: false
 	}
 
 	handleCounterCb = () => {

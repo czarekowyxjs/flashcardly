@@ -113,19 +113,19 @@ class GameWindow extends Component {
 					<div className="gsb_game_word">
 						{
 							this.state.finished && !this.state.wordChecking
-							? <Finished result={this.state.result} duration={this.state.duration} staticDuration={this.state.staticDuration} flashcard={this.props.flashcard}/>
+							? <Finished result={this.state.result} duration={this.state.duration} staticDuration={this.state.staticDuration} flashcard={this.props.flashcard} lang={this.props.lang}/>
 							: null
 						}
 
 						{
 							!this.state.finished && !this.state.wordChecking
-							? <GameWindowWord word={this.state.words[this.state.wordNum]} selectedGameType={this.props.selectedGameType} light={this.props.light} lang={this.props} methods={methods}/>
+							? <GameWindowWord word={this.state.words[this.state.wordNum]} selectedGameType={this.props.selectedGameType} light={this.props.light} lang={this.props.lang} methods={methods}/>
 							: null
 						}
 
 						{
 							!this.state.finished && this.state.wordChecking
-							? <WordChecking good={this.state.good} word={this.state.words[this.state.wordNum]} selectedGameType={this.props.selectedGameType} methods={methods}/>
+							? <WordChecking good={this.state.good} word={this.state.words[this.state.wordNum]} selectedGameType={this.props.selectedGameType} methods={methods} lang={this.props.lang}/>
 							: null
 						}
 	

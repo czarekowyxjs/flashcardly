@@ -65,9 +65,13 @@
 		"hours": "hours",
 		"minute": "minute",
 		"minutes": "minutes",
+		"seconds": "seconds",
+		"second": "second",
 		"cancel": "Cancel",
 		"or": "or",
 		"save": "Save",
+		"back": "Back",
+		"startGameBtn": "Let's play",
 		"edit": "Edit",
 		"loading": "Loading",
 		"loadingAccountData": "Loading account data",
@@ -83,7 +87,15 @@
 		"shuffleWords": "Shuffle words",
 		"reverseCard": "Reverse card",
 		"backTo": "Back to",
-		"search": "Search"
+		"search": "Search",
+		"uWillStartFor": "You will start for",
+		"translateTo": "translate to",
+		"startGame": "Start game",
+		"typeYourTranslation": "Type your translation",
+		"check": "Check",
+		"continue": "Continue",
+		"rightAnswer": "Your answer is right",
+		"badAnswer": "Your answer is incorrect"
 	},
 	"contents": {
 		"registerUsernameDesc": "It's your username, visible for other users. Remember: Your username should be unique.",
@@ -110,7 +122,23 @@
 		"loginByUsernameDesc": "Turn on login using your username. You can concurentlly use email address or username to login. By default this option is turned off.",
 		"changeFlashcardTitleDesc": "Title of flashcard is very important. This one should be unique and according to content.",
 		"changeColumnsNamesDesc": "Columns names make it easier to recognize the content of flashcard.",
-		"privateStatusDesc": "If you set your flashcard as private, it won't be possible to find and watch this one by other users."
+		"privateStatusDesc": "If you set your flashcard as private, it won't be possible to find and watch this one by other users.",
+		"guessByWritting": {
+			"beginningDesc": "Hello, if you want to start to play GuessByWrtiing, you have to select type of playing.",
+			"important": "<b>Important!</b> Okey, you choosen your game type. It's a few important points for you.",
+			"points": {
+				"p1": "When you click 'Let's play' you will have 3 second for preparing to game.",
+				"p2": "While playing you will have 15 second to translate each word. Time is summed up.",
+				"p3": "If you leave while playing, you will lost whole progress."
+			},
+			"finishTitle": "You finished Guess by Writting for",
+			"itTook": "It took you",
+			"youAnswerdCorrectly": "You answerd correctly",
+			"times": "times out of",
+			"playAgainDesc": "If you want, you can",
+			"playAgain": "Play Again",
+			"orBackTo": "or back to"
+		}
 	},
 	"flashcardsIntroduce": [
 		{

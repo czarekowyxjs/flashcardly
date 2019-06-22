@@ -6,6 +6,8 @@ function WordChecking(props) {
     return () => window.removeEventListener("keyup", props.methods.confirmCheckedWord, false);
   })
 
+  const lang = props.lang;
+
   return (
     <div>
       <div className="gsb_game_word_right">
@@ -29,12 +31,12 @@ function WordChecking(props) {
           <span>
             {
               props.good 
-              ? "Your answer is right"
-              : "Your answer is incorrect"
+              ? lang.shorts.rightAnswer
+              : lang.shorts.badAnswer
             }
           </span>
           <button className="flashcardly_btn flashcardly_btn--common" onClick={props.methods.confirmCheckedWord}>
-              Continue
+              { lang.shorts.continue }
           </button>
       </div>
       </div>
