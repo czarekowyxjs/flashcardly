@@ -21,21 +21,21 @@
   },
   "homepage": "https://github.com/czarekowyxjs/flashcardly#readme",
   "dependencies": {
-    "body-parser": "^1.18.3",
+    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^6.2.0",
-    "express": "^4.16.4",
+    "express": "^4.17.1",
     "express-validator": "^5.3.1",
-    "helmet": "^3.16.0",
-    "mysql": "^2.16.0",
+    "helmet": "^3.18.0",
+    "mysql": "^2.17.1",
     "mysql2": "^1.6.5",
     "nodemailer": "^4.7.0",
-    "sequelize": "^4.43.1",
+    "sequelize": "^4.44.0",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
     "concurrently": "^4.1.0",
-    "nodemon": "^1.18.11"
+    "nodemon": "^1.19.1"
   },
   "engines": {
     "node": "8.12.0",
