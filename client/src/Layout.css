@@ -26,10 +26,11 @@
 
 .app_header_row {
 	width:100%;
+	max-width: 1440px;
 	display:flex;
 	flex-direction:row;
 	align-items:center;
-	justify-content:flex-end;
+	justify-content:space-between;
 }
 
 .app_body {
@@ -48,12 +49,35 @@
 	justify-content:flex-start;
 }
 
+.flashcardly_logo {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0rem 1rem;
+}
+
+.flashcardly_logo > h1 {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.flashcardly_logo > h1 > a {
+	color:#fff;
+	font-size: 1.1rem;
+	font-family: 'Kalam', cursive;
+	font-weight: 900;
+	transition-duration: 200ms;
+}
+
+.flashcardly_logo > h1 > a:hover {
+	transform: scale(0.95);
+}
+
 @media (max-width:800px) {
 	.app_body_content {
 		width:100%;
-	}
-
-	.app_header_row {
-		flex-direction:column;
 	}
 }

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { updateUserAvatar } from '../../actions/userActions';
 import Navigation from '../Navigation/Navigation.jsx';
 import AvatarPopUp from './AvatarPopUp/AvatarPopUp.jsx';
+import Logo from './Logo.jsx';
 
 class Header extends Component {
 	state = {
@@ -33,6 +34,7 @@ class Header extends Component {
 					: null
 				}
 				<div className="app_header_row">
+					<Logo/>
 					<Navigation lang={this.props.user.lang} user={this.props.user} methods={methods}/>
 				</div>
 			</div>

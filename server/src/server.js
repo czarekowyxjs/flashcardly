@@ -33,11 +33,7 @@ app.use("/api/v1/service/search", SearchController);
 //
 if(process.env.NODE_ENV == "production") {
 	app.use("/*", function(req, res) {
-		if(req.secure) {
-			res.sendFile(__dirname+"/public/build/index.html");
-		} else {
-			res.redirect('https://' + req.headers.host + req.url);
-		}
+		res.sendFile(__dirname+"/public/build/index.html");
 	});
 }
 
