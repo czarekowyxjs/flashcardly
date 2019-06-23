@@ -294,7 +294,7 @@ Router.put("/word/learned", VerifyToken, CheckFlashcardAuthor, function(req, res
 	})
 	.then(function(foundWord) {
 		if(foundWord) {
-			return foundWord.updateAttributes({
+			return foundWord.update({
 				learned: !foundWord.learned
 			})
 			.then(function(updatedWord) {
