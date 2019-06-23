@@ -11,6 +11,11 @@ class Footer extends Component {
 		return (
 			<div className="flashcardly_footer">
 				<div className="flashcardly_footer_content">
+					<div className="flashcardly_footer_logo">
+						<Link to="/">
+							flashcardly.eu
+						</Link>
+					</div>
 					<div className="flashcardly_footer_nav">
 						<ul>
 							<li><Link to="/">Flashcardly</Link></li>

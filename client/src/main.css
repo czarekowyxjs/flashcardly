@@ -4,6 +4,11 @@
 	src: url("./fonts/Kalam/Kalam-Bold.ttf")
 }
 
+@font-face {
+	font-family: "Kalam-light";
+	src: url("./fonts/Kalam/Kalam-Light.ttf")
+}
+
 html {
 	box-sizing:border-box;
 	font-size:14px;
