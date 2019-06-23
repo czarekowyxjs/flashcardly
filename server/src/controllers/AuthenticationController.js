@@ -3,7 +3,6 @@ const models = require("../models");
 const VerifyToken = require("../middlewares/VerifyToken");
 const Op = require('sequelize').Op;
 const mail = require("../config/transporter");
-const sequelize = require("sequelize");
 
 Router.post("/signin", function(req, res) {
 	const query = `SELECT * FROM Users INNER JOIN User_options ON Users.uid = User_options.uid WHERE ((email=$bindEmail AND password=$bindPassword) OR ((email=$bindEmail OR username=$bindEmail) AND password=$bindPassword AND User_options.loginByUsername=1)) AND User_options.emailConfirm = 1 LIMIT 1`;

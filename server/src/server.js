@@ -1,6 +1,7 @@
 const express = require("express");
 const validator = require("express-validator");
 const bodyParser = require("body-parser");
+const favicon = require("serve-favicon");
 const path = require("path");
 const cors = require("cors");
 const helmet = require("helmet");
@@ -23,6 +24,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(helmet());
 app.use(cors());
 app.use(validator());
+//
+app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
 //
 app.use('/api/v1/authentication', AuthenticationController);
 app.use('/api/v1/flashcards', FlashcardController);
