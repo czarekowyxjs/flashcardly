@@ -286,14 +286,14 @@
 	}
 
 	.settings_nav_wrapper {
-		max-width:240px;
+		max-width:270px;
 		width:40%;
 		border-right:1px solid rgba(0,0,0,0.15);
 	}	
 
 	.settings_edit_table_v2_item--extended_form {
 		max-width:800px;
-		width:600px;
+		width:500px;
 		min-width:200px;
 	}
 

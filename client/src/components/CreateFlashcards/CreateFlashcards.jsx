@@ -12,7 +12,7 @@ class CreateFlashcards extends Component {
 	}
 
 	componentDidMount() {
-		document.title = "Flashcardly";
+		document.title = "Flashcards creator - Flashacrdly";
 	}
 
 	componentWillUnmount() {

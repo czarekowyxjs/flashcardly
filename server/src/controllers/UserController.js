@@ -147,7 +147,7 @@ Router.put("/password", VerifyToken, function(req, res) {
 	.then(function(foundUser) {
 		if(foundUser) {
 			if(req.body.newPassword === req.body.newPasswordRepeat) {
-				return foundUser.updateAttributes({
+				return foundUser.update({
 					password: req.body.newPassword
 				})
 				.then(function(updatedUser) {
@@ -177,7 +177,7 @@ Router.put("/emailprivacy", VerifyToken, function(req, res) {
 		}
 	})
 	.then(function(foundOptions) {
-		foundOptions.updateAttributes({
+		foundOptions.update({
 			emailVisibility: !foundOptions.emailVisibility
 		})
 		.then(function(updatedOptions) {
@@ -195,7 +195,7 @@ Router.put("/loginbyusername", VerifyToken, function(req, res) {
 		}
 	})
 	.then(function(foundOptions) {
-		foundOptions.updateAttributes({
+		foundOptions.update({
 			loginByUsername: !foundOptions.loginByUsername
 		})
 		.then(function(updatedOptions) {

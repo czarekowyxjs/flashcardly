@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getManyFlashcards, clearOwnFlashcards } from '../../actions/flashcardActions';
 import SingleFlashcardPreview from '../SingleFlashcardPreview/SingleFlashcardPreview.jsx';
-import TinyLoader from '../Commons/Loader/TinyLoader.jsx';
+import FullAbsoluteLoader from '../Commons/Loader/FullAbsoluteLoader.jsx';
 import FlashcardAddBtn from '../Commons/FlashcardAddBtn/FlashcardAddBtn.jsx';
 
 class OwnFlashcards extends Component {
@@ -31,6 +31,7 @@ class OwnFlashcards extends Component {
 		return (
 			<div className="flashcards_window">
 				<div className="flashcards_block">
+					{this.props.user.ownFlashcardsLoaded ? null : <FullAbsoluteLoader/>}
 					<div className="flashcards_block_header">
 						<div className="flashcards_block_header_title">
 							<h3>{lang.titles.yourFlashcards}</h3>
@@ -40,7 +41,6 @@ class OwnFlashcards extends Component {
 						<div className="flashcards_block_previews">
 							<FlashcardAddBtn/>
 							{this.props.user.ownFlashcards.length > 0 ? this.renderFlashcardPreviews() : null}
-							{this.props.user.ownFlashcardsLoaded ? null : <TinyLoader/>}
 						</div>
 						{
 							this.props.user.ownFlashcardsIsMore
