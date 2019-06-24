@@ -152,7 +152,7 @@ Router.post("/signup", function(req, res, next) {
 
 	req.checkBody('username', "Incorrect username").trim().isLength({ min: 3, max: 48 });
 	req.checkBody("email", "Incorrect email address").trim().isEmail().isLength({ min: 5, max: 255 });
-	req.checkBody('password', "Incorrect password").trim().isLength({ min: 8, max: 255 });
+	req.checkBody('password', "Incorrect password").trim().isLength({ min: 2, max: 255 });
 	req.checkBody('password2', 'Passwords are not that same').equals(req.body.password);
 
 	const errors = req.validationErrors();
