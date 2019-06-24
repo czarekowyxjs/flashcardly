@@ -101,7 +101,8 @@ module.exports = (sequelize, DataTypes) => {
     .then(function(createdUser) {
       if(createdUser) {
         return sequelize.models.User_options.create({
-          uid: createdUser.uid
+          uid: createdUser.uid,
+          emailConfirm: true
         })
         .then(function(createdOptions) {
           return {

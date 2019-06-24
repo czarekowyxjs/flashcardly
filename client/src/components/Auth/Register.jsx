@@ -48,7 +48,7 @@ class Register extends Component {
 								!this.props.user.register.loaded && this.props.user.register.processing
 								? <TinyLoader/>
 								: (this.props.user.register.loaded && !this.props.user.register.error
-									?	<p>Confirm your email address</p>
+									?	<Redirect to="/"/>
 									: (<form onSubmit={this.handleLoginFormSubmit}>
 										<label htmlFor="username">{lang.username}</label>
 										<input
