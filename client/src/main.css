@@ -5,6 +5,11 @@
 }
 
 @font-face {
+	font-family: "Kalam-regular";
+	src: url("./fonts/Kalam/Kalam-Regular.ttf")
+}
+
+@font-face {
 	font-family: "Kalam-light";
 	src: url("./fonts/Kalam/Kalam-Light.ttf")
 }
