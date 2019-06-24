@@ -3,6 +3,7 @@ const validator = require("express-validator");
 const bodyParser = require("body-parser");
 const favicon = require("serve-favicon");
 const path = require("path");
+const http = require("http");
 const cors = require("cors");
 const helmet = require("helmet");
 const AuthenticationController = require("./controllers/AuthenticationController");
@@ -40,6 +41,12 @@ if(process.env.NODE_ENV == "production") {
 	});
 }
 
-const server = app.listen(process.env.PORT || 3001, function() {
+function neverSleep() {
+	http.get('http://flashcardly.herokuapp.com');
+}
+
+setInterval(neverSleep, 60000);
+
+app.listen(process.env.PORT || 3001, function() {
 	console.log('Server is running');
 });
